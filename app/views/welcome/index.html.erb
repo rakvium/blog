@@ -1,0 +1,15 @@
+<h1>All heil Rails!</h1>
+<%= link_to "My Blog", controller: "posts" %>
+
+<p>P.S.: This is a view. Find it at app/views/welcome/index.html.erb</p>
+
+<h2>Wanna any cycles?</h2>
+ Alternate CSS classes for even and odd numbers...
+ @items = [1,2,3,4]
+ <table>
+ <% @items.each do |item| %>
+   <tr class="<%= cycle("odd", "even") -%>">
+     <td>item</td>
+   </tr>
+ <% end %>
+ </table>
