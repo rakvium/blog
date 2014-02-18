@@ -4,6 +4,7 @@ ruby '1.9.3'
 
 gem 'rails', '4.0.2'
 
+gem 'bootstrap-sass'
 
 gem 'sass-rails', '4.0.1'
 gem 'uglifier', '2.1.1'
