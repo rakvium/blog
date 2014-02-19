@@ -13,9 +13,9 @@ http_basic_authenticate_with name: "dhh", password: "secret", only: :destroy
  
 #DESTROY the comment
 def destroy
-	@post = Post.find(params[:post_id])
-	@comment = @post.comments.create(comment_params)
-	redirect_to post_path(@post)
+  @post = Post.find(params[:post_id])
+  @comment = @post.comments.create(comment_params)
+  redirect_to post_path(@post)
 end
 
 #BEWARE OF THE "private"

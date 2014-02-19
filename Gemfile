@@ -5,7 +5,6 @@ ruby '1.9.3'
 gem 'rails', '4.0.2'
 
 gem 'bootstrap-sass'
-
 gem "therubyracer"
 gem "less-rails" 
 gem "twitter-bootstrap-rails"
@@ -21,13 +20,14 @@ group :doc do
   gem 'sdoc', '0.3.20', require: false
 end
 
-#<<<<<<< HEAD
-
-#=======
 #group :production do
   gem 'pg'
   gem 'rails_12factor'
 #end
+
+
+# Authentication
+gem 'devise'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
