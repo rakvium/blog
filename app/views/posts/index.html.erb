@@ -1,6 +1,6 @@
 <h1>The Great Listing Of All Of The Posts</h1>
 
-<button align="center">
+<button align="center" class="btn btn-success">
   <%= link_to 'What about a New Post, dude?', new_post_path %>
 </button>
 
@@ -15,13 +15,13 @@
     <%= post.text %>
   </div>
   <div class="row">
-    <button>
+    <button class="btn">
       <%= link_to 'Show', post_path(post) %>
     </button>
-    <button>
+    <button class="btn btn-success">
       <%= link_to 'Edit', edit_post_path(post) %>
     </button>
-    <button>
+    <button class="btn btn-danger">
       <%= link_to 'Destroy', post_path(post),
                     method: :delete, data: { confirm: 'Are you sure?' } %>
     </button>
