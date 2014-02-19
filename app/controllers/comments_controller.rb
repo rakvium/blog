@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
 
 #allow to delete comments only for authenticated users
-http_basic_authenticate_with name: "dhh", password: "secret", only: :destroy
+#http_basic_authenticate_with name: "dhh", password: "secret", only: :destroy
 
 
 #create comments to post
@@ -14,7 +14,8 @@ http_basic_authenticate_with name: "dhh", password: "secret", only: :destroy
 #DESTROY the comment
 def destroy
   @post = Post.find(params[:post_id])
-  @comment = @post.comments.create(comment_params)
+  @comment = @post.comments.find(params[:id])
+  @comment.destroy
   redirect_to post_path(@post)
 end
 
