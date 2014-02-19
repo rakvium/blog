@@ -1,12 +1,17 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
+<header class="navbar navbar-fixed-top navbar-inverse" role="navigation">
   <div class="navbar-inner">
     <div class="container">
-      <%= link_to "Blog", '/', id: "logo" %>
+      <%= link_to "Blog", '/', id: "logo" %>  
       <nav>
         <ul class="nav pull-right">
+        
           <li><%= link_to "There is no link to Home page",    '#' %></li>
           <li><%= link_to "There is no link to Help page",    '#' %></li>
-          <li><%= link_to "Sign in", '/users/sign_in' %></li>
+          <% if user_signed_in? %>                     
+            <li><%= link_to("Sign out", destroy_user_session_path,:method=>:delete)%>Hello, user #<%= current_user.id %></li>
+            <% else %>
+            <li><%= link_to "Sign in", new_user_session_path %></li>
+            <% end %>
         </ul>
       </nav>
     </div>

@@ -1,8 +1,8 @@
 <h1>The Great Listing Of All Of The Posts</h1>
 
-<button align="center" class="btn btn-success">
-  <%= link_to 'What about a New Post, dude?', new_post_path %>
-</button>
+
+ <%= link_to 'What about a New Post, dude?', new_post_path, :class=>'btn btn-success' %>
+
 
 
  <% @posts.each do |post| %>
@@ -15,16 +15,11 @@
     <%= post.text %>
   </div>
   <div class="row">
-    <button class="btn">
-      <%= link_to 'Show', post_path(post) %>
-    </button>
-    <button class="btn btn-success">
-      <%= link_to 'Edit', edit_post_path(post) %>
-    </button>
-    <button class="btn btn-danger">
-      <%= link_to 'Destroy', post_path(post),
-                    method: :delete, data: { confirm: 'Are you sure?' } %>
-    </button>
+
+    <%= link_to "Show", post_path(post), :class=>'btn btn-primary' %>
+    <%= link_to "Edit", edit_post_path(post), :class=>'btn btn-success' %>
+    <%= link_to 'Destroy', post_path(post),
+                    method: :delete, data: { confirm: 'Are you sure?' }, :class=>'btn btn-danger'%>
   </div>
 
 <% end %>
