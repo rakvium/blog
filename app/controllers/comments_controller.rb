@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
 
 #allow to delete comments only for authenticated users
+http_basic_authenticate_with name: "dhh", password: "secret", only: :destroy
 
 
 #create comments to post
