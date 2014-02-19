@@ -1,6 +1,6 @@
 Blog::Application.routes.draw do
   resources :posts do
-	resources :comments
+	 resources :comments
 	end
 
   #get "welcome/index"
