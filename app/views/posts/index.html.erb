@@ -1,7 +1,8 @@
+<%provide(:title, '| The Great Listing Of All Of The Posts')%>
 <h1>The Great Listing Of All Of The Posts</h1>
 
 
- <%= link_to 'What about a New Post, dude?', new_post_path, :class=>'btn btn-success' %>
+ <%= link_to 'What about a New Post, dude?', new_post_path, :class=>'btn btn-lg btn-success' %>
 
 
 
@@ -16,10 +17,10 @@
   </div>
   <div class="row">
 
-    <%= link_to "Show", post_path(post), :class=>'btn btn-primary' %>
-    <%= link_to "Edit", edit_post_path(post), :class=>'btn btn-success' %>
+    <%= link_to "Show", post_path(post), :class=>'btn btn-sm btn-primary' %>
+    <%= link_to "Edit", edit_post_path(post), :class=>'btn btn-sm btn-success' %>
     <%= link_to 'Destroy', post_path(post),
-                    method: :delete, data: { confirm: 'Are you sure?' }, :class=>'btn btn-danger'%>
+                    method: :delete, data: { confirm: 'Are you sure?' }, :class=>'btn btn-sm btn-danger'%>
   </div>
 
 <% end %>
