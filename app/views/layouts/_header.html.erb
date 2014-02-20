@@ -5,8 +5,8 @@
       <nav>
         <ul class="nav pull-right">
         
-          <li><%= link_to "There is no link to Home page",    static_pages_home_path %></li>
-          <li><%= link_to "There is no link to Help page",    static_pages_help_path %></li>
+          <li><%= link_to "Home",    static_pages_home_path %></li>
+          <li><%= link_to "Help",    static_pages_help_path %></li>
           <% if user_signed_in? %>                     
             <li><%= link_to("Sign out", destroy_user_session_path,:method=>:delete)%>Hello, user #<%= current_user.id %></li>
             <% else %>
