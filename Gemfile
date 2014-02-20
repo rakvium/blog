@@ -2,6 +2,15 @@ source 'https://rubygems.org'
 ruby '1.9.3'
 #ruby-gemset=railstutorial_rails_4_0
 
+# Use rspec+selenium_webdriver+capybara as for test
+#group :development, :test do
+#	gem 'rspec-rails'
+#end
+#group :test do
+#  gem 'selenium-webdriver', '2.35.1'
+#  gem 'capybara', '2.1.0'
+#end
+
 gem 'rails', '4.0.2'
 
 gem 'bootstrap-sass'
