@@ -3,9 +3,7 @@
     <div class="container">
       <%= link_to "Blog", '/', id: "logo" %>  
       <nav>
-        <ul class="nav pull-right">
-        
-          <li><%= link_to "Home",    static_pages_home_path %></li>
+        <ul class="nav pull-right">        
           <li><%= link_to "Help",    static_pages_help_path %></li>
           <% if user_signed_in? %>                     
             <li><%= link_to("Sign out", destroy_user_session_path,:method=>:delete)%>Hello, user #<%= current_user.id %></li>
