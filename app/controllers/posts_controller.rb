@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-#allow to delete posts only for authenticated users
+#allow to delete posts only for http authenticated users
 #http_basic_authenticate_with name: "dhh", password: "secret", except: [:index, :show]
 
 
