@@ -1,10 +1,7 @@
 <%provide(:title, '| The Great Listing Of All Of The Posts')%>
 <h1>The Great Listing Of All Of The Posts</h1>
 
-
  <%= link_to 'What about a New Post, dude?', new_post_path, :class=>'btn btn-lg btn-success' %>
-
-
 
  <% @posts.each do |post| %>
   <div class="row">

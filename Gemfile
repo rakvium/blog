@@ -5,6 +5,8 @@ ruby '1.9.3'
 # Use rspec+selenium_webdriver+capybara as for test
 group :development, :test do
 	gem 'rspec-rails'
+	gem 'pry-nav'
+	gem 'pry-rails'
 end
 group :test do
   gem 'selenium-webdriver', '2.35.1'

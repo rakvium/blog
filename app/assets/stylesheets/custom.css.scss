@@ -87,7 +87,8 @@ table th{
 
 /* comments */
 .comment {
-  margin-left: 20%;
+  margin-left: 10%;
+  margin-right: 10%;
   word-wrap: break-word;
 }
 
@@ -96,7 +97,7 @@ table th{
 footer {
   margin-top: 45px;
   padding-top: 5px;
-  border-top: 1px solid #eaeaea;
+  border-top: 1px solid #eee;
   color: #999;
 }
 
@@ -126,11 +127,11 @@ footer ul li {
 
 .field_with_errors label {
   padding: 2px;
-  background-color: red;
+  background-color: #f00;
 }
 
 .field_with_errors input[type="text"] {
   padding: 3px 2px;
-  border: 2px solid red;
+  border: 2px solid #f00;
 }
 

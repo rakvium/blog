@@ -4,10 +4,12 @@ class CommentsController < ApplicationController
 #http_basic_authenticate_with name: "dhh", password: "secret", only: :destroy
 
 
-#create comments to post
+#CREATE comment to the post
  def create
+    #binding.pry
+    #@user = User.find(params[:user_id])
     @post = Post.find(params[:post_id])
-    @comment = @post.comments.create(comment_params)
+    @comment = @post.comments.create(params.require(:comment).permit(:user_id, :body))
     redirect_to post_path(@post)
   end
  
@@ -19,9 +21,5 @@ def destroy
   redirect_to post_path(@post)
 end
 
-#BEWARE OF THE "private"
-private
-    def comment_params
-      params.require(:comment).permit(:commenter, :body)
-    end
+
 end

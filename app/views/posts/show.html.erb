@@ -1,19 +1,59 @@
 <div>
-<h1>  <%= @post.title %></h1>
-<p>
-  <strong>Text:</strong>
-  <%= @post.text %>
-</p>
- 
- <%= link_to 'Edit', edit_post_path(@post), :class=>'btn btn-sm btn-success'%>
+  <h1>
+   <%= @post.title %>
+  </h1>
+  <p>
+   <strong>Text:</strong>
+   <%= @post.text %>
+  </p>
+  <%= link_to 'Edit', edit_post_path(@post), :class=>'btn btn-sm btn-success'%>
 </div>
 
 <div class="container comment">
 
-<h2>Comments</h2>
-<%= render @post.comments %>
+<h2>
+ Comments
+</h2>
+
+
+<% @post.comments.each do |c| %>
+<p>
+  <strong>User # <%= c.user_id %></strong>  
+</p>
  
-<h2>Add a comment:</h2>
-<%= render "comments/form" %>
+<p>
+  <%= c.body %>
+</p>
+
+<p>
+  <%= link_to 'Destroy Comment', [c.post, c],
+               method: :delete,
+               data: { confirm: 'Are you sure you want to delete this comment?'},
+               :class=>'btn btn-sm btn-danger'%>
+</p>
+ 
+<% end %>
+
+<h2>
+ Add a comment:
+</h2>
+<%= form_for([@post, @post.comments.build]) do |f| %>
+ <% if user_signed_in? %> 
+  <p>
+     <%= f.hidden_field :user_id, :value=>current_user.id %>
+     <%= "Post comment as user \##{current_user.id}\:" %>
+  <p>    
+    <%= f.text_area :body, :required => true %>
+  </p>
+  <p>
+    <%= f.submit :class=>'btn btn-lg btn-success'%>
+  </p>
+ <% else %>
+  <p class="center">
+    <%= link_to "Sign in to add a comment", new_user_session_path %>
+  </p>
+ <% end %>
+<% end %>
 </div>
+
 <%= link_to 'Back to The Great Listing Of All Of The Posts', posts_path, :class=>'btn btn-sm btn-warning' %>
