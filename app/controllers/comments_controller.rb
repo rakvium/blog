@@ -20,7 +20,7 @@ def destroy
 end
 
 #BEWARE OF THE "private"
-  private
+private
     def comment_params
       params.require(:comment).permit(:commenter, :body)
     end
