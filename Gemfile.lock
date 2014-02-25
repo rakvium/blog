@@ -186,6 +186,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-sass
+  bundler
   capybara (= 2.1.0)
   coffee-rails (= 4.0.1)
   devise

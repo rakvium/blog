@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 ruby '1.9.3'
+
+#I don't know why heroku runs no bundle
+gem 'bundler'
+
 #ruby-gemset=railstutorial_rails_4_0
 
 # Use rspec+selenium_webdriver+capybara as for test
