@@ -5,21 +5,30 @@
 
  <% @posts.each do |post| %>
   <div class="row">
-    <h3>
-      <%= post.title %>
-    </h3>
+    <hr>
+    <div class="span8">
+      <h3>
+        <%= post.title %>
+      </h3>
+    </div>
+    <div class="span4">
+      <p align="right-up">
+        <%= post.created_at %>  
+      </p>
+    </div> 
   </div>
   <div class="row">
+    <div class="span12">
     <%= post.text %>
+    <br>
+    </div>
   </div>
-  <div class="row btn-group">
-
-    <%= link_to "Show", post_path(post), :class=>'btn btn-sm btn-primary' %>
-    <%= link_to "Edit", edit_post_path(post), :class=>'btn btn-sm btn-success' %>
-    <%= link_to 'Destroy', post_path(post),
-                    method: :delete, data: { confirm: 'Are you sure?' }, :class=>'btn btn-sm btn-danger'%>
-  </div>
-
+    <div class="row">
+      <div class="span4 btn-group">
+        <%= link_to "Show", post_path(post), :class=>'btn btn-sm btn-primary' %>
+        <%= link_to "Edit", edit_post_path(post), :class=>'btn btn-sm btn-success' %>
+        <%= link_to 'Destroy', post_path(post),
+                        method: :delete, data: { confirm: 'Are you sure?' }, :class=>'btn btn-sm btn-danger'%>
+      </div>
+    </div>
 <% end %>
-
-

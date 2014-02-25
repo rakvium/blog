@@ -14,6 +14,7 @@ group :test do
 end
 
 gem 'rails', '4.0.2'
+gem 'rake'
 
 gem 'bootstrap-sass'
 gem "therubyracer"

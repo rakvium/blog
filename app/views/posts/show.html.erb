@@ -2,10 +2,13 @@
   <h1>
    <%= @post.title %>
   </h1>
-  <p>
-   <strong>Text:</strong>
+  <p>   
    <%= @post.text %>
   </p>
+  <p>
+    <strong>
+      Post added by <%= @user.first_name %> <%= @user.last_name %></strong>
+    </p>
   <%= link_to 'Edit', edit_post_path(@post), :class=>'btn btn-sm btn-success'%>
 </div>
 
@@ -14,24 +17,20 @@
 <h2>
  Comments
 </h2>
-
-
-<% @post.comments.each do |c| %>
+<% @comments.each do |c| %>
 <p>
-  <strong>User # <%= c.user_id %></strong>  
+  <strong><%= @user.first_name %> <%= @user.last_name %> wrote:
+  </strong>  
 </p>
- 
 <p>
   <%= c.body %>
 </p>
-
 <p>
   <%= link_to 'Destroy Comment', [c.post, c],
                method: :delete,
                data: { confirm: 'Are you sure you want to delete this comment?'},
                :class=>'btn btn-sm btn-danger'%>
 </p>
- 
 <% end %>
 
 <h2>
@@ -39,9 +38,8 @@
 </h2>
 <%= form_for([@post, @post.comments.build]) do |f| %>
  <% if user_signed_in? %> 
-  <p>
-     <%= f.hidden_field :user_id, :value=>current_user.id %>
-     <%= "Post comment as user \##{current_user.id}\:" %>
+ <%= f.hidden_field :user_id, :value => current_user.id %>
+     <%= "Post comment as #{current_user.first_name} #{current_user.last_name}\:" %>
   <p>    
     <%= f.text_area :body, :required => true %>
   </p>

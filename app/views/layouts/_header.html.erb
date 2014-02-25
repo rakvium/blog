@@ -3,13 +3,16 @@
       <%= link_to "Blog", '/', id: "logo" %>  
       <nav>
         <ul class="nav pull-right">        
-          <li><%= link_to "Help",    static_pages_help_path %></li>
+          
           <% if user_signed_in? %>  
-            <li><%= link_to "Hello, user \##{current_user.id}", edit_user_registration_path %>              
-            <li><%= link_to("Sign out", destroy_user_session_path,:method=>:delete)%></li>
+              <li><a onclick="return false" style="color:#ccc">Hello, <%=current_user.first_name%>!</a></li>
+              <li><%= link_to "Help", static_pages_help_path %></li>
+              <li><%= link_to "#{current_user.first_name} account", edit_user_registration_path %>              
+              <li><%= link_to("Sign out", destroy_user_session_path,:method=>:delete)%></li>
             <% else %>
-            <li><%= link_to "Sign up", new_user_registration_path %></li>
-            <li><%= link_to "Sign in", new_user_session_path %></li>
+              <li><%= link_to "Help", static_pages_help_path %></li>
+              <li><%= link_to "Sign up", new_user_registration_path %></li>
+              <li><%= link_to "Sign in", new_user_session_path %></li>
             <% end %>
         </ul>
       </nav>

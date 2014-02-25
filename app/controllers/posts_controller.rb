@@ -3,6 +3,11 @@ class PostsController < ApplicationController
 #allow to delete posts only for http authenticated users
 #http_basic_authenticate_with name: "dhh", password: "secret", except: [:index, :show]
 
+#allow to posts only for authenticated users
+  before_filter :validate_user
+  def validate_user
+    redirect_to new_user_session_url unless current_user
+  end
 
 #publish the new post
 def new
@@ -12,8 +17,8 @@ end
 #create a post
 def create
   @post = Post.new(post_params)
- 
   if @post.save
+    @post.update_attributes(:user_id=>current_user.id)
     redirect_to @post
   else
     render 'new'
@@ -22,7 +27,9 @@ end
  
 #show the just created|edited post
 def show
-  @post = Post.find(params[:id])
+  @post     = Post.find(params[:id])
+  @comments = Post.find(params[:id]).comments.all
+  @user     = @post.user
 end
 
 #show all posts
@@ -51,7 +58,7 @@ def destroy
 @post = Post.find(params[:id])
   @post.destroy
  
-  redirect_to posts_path
+  redirect_to posts_url
 end
 
 #BEWARE OF THE "private"!

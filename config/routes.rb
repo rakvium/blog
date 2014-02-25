@@ -3,6 +3,7 @@ Blog::Application.routes.draw do
   get "static_pages/help"
   get "static_pages/about"
   get "static_pages/contact"
+
   devise_for :users
   resources :posts do
 	 resources :comments

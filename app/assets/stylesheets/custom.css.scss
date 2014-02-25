@@ -35,7 +35,9 @@ section {
 }
 
 textarea {
-  resize: vertical;
+  resize: vertical, horizontal;
+  width: 80%;
+  height: 100px;
 }
 
 .center {
@@ -85,8 +87,12 @@ table th{
     text-align: center;
 }
 
+#post_title {
+  min-width: 80%;
+}
+
 /* comments */
-.comment {
+.comment #t{
   margin-left: 10%;
   margin-right: 10%;
   word-wrap: break-word;
@@ -102,11 +108,11 @@ footer {
 }
 
 footer a {
-  color: #555;
+  color: #666;
 }
 
 footer a:hover {
-  color: #222;
+  color: #999;
 }
 
 footer small {
