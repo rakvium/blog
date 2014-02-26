@@ -8,6 +8,7 @@ gem 'bundler'
 
 # Use rspec+selenium_webdriver+capybara as for test
 group :development, :test do
+  	gem 'pg'
 	gem 'rspec-rails'
 	gem 'pry-nav'
 	gem 'pry-rails'
@@ -39,10 +40,10 @@ group :doc do
   gem 'sdoc', '0.3.20', require: false
 end
 
-#group :production do
+group :production do
   gem 'pg'
   gem 'rails_12factor'
-#end
+end
 
 
 # Authentication
