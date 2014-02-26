@@ -11,7 +11,7 @@
     </ul>
   </div>
   <% end %>  
-  <%= "Post as user \##{current_user.id}\:" %>
+  <%= "Post as #{current_user.first_name} #{current_user.last_name}\:" %>
   <p>
     <%= f.label :title %><br>
     <%= f.text_field :title, :required => true  %>

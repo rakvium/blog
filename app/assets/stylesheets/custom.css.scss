@@ -21,6 +21,7 @@
 
 /* universal */
 
+
 html {
   overflow-y: scroll;
 }
@@ -77,7 +78,7 @@ p {
 }
 
 /* tables */
-table th{
+table th {
   text-align: left;
 }
 
@@ -87,14 +88,20 @@ table th{
     text-align: center;
 }
 
+#main_image:hover img {
+  min-width: 300px;
+  max-height: 266px;
+}
+
+
 #post_title {
   min-width: 80%;
 }
 
 /* comments */
-.comment #t{
-  margin-left: 10%;
-  margin-right: 10%;
+.comment {
+  margin-left: 25%;
+  margin-right: 25%;
   word-wrap: break-word;
 }
 

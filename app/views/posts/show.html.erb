@@ -6,30 +6,33 @@
    <%= @post.text %>
   </p>
   <p>
-    <strong>
-      Post added by <%= @user.first_name %> <%= @user.last_name %></strong>
+    <em>
+      Post added by <%= @user.first_name %> <%= @user.last_name %> at <%= @post.created_at.asctime %> 
+    </em>
     </p>
-  <%= link_to 'Edit', edit_post_path(@post), :class=>'btn btn-sm btn-success'%>
+  <%= link_to 'Edit', edit_post_path(@post), :class=>'btn btn-sm btn-success icon-edit'%>
 </div>
 
 <div class="container comment">
 
-<h2>
+<h3>
  Comments
-</h2>
+</h3>
 <% @comments.each do |c| %>
+<hr>
 <p>
-  <strong><%= @user.first_name %> <%= @user.last_name %> wrote:
-  </strong>  
+  <em>
+    <%= c.user.first_name %> <%= c.user.last_name %> at <%=c.created_at.asctime%> wrote:
+  </em>
 </p>
 <p>
   <%= c.body %>
 </p>
 <p>
-  <%= link_to 'Destroy Comment', [c.post, c],
+  <%= link_to ' Destroy Comment', [c.post, c],
                method: :delete,
                data: { confirm: 'Are you sure you want to delete this comment?'},
-               :class=>'btn btn-sm btn-danger'%>
+               :class=>'btn btn-sm btn-danger icon-remove-sign'%>
 </p>
 <% end %>
 
@@ -39,7 +42,7 @@
 <%= form_for([@post, @post.comments.build]) do |f| %>
  <% if user_signed_in? %> 
  <%= f.hidden_field :user_id, :value => current_user.id %>
-     <%= "Post comment as #{current_user.first_name} #{current_user.last_name}\:" %>
+     <%= "Comment as #{current_user.first_name} #{current_user.last_name}\:" %>
   <p>    
     <%= f.text_area :body, :required => true %>
   </p>
@@ -52,6 +55,6 @@
   </p>
  <% end %>
 <% end %>
+<%= link_to ' Back to The Great Listing Of All Of The Posts', posts_path, :class=>'btn btn-sm btn-warning icon-chevron-left' %>
 </div>
 
-<%= link_to 'Back to The Great Listing Of All Of The Posts', posts_path, :class=>'btn btn-sm btn-warning' %>
