@@ -84,11 +84,13 @@ table th {
 
 /* welcome page */
 .welcome {
+    box-shadow: inset 0em 0em 0.5em 0.5em #f00;
     text-align: center;
 }
 
 #main_image:hover img {
   min-width: 300px;
+  max-height: 266px;
 }
 
 
