@@ -34,7 +34,7 @@ end
 
 #show all posts
 def index
-@posts = Post.paginate(:page => params[:page], :per_page => 3)
+@posts = Post.paginate(:page => params[:page], :per_page => 3, :order => "created_at DESC")
 end
 
 #def edit

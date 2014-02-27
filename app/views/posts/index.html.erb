@@ -1,35 +1,42 @@
 <%provide(:title, '| The Great Listing Of All Of The Posts')%>
-<%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
 <h1>The Great Listing Of All Of The Posts</h1>
 
  <%= link_to ' What about a New Post, dude?', new_post_path, :class=>'btn btn-lg btn-success icon-pencil' %>
 
- <% @posts.each do |post| %>
-  <div class="row">
-    <hr>
-    <div class="span8">
-      <h3>
-        <%= post.title %>
-      </h3>
+<% @posts.each do |post| %>
+  <hr>
+  <div class="post">
+    <div class="row">
+      <div class="span8">
+          <h3>
+            <%= post.title %>
+          </h3>      
+      </div>
+      <div class="span3">
+
+          <code><%= post.created_at.strftime("%d %B %Y") %></code>
+
+      </div> 
     </div>
-    <div class="span4">
-      <p align="right">
-        <%= post.created_at.asctime %>  
-      </p>
-    </div> 
-  </div>
-  <div class="row">
-    <div class="span12">
-    <%= post.text %>
-    <br>
-    </div>
-  </div>
+      <div class="row">
+        <div class="span12">
+        <%= post.text %>
+        <br>
+        </div>
+      </div>
     <div class="row">
       <div class="span4 btn-group">
-        <%= link_to "Show", post_path(post), :class=>'btn btn-sm btn-primary icon-zoom-in' %>
-        <%= link_to "Edit", edit_post_path(post), :class=>'btn btn-sm btn-success icon-edit' %>
-        <%= link_to 'Destroy', post_path(post),
-                        method: :delete, data: { confirm: 'Are you sure?' }, :class=>'btn btn-sm btn-danger icon-remove-sign'%>
+          <%= link_to "Show", post_path(post), :class=>'btn btn-sm btn-primary icon-zoom-in' %>
+          <%= link_to "Edit", edit_post_path(post), :class=>'btn btn-sm btn-success icon-edit' %>
+          <%= link_to 'Destroy', post_path(post),
+                          method: :delete, data: { confirm: 'Are you sure?' }, :class=>'btn btn-sm btn-danger icon-remove-sign'%>
       </div>
     </div>
+  </div>
 <% end %>
+
+
+<hr>
+    <div class="center">
+    <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
+    </div>

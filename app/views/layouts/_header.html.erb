@@ -7,11 +7,11 @@
               <li><a onclick="return false" class="icon-ok icon-large" style="color:#ccc">Hello, <%=current_user.first_name%>!</a></li>
               <li><%= link_to " Help", static_pages_help_path, :class=>'icon-stethoscope  icon-large'  %></li>
               <li><%= link_to " #{current_user.first_name} account", edit_user_registration_path, :class=>'icon-cog icon-large' %>
-              <li><%= link_to(" Sign out", destroy_user_session_path,:method=>:delete, :class=>'icon-eject icon-large' )%></li>
+              <li><%= link_to(" Sign out", destroy_user_session_path,:method=>:delete, :class=>'icon-signout icon-large' )%></li>
             <% else %>
-              <li><%= link_to " Help", static_pages_help_path, :class=>'icon-help icon-large'  %></li>
-              <li><%= link_to " Sign up", new_user_registration_path, :class=>'icon-ok icon-large'  %></li>
-              <li><%= link_to " Sign in", new_user_session_path, :class=>'icon-ok icon-large'  %></li>
+              <li><%= link_to " Help", static_pages_help_path, :class=>'icon-stethoscope  icon-large'  %></li>
+              <li><%= link_to " Sign up", new_user_registration_path, :class=>'icon-edit icon-large'  %></li>
+              <li><%= link_to " Sign in", new_user_session_path, :class=>'icon-signin icon-large'  %></li>
             <% end %>
         </ul>
       </nav>
