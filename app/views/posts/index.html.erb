@@ -1,4 +1,5 @@
 <%provide(:title, '| The Great Listing Of All Of The Posts')%>
+<%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
 <h1>The Great Listing Of All Of The Posts</h1>
 
  <%= link_to ' What about a New Post, dude?', new_post_path, :class=>'btn btn-lg btn-success icon-pencil' %>
