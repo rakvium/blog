@@ -1,35 +1,52 @@
 <%provide(:title, '| The Great Listing Of All Of The Posts')%>
 <h1>The Great Listing Of All Of The Posts</h1>
 
+<div class="center">
  <%= link_to ' What about a New Post, dude?', new_post_path, :class=>'btn btn-lg btn-success icon-pencil' %>
+ </div>
 
 <% @posts.each do |post| %>
   <hr>
   <div class="post">
+    <div>
     <div class="row">
-      <div class="span8">
+      <div class="span6 text-left">
+          <code><%= post.created_at.strftime("%d %B %Y") %></code>
+      </div> 
+      <div class="span5 text-right">
+        <% if post.created_at.to_i != post.updated_at.to_i %>
+          <em><code>
+            Updated at <%= post.updated_at.strftime("%d %B %Y") %>
+          </code></em>
+        <% end %>
+      </div> 
+    </div>
+    </div>
+    <div class="row">
+      <div class="span12">
           <h3>
             <%= post.title %>
           </h3>      
       </div>
-      <div class="span3">
-
-          <code><%= post.created_at.strftime("%d %B %Y") %></code>
-
-      </div> 
     </div>
       <div class="row">
-        <div class="span12">
+        <div class="span12 lead">
         <%= post.text %>
         <br>
         </div>
       </div>
     <div class="row">
-      <div class="span4 btn-group">
-          <%= link_to "Show", post_path(post), :class=>'btn btn-sm btn-primary icon-zoom-in' %>
-          <%= link_to "Edit", edit_post_path(post), :class=>'btn btn-sm btn-success icon-edit' %>
-          <%= link_to 'Destroy', post_path(post),
-                          method: :delete, data: { confirm: 'Are you sure?' }, :class=>'btn btn-sm btn-danger icon-remove-sign'%>
+      <div class="btn-group dropup">
+        <% if can? :read, post %>
+          <%= link_to " Show", post_path(post), :class=>'btn btn-primary icon-zoom-in' %>
+          <% end %>
+        <% if can? :update, post %>
+          <%= link_to " Edit", edit_post_path(post), :class=>'btn btn-success icon-edit' %>
+        <% end %>
+        <% if can? :destroy, post %>
+          <%= link_to ' Destroy', post_path(post),
+                          method: :delete, data: { confirm: 'Are you sure?' }, :class=>'btn btn-danger icon-remove-sign'%>
+        <% end %>
       </div>
     </div>
   </div>

@@ -1,48 +1,74 @@
-<div>
-  <h1>
-   <%= @post.title %>
-  </h1>
+<div class="container post">
+  <div class="row">
+    <div class="span6 text-left">
+      <em>
+        <code>
+          <%= @user.first_name %> <%= @user.last_name %> at <%= @post.created_at.strftime("%d %B %Y at %H:%M") %> 
+        </code>
+      </em>
+    </div>
+    <div class="span6 text-right">
+      <% if @post.created_at.to_i != @post.updated_at.to_i %>
+        <em>
+          <code>
+            Updated: <%= @post.updated_at.strftime("%d %B %Y at %H:%M") %>
+          </code>      
+        </em>
+      <% end %>
+    </div>
+  </div>
+  <div class="row span12">
+    <h1>
+     <%= @post.title %>
+    </h1>
+  </div>
+  <div class="row span12 lead">
   <p>   
    <%= @post.text %>
   </p>
-  <p>
-    <em>
-      Post added by <%= @user.first_name %> <%= @user.last_name %> at <%= @post.created_at.asctime %> 
-    </em>
-  </p>
+  </div>
+  <div class="row span12 btn-group">
   <% if can? :update, @post %>
     <%= link_to 'Edit', edit_post_path(@post), :class=>'btn btn-sm btn-success icon-edit'%>
     <% end %>
+    <% if can? :destroy, @post %>
+          <%= link_to 'Destroy', post_path(@post),
+                          method: :delete, data: { confirm: 'Are you sure?' }, :class=>'btn btn-sm btn-danger icon-remove-sign'%>
+    <% end %>
+  </div>
 </div>
 
-<div class="container comment">
 
+<div class="container comment">
 <h3>
  Comments
 </h3>
 <% @comments.each do |c| %>
-<hr>
-<p>
-  <em>
-    <%= c.user.first_name %> <%= c.user.last_name %> at <%=c.created_at.asctime%> wrote:
-  </em>
-</p>
-<p>
-  <%= c.body %>
-</p>
-<p>
-  <%= link_to ' Destroy Comment', [c.post, c],
-               method: :delete,
-               data: { confirm: 'Are you sure you want to delete this comment?'},
-               :class=>'btn btn-sm btn-danger icon-remove-sign'%>
-</p>
+  <hr>
+  <p>
+    <em>
+      <%= c.user.first_name %> <%= c.user.last_name %> at <%=c.created_at.asctime%> wrote:
+    </em>
+  </p>
+  <p>
+    <%= c.body %>
+  </p>
+  <% if can? :destroy, c %>
+    <p>
+      <%= link_to ' Destroy Comment', [c.post, c],
+                   method: :delete,
+                   data: { confirm: 'Are you sure you want to delete this comment?'},
+                   :class=>'btn btn-sm btn-danger icon-remove-sign'%>
+    </p>
+  <% end %>
 <% end %>
 
-<h2>
+<% if can? :create, Comment %>
+<h3>
  Add a comment:
-</h2>
+</h3>
 <%= form_for([@post, @post.comments.build]) do |f| %>
- <% if user_signed_in? %> 
+
  <%= f.hidden_field :user_id, :value => current_user.id %>
      <%= "Comment as #{current_user.first_name} #{current_user.last_name}\:" %>
   <p>    
@@ -51,11 +77,12 @@
   <p>
     <%= f.submit :class=>'btn btn-lg btn-success'%>
   </p>
+  <% end %>
  <% else %>
-  <p class="center">
-    <%= link_to "Sign in to add a comment", new_user_session_path %>
+  <p>
+    <%= link_to "Sign in to add a comment", new_user_session_path, :class => 'btn btn-lg btn-primary'  %>
   </p>
- <% end %>
+
 <% end %>
 <%= link_to ' Back to The Great Listing Of All Of The Posts', posts_path, :class=>'btn btn-sm btn-warning icon-chevron-left' %>
 </div>

@@ -11,9 +11,8 @@ class CommentsController < ApplicationController
     #@user = User.find(params[:user_id])
     @post = Post.find(params[:post_id])
     @comment = @post.comments.create(params.require(:comment).permit(:user_id, :body))
-    redirect_to post_url(@post)
-    
-  end
+    redirect_to post_url(@post)   
+end
  
 #DESTROY the comment
 def destroy
