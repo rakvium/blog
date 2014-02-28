@@ -1,3 +1,4 @@
+<% if user_signed_in? %>
 <div id="post">
 <%= form_for @post do |f| %>
   <% if @post.errors.any? %>
@@ -11,7 +12,7 @@
     </ul>
   </div>
   <% end %>  
-  <%= "Post as #{current_user.first_name} #{current_user.last_name}\:" %>
+  <%= "Act as #{current_user.first_name} #{current_user.last_name}\:" %>
   <p>
     <%= f.label :title %><br>
     <%= f.text_field :title, :required => true  %>
@@ -26,4 +27,11 @@
     <%= f.submit :class=>'btn btn-lg btn-success' %>
   </p>
 <% end %>
+
+<%else%>
+<p class="center">
+<%= link_to "Sign in to manage posts", new_user_session_path, :class=>'btn btn-lg btn-primary ' %>
+</p>
+
+<%end%>
 </div>

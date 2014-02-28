@@ -1,10 +1,17 @@
 class PostsController < ApplicationController
+ 
+# uncomment next string when users had roles 
+  
+
 
 #allow to delete posts only for http authenticated users
 #http_basic_authenticate_with name: "dhh", password: "secret", except: [:index, :show]
 
 #allow to posts only for authenticated users
-  before_filter :validate_user
+  before_filter :authenticate_user!, :except => [:show, :index]
+  load_and_authorize_resource :except => [:show, :index]
+  skip_load_resource :only => [:create]
+
   def validate_user
     redirect_to new_user_session_url unless current_user
   end
@@ -61,11 +68,9 @@ def destroy
   redirect_to posts_url
 end
 
-#BEWARE OF THE "private"!
 private
   def post_params
-    params.require(:post).permit(:title, :text)
+    params.require(:post).permit(:title, :text, :commit, :user_id)
   end
-
 
 end

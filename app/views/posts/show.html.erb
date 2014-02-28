@@ -9,8 +9,10 @@
     <em>
       Post added by <%= @user.first_name %> <%= @user.last_name %> at <%= @post.created_at.asctime %> 
     </em>
-    </p>
-  <%= link_to 'Edit', edit_post_path(@post), :class=>'btn btn-sm btn-success icon-edit'%>
+  </p>
+  <% if can? :update, @post %>
+    <%= link_to 'Edit', edit_post_path(@post), :class=>'btn btn-sm btn-success icon-edit'%>
+    <% end %>
 </div>
 
 <div class="container comment">
