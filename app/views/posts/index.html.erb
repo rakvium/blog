@@ -36,7 +36,9 @@
         </div>
       </div>
     <div class="row">
-      <div class="btn-group dropup">
+      <div class="span1">
+      </div>
+      <div class="btn-group">
         <% if can? :read, post %>
           <%= link_to " Show", post_path(post), :class=>'btn btn-primary icon-zoom-in' %>
           <% end %>

@@ -6,11 +6,20 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 puts "Seed data goes here"
+# add root role
+Role.create!(:name => 'root')
 # add admin role
-Role.create!(:id => 1,:name => :admin)
-# add admin
-User.create!(:id => 1,:email => "rakvium@gmail.com", :password => "1234",
-	:first_name => "Victor", :last_name => "Rak")
-Users_role.create!(:user_id => 1, :role_id => 1)
+Role.create!(:name => 'admin')
 # add user role
-Role.create(:name => :user)
+Role.create!(:name => 'user')
+# add root user
+User.create!(
+  :email => 'rakvium@gmail.com',
+  :password => '1234',
+  :encrypted_password => '1234',
+  :first_name => 'Victor',
+  :last_name => 'Rak')
+# add root role to root user
+UsersRole.create!(
+  :user_id => User.where(:email=>"rakvium@gmail.com").first.id,
+  :role_id => Role.where(:name=>"root").first.id)

@@ -8,11 +8,12 @@ gem 'bundler'
 
 # Use rspec+selenium_webdriver+capybara as for test
 group :development, :test do
-	gem 'rspec-rails'
-	gem 'pry-nav'
-	gem 'pry-rails'
+    gem 'rspec-rails'
+    gem 'pry-nav'
+    gem 'pry-rails'
 end
 group :test do
+  gem 'sqlite3'
   gem 'selenium-webdriver', '2.35.1'
   gem 'capybara', '2.1.0'
 end
