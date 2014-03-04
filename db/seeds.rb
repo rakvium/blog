@@ -16,7 +16,7 @@ Role.create!(:name => 'user')
 User.create!(
   :email => 'rakvium@gmail.com',
   :password => '1234',
-  :encrypted_password => '1234',
+  :password_confirmation => '1234',
   :first_name => 'Victor',
   :last_name => 'Rak')
 # add root role to root user

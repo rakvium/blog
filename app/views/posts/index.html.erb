@@ -5,57 +5,59 @@
  <%= link_to ' What about a New Post, dude?', new_post_path, :class=>'btn btn-lg btn-success icon-pencil' %>
  </div>
 
-<% @posts.each do |post| %>
-  <hr>
-  <div class="post">
-    <div>
-    <div class="row">
-      <div class="span6 text-left">
-          <code><%= post.created_at.strftime("%d %B %Y") %></code>
-      </div> 
-      <div class="span5 text-right">
-        <% if post.created_at.to_i != post.updated_at.to_i %>
-          <em><code>
-            Updated at <%= post.updated_at.strftime("%d %B %Y") %>
-          </code></em>
-        <% end %>
-      </div> 
-    </div>
-    </div>
-    <div class="row">
-      <div class="span12">
-          <h3>
-            <%= post.title %>
-          </h3>      
-      </div>
-    </div>
+<% if @posts %>
+  <% @posts.each do |post| %>
+    <hr>
+    <div class="post">
+      <div>
       <div class="row">
-        <div class="span12 lead">
-        <%= post.text %>
-        <br>
+        <div class="span6 text-left">
+            <code><%= post.created_at.strftime("%d %B %Y") %></code>
+        </div> 
+        <div class="span5 text-right">
+          <% if post.created_at.to_i != post.updated_at.to_i %>
+            <em><code>
+              Updated at <%= post.updated_at.strftime("%d %B %Y") %>
+            </code></em>
+          <% end %>
+        </div> 
+      </div>
+      </div>
+      <div class="row">
+        <div class="span12">
+            <h3>
+              <%= post.title %>
+            </h3>      
         </div>
       </div>
-    <div class="row">
-      <div class="span1">
-      </div>
-      <div class="btn-group">
-        <% if can? :read, post %>
-          <%= link_to " Show", post_path(post), :class=>'btn btn-primary icon-zoom-in' %>
+        <div class="row">
+          <div class="span12 lead">
+          <%= post.text %>
+          <br>
+          </div>
+        </div>
+      <div class="row">
+        <div class="span1">
+        </div>
+        <div class="btn-group">
+          <% if can? :read, post %>
+            <%= link_to " Show", post_path(post), :class=>'btn btn-primary icon-zoom-in' %>
+            <% end %>
+          <% if can? :update, post %>
+            <%= link_to " Edit", edit_post_path(post), :class=>'btn btn-success icon-edit' %>
           <% end %>
-        <% if can? :update, post %>
-          <%= link_to " Edit", edit_post_path(post), :class=>'btn btn-success icon-edit' %>
-        <% end %>
-        <% if can? :destroy, post %>
-          <%= link_to ' Destroy', post_path(post),
-                          method: :delete, data: { confirm: 'Are you sure?' }, :class=>'btn btn-danger icon-remove-sign'%>
-        <% end %>
+          <% if can? :destroy, post %>
+            <%= link_to ' Destroy', post_path(post),
+                            method: :delete, data: { confirm: 'Are you sure?' }, :class=>'btn btn-danger icon-remove-sign'%>
+          <% end %>
+        </div>
       </div>
     </div>
+  <% end %>
+
+
+  <hr>
+  <div class="center">
+    <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
   </div>
 <% end %>
-
-
-<hr>
-    <div class="center">
-    <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
-    </div>
