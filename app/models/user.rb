@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
   validates :email, :uniqueness => true
+  
 
   def role?(role_name)
     self.roles.last == Role.where(:name=>role_name).last 
