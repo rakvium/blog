@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-ruby '1.9.3'
 
 #I don't know why heroku runs no bundle
 gem 'bundler'
