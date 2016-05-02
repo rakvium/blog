@@ -25,7 +25,6 @@ gem 'bootstrap-sass'
 gem "therubyracer"
 gem "less-rails" 
 gem "twitter-bootstrap-rails"
-gem "font-awesome-rails"
 
 gem 'sass-rails', '4.0.1'
 gem 'uglifier', '2.1.1'
