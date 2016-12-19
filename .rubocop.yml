@@ -1,0 +1,25 @@
+AllCops:
+  TargetRubyVersion: 2.0
+  Exclude:
+    - 'db/migrate/**'
+    - 'db/schema.rb'
+    - 'vendor/**/*'
+
+Lint/AssignmentInCondition:
+  Exclude:
+    - 'bin/spring'
+
+Metrics/ClassLength:
+  Max: 200
+
+Metrics/LineLength:
+  Max: 120
+
+Metrics/MethodLength:
+  Max: 15
+
+Rails:
+  Enabled: true
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
