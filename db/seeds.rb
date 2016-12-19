@@ -5,21 +5,22 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-puts "Seed data goes here"
+Rails.logger.info 'Seed data goes here'
 # add root role
-Role.create!(:name => 'root')
+Role.find_or_create_by(name: 'root')
 # add admin role
-Role.create!(:name => 'admin')
+Role.find_or_create_by(name: 'admin')
 # add user role
-Role.create!(:name => 'user')
+Role.find_or_create_by(name: 'user')
 # add root user
-User.create!(
-  :email => 'rakvium@gmail.com',
-  :password => '1234',
-  :password_confirmation => '1234',
-  :first_name => 'Victor',
-  :last_name => 'Rak')
+User.find_or_create_by(email: 'rakvium@gmail.com') do |u|
+  u.password = '1234'
+  u.password_confirmation = '1234'
+  u.first_name = 'Victor'
+  u.last_name = 'Rak'
+end
 # add root role to root user
-UsersRole.create!(
-  :user_id => User.where(:email=>"rakvium@gmail.com").first.id,
-  :role_id => Role.where(:name=>"root").first.id)
+UsersRole.find_or_create_by(
+  user_id: User.where(email: 'rakvium@gmail.com').first.id,
+  role_id: Role.where(name: 'root').first.id
+)

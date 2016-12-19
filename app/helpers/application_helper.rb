@@ -1,3 +1,4 @@
+# helper for ApplicationController
 module ApplicationHelper
   def resource_name
     :user
