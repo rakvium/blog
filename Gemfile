@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.0.0'
+
 # TODO: check if bundler gem is really needed for heroku
 gem 'bundler'
 
