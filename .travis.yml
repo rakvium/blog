@@ -10,5 +10,6 @@ services:
   - postgresql
 script:
   - bundle exec rubocop
+  - bundle exec rake db:setup
   - bundle exec rspec
 sudo: required
