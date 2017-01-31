@@ -19,6 +19,6 @@ class User < ActiveRecord::Base
   private
 
   def create_role
-    roles << Role.find_by(name: :user)
+    roles << Role.find_or_create_by(name: :user)
   end
 end
