@@ -40,3 +40,11 @@ RSpec.configure do |config|
   #     --seed 1234
   config.order = 'random'
 end
+
+Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+    # Choose a test framework:
+    with.library :rails
+    with.test_framework :rspec
+  end
+end

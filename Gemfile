@@ -9,13 +9,14 @@ gem 'bundler'
 group :development, :test do
   gem 'pry-nav'
   gem 'pry-rails'
-  gem 'rspec-rails'
   gem 'rubocop'
 end
 
 group :test do
   gem 'capybara', '2.1.0'
+  gem 'rspec-rails'
   gem 'selenium-webdriver', '2.35.1'
+  gem 'shoulda-matchers'
   gem 'sqlite3'
 end
 
