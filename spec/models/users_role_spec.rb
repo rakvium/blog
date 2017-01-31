@@ -1,5 +1,8 @@
 require 'spec_helper'
 
-describe UsersRole do
-  pending "add some examples to (or delete) #{__FILE__}"
+RSpec.describe UsersRole, type: :model do
+  context 'relations' do
+    it { should belong_to(:user) }
+    it { should belong_to(:role) }
+  end
 end
