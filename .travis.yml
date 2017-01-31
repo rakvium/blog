@@ -1,7 +1,13 @@
+addons:
+  postgresql: '9.4'
+before_script:
+  - cp config/database.yml.sample config/database.yml
 cache: bundler
 language: ruby
 rvm:
 - 2.0.0
+services:
+  - postgresql
 script:
   - bundle exec rubocop
   - bundle exec rspec
