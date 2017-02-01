@@ -5,6 +5,9 @@ ruby '2.0.0'
 # TODO: check if bundler gem is really needed for heroku
 gem 'bundler'
 
+# Use grape for API
+gem 'grape', '0.17.0'
+
 # Use rspec+selenium_webdriver+capybara as for test
 group :development, :test do
   gem 'pry-nav'
