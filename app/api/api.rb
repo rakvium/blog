@@ -2,6 +2,7 @@
 class API < Grape::API
   format :json
   prefix :api
+  version 'v1'
 
   get :posts do
     Post.all
