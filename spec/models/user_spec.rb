@@ -1,6 +1,11 @@
 require 'spec_helper'
 
 RSpec.describe User, type: :model do
+  describe 'fabric' do
+    subject { FactoryGirl.create(:user) }
+    it { should be_valid }
+  end
+
   describe 'relations' do
     it { should have_many(:posts) }
     it { should have_many(:comments) }
