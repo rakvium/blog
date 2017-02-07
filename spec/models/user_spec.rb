@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 RSpec.describe User, type: :model do
-  describe 'fabric' do
+  describe 'factory' do
     subject { FactoryGirl.create(:user) }
     it { should be_valid }
   end
