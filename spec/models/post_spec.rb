@@ -1,8 +1,8 @@
 require 'spec_helper'
 
 RSpec.describe Post, type: :model do
-  describe 'fabric' do
-    subject { FactoryGirl.create(:post) }
+  describe 'factory' do
+    subject { FactoryGirl.build(:post) }
     it { should be_valid }
   end
 
