@@ -1,11 +1,6 @@
 require 'spec_helper'
 
 RSpec.describe Post, type: :model do
-  describe 'factory' do
-    subject { FactoryGirl.build(:post) }
-    it { should be_valid }
-  end
-
   describe 'relations' do
     it { should belong_to(:user) }
     it { should have_many(:comments).dependent(:destroy) }
