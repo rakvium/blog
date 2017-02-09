@@ -66,6 +66,7 @@ GEM
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
+    docile (1.1.5)
     enumerable-lazy (0.0.2)
     equalizer (0.0.11)
     erubis (2.7.0)
@@ -194,6 +195,11 @@ GEM
       websocket (~> 1.0.4)
     shoulda-matchers (3.1.1)
       activesupport (>= 4.0.0)
+    simplecov (0.13.0)
+      docile (~> 1.1.0)
+      json (>= 1.8, < 3)
+      simplecov-html (~> 0.10.0)
+    simplecov-html (0.10.0)
     slop (3.4.7)
     sprockets (2.11.0)
       hike (~> 1.2)
@@ -270,6 +276,7 @@ DEPENDENCIES
   sdoc (= 0.3.20)
   selenium-webdriver (= 2.35.1)
   shoulda-matchers
+  simplecov
   sqlite3
   therubyracer
   turbolinks (= 1.1.1)
