@@ -12,4 +12,10 @@ RSpec.describe ApplicationHelper, type: :helper do
       helper.resource.should be_an_instance_of(User)
     end
   end
+
+  describe '#devise_mapping' do
+    it 'should be devise mapping for :user' do
+      helper.devise_mapping.should equal(Devise.mappings[:user])
+    end
+  end
 end
