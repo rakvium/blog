@@ -15,6 +15,7 @@
 /log/*.log
 /tmp
 /public/assets
+/coverage
 
 # Ignore other useless files
 database.yml

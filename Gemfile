@@ -23,6 +23,7 @@ group :test do
   gem 'rspec-rails'
   gem 'selenium-webdriver', '2.35.1'
   gem 'shoulda-matchers'
+  gem 'simplecov', require: false
   gem 'sqlite3'
 end
 
