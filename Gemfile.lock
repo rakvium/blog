@@ -46,6 +46,10 @@ GEM
       xpath (~> 2.0)
     childprocess (0.5.1)
       ffi (~> 1.0, >= 1.0.11)
+    codecov (0.1.10)
+      json
+      simplecov
+      url
     coderay (1.1.0)
     coercible (1.0.0)
       descendants_tracker (~> 0.0.1)
@@ -233,6 +237,7 @@ GEM
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
     unicode-display_width (1.1.2)
+    url (0.3.2)
     virtus (1.0.1)
       axiom-types (~> 0.0.5)
       coercible (~> 1.0)
@@ -255,6 +260,7 @@ DEPENDENCIES
   bundler
   cancan
   capybara (= 2.1.0)
+  codecov
   coffee-rails (= 4.0.1)
   database_cleaner
   devise
