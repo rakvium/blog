@@ -53,6 +53,8 @@ GEM
       xpath (~> 2.0)
     childprocess (0.5.1)
       ffi (~> 1.0, >= 1.0.11)
+    codeclimate-test-reporter (1.0.8)
+      simplecov (<= 0.13)
     codecov (0.1.10)
       json
       simplecov
@@ -282,6 +284,7 @@ DEPENDENCIES
   bundler
   cancan
   capybara (= 2.1.0)
+  codeclimate-test-reporter (~> 1.0.0)
   codecov
   coffee-rails (= 4.0.1)
   database_cleaner
