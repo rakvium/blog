@@ -29,7 +29,7 @@ group :test do
 end
 
 gem 'rails', '~> 4.2'
-gem 'rake'
+gem 'rake', '< 11.0'
 
 # Authorization
 gem 'cancan'
