@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.0.0'
+ruby '2.1.10'
 
 # TODO: check if bundler gem is really needed for heroku
 gem 'bundler'
@@ -28,13 +28,13 @@ group :test do
   gem 'sqlite3'
 end
 
-gem 'rails', '4.0.2'
+gem 'rails', '~> 4.2'
 gem 'rake'
 
 # Authorization
 gem 'cancan'
 # Authentication
-gem 'devise'
+gem 'devise', '~> 4.3'
 # Database
 gem 'pg'
 
