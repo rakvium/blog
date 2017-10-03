@@ -12,7 +12,7 @@ gem 'grape', '0.17.0'
 group :development, :test do
   gem 'pry-nav'
   gem 'pry-rails'
-  gem 'rubocop'
+  gem 'rubocop', '~> 0.46.0'
 end
 
 group :test do
