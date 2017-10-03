@@ -249,7 +249,7 @@ GEM
     thor (0.20.0)
     thread_safe (0.3.6)
     tilt (1.4.1)
-    turbolinks (1.1.1)
+    turbolinks (2.3.0)
       coffee-rails
     twitter-bootstrap-rails (2.2.8)
       actionpack (>= 3.1)
@@ -311,7 +311,7 @@ DEPENDENCIES
   simplecov
   sqlite3
   therubyracer
-  turbolinks (= 1.1.1)
+  turbolinks (~> 2.3.0)
   twitter-bootstrap-rails
   uglifier (= 2.1.1)
   will_paginate
