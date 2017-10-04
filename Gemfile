@@ -8,13 +8,13 @@ gem 'bundler'
 # Use grape for API
 gem 'grape', '0.17.0'
 
-# Use rspec+selenium_webdriver+capybara as for test
 group :development, :test do
   gem 'pry-nav'
   gem 'pry-rails'
   gem 'rubocop', '~> 0.46.0'
 end
 
+# Use rspec+selenium_webdriver+capybara as for test
 group :test do
   gem 'capybara', '2.1.0'
   gem 'codeclimate-test-reporter', '~> 1.0.0'
@@ -23,7 +23,7 @@ group :test do
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'rspec-rails'
-  gem 'selenium-webdriver', '2.35.1'
+  gem 'selenium-webdriver', '~> 2.37'
   gem 'shoulda-matchers'
   gem 'simplecov', require: false
   gem 'sqlite3'
