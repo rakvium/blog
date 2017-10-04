@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.0.0'
+ruby '2.1.10'
 
 # TODO: check if bundler gem is really needed for heroku
 gem 'bundler'
@@ -12,11 +12,12 @@ gem 'grape', '0.17.0'
 group :development, :test do
   gem 'pry-nav'
   gem 'pry-rails'
-  gem 'rubocop'
+  gem 'rubocop', '~> 0.46.0'
 end
 
 group :test do
   gem 'capybara', '2.1.0'
+  gem 'codeclimate-test-reporter', '~> 1.0.0'
   gem 'codecov', require: false
   gem 'database_cleaner'
   gem 'factory_girl_rails'
@@ -28,13 +29,13 @@ group :test do
   gem 'sqlite3'
 end
 
-gem 'rails', '4.0.2'
-gem 'rake'
+gem 'rails', '~> 4.2'
+gem 'rake', '< 11.0'
 
 # Authorization
 gem 'cancan'
 # Authentication
-gem 'devise'
+gem 'devise', '~> 4.3'
 # Database
 gem 'pg'
 
@@ -44,9 +45,9 @@ gem 'coffee-rails', '4.0.1'
 gem 'jbuilder', '1.0.2'
 gem 'jquery-rails', '3.0.4'
 gem 'less-rails'
-gem 'sass-rails', '4.0.1'
+gem 'sass-rails', '~> 4.0.1'
 gem 'therubyracer'
-gem 'turbolinks', '1.1.1'
+gem 'turbolinks', '~> 2.3.0'
 gem 'twitter-bootstrap-rails'
 gem 'uglifier', '2.1.1'
 gem 'will_paginate'

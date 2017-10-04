@@ -5,11 +5,13 @@ before_script:
 cache: bundler
 language: ruby
 rvm:
-- 2.0.0
+- 2.1.10
 services:
   - postgresql
 script:
   - bundle exec rubocop
   - bundle exec rake db:setup
   - bundle exec rspec
+after_success:
+  - bundle exec codeclimate-test-reporter
 sudo: required
