@@ -2,13 +2,12 @@ source 'https://rubygems.org'
 
 ruby '2.1.10'
 
-# TODO: check if bundler gem is really needed for heroku
-gem 'bundler'
-
 # Use grape for API
 gem 'grape', '0.17.0'
 
 group :development, :test do
+  gem 'factory_girl_rails'
+  gem 'faker'
   gem 'pry-nav'
   gem 'pry-rails'
   gem 'rubocop', '~> 0.46.0'
@@ -20,8 +19,6 @@ group :test do
   gem 'codeclimate-test-reporter', '~> 1.0.0'
   gem 'codecov', require: false
   gem 'database_cleaner'
-  gem 'factory_girl_rails'
-  gem 'faker'
   gem 'rspec-rails'
   gem 'selenium-webdriver', '~> 2.37'
   gem 'shoulda-matchers'

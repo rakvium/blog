@@ -3,7 +3,7 @@
     <div class="span6 text-left">
       <em>
         <code>
-          <%= @user.first_name %> <%= @user.last_name %> at <%= @post.created_at.strftime("%d %B %Y at %H:%M") %> 
+          <%= @user.first_name %> <%= @user.last_name %> at <%= @post.created_at.strftime("%d %B %Y at %H:%M") %>
         </code>
       </em>
     </div>
@@ -12,7 +12,7 @@
         <em>
           <code>
             Updated: <%= @post.updated_at.strftime("%d %B %Y at %H:%M") %>
-          </code>      
+          </code>
         </em>
       <% end %>
     </div>
@@ -23,7 +23,7 @@
     </h1>
   </div>
   <div class="row span12 lead">
-  <p>   
+  <p>
    <%= @post.text %>
   </p>
   </div>
@@ -69,9 +69,8 @@
 </h3>
 <%= form_for([@post, @post.comments.build]) do |f| %>
 
- <%= f.hidden_field :user_id, :value => current_user.id %>
-     <%= "Comment as #{current_user.first_name} #{current_user.last_name}\:" %>
-  <p>    
+  <%= "Comment as #{current_user.first_name} #{current_user.last_name}\:" %>
+  <p>
     <%= f.text_area :body, :required => true %>
   </p>
   <p>

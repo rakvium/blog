@@ -1,13 +1,11 @@
 # controls users' comments to the posts
 class CommentsController < ApplicationController
-  # allow to delete comments only for http authenticated users
-  # http_basic_authenticate_with name: "dhh", password: "secret", only: :destroy
+  before_action :authenticate_user!
 
   # CREATE comment to the post
   def create
     @post = Post.find(params[:post_id])
-    # TODO: use current_user instead of user_id hidden field
-    @comment = @post.comments.create(params.require(:comment).permit(:user_id, :body))
+    @comment = @post.comments.create(comment_params)
     redirect_to post_url(@post)
   end
 
@@ -15,7 +13,13 @@ class CommentsController < ApplicationController
   def destroy
     @post = Post.find(params[:post_id])
     @comment = @post.comments.find(params[:id])
-    @comment.destroy
+    @comment.destroy if can?(:destroy, @comment)
     redirect_to post_url(@post)
+  end
+
+  private
+
+  def comment_params
+    params.require(:comment).permit(:body).merge(user_id: current_user.id)
   end
 end

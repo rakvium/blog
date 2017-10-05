@@ -282,7 +282,6 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-sass
-  bundler
   cancan
   capybara (= 2.1.0)
   codeclimate-test-reporter (~> 1.0.0)
