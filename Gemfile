@@ -45,8 +45,10 @@ gem 'less-rails'
 gem 'sass-rails', '~> 4.0.1'
 gem 'therubyracer'
 gem 'turbolinks', '~> 2.3.0'
+
 gem 'twitter-bootstrap-rails'
-gem 'uglifier', '2.1.1'
+gem 'uglifier', '>= 2.7.2'
+
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
 
