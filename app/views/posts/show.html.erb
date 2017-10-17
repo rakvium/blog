@@ -2,7 +2,7 @@
   <div class="col-md-6 text-left">
     <em>
       <code>
-        <%= "#{@user.first_name} #{@user.last_name} on #{@post.created_at.strftime("%d %B %Y at %H:%M")}" %>
+        <%= "#{full_name(@user)} on #{my_date_format(@post.created_at)}" %>
       </code>
     </em>
   </div>
@@ -46,8 +46,7 @@
   <hr>
   <p>
     <em>
-      <%# TODO: Add full name and datetime format helpers %>
-      <%= "#{c.user.first_name} #{c.user.last_name} on #{c.created_at.strftime("%d %B %Y at %H:%M")} wrote:" %>
+      <%= "#{full_name(c.user)} on #{my_date_format(c.created_at)} wrote:" %>
     </em>
   </p>
   <p>
