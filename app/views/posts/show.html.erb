@@ -1,45 +1,44 @@
-<div class="container post">
-  <div class="row">
-    <div class="span6 text-left">
+<div class="panel post">
+  <div class="col-md-6 text-left">
+    <em>
+      <code>
+        <%= "#{@user.first_name} #{@user.last_name} on #{@post.created_at.strftime("%d %B %Y at %H:%M")}" %>
+      </code>
+    </em>
+  </div>
+  <div class="col-md-6 text-right">
+    <% if @post.created_at.to_i != @post.updated_at.to_i %>
       <em>
         <code>
-          <%= @user.first_name %> <%= @user.last_name %> at <%= @post.created_at.strftime("%d %B %Y at %H:%M") %>
+          Updated: <%= @post.updated_at.strftime("%d %B %Y at %H:%M") %>
         </code>
       </em>
-    </div>
-    <div class="span6 text-right">
-      <% if @post.created_at.to_i != @post.updated_at.to_i %>
-        <em>
-          <code>
-            Updated: <%= @post.updated_at.strftime("%d %B %Y at %H:%M") %>
-          </code>
-        </em>
-      <% end %>
-    </div>
+    <% end %>
   </div>
-  <div class="row span12">
+  <div class="col-md-12">
     <h1>
      <%= @post.title %>
     </h1>
+    <div class="lead">
+      <p>
+       <%= @post.text %>
+      </p>
+    </div>
   </div>
-  <div class="row span12 lead">
-  <p>
-   <%= @post.text %>
-  </p>
-  </div>
-  <div class="row span12 btn-group">
-  <% if can? :update, @post %>
-    <%= link_to 'Edit', edit_post_path(@post), :class=>'btn btn-sm btn-success icon-edit'%>
+  <div class="btn-group">
+    <% if can? :update, @post %>
+      <%= link_to 'Edit', edit_post_path(@post), class: 'btn btn-sm btn-success icon-edit'%>
     <% end %>
     <% if can? :destroy, @post %>
-          <%= link_to 'Destroy', post_path(@post),
-                          method: :delete, data: { confirm: 'Are you sure?' }, :class=>'btn btn-sm btn-danger icon-remove-sign'%>
+      <%= link_to 'Destroy', post_path(@post),
+                             method: :delete, data: { confirm: 'Are you sure?' },
+                             class: 'btn btn-sm btn-danger icon-remove-sign' %>
     <% end %>
   </div>
 </div>
 
 
-<div class="container comment">
+<div class="comment">
 <h3>
  Comments
 </h3>
@@ -47,7 +46,8 @@
   <hr>
   <p>
     <em>
-      <%= c.user.first_name %> <%= c.user.last_name %> at <%=c.created_at.asctime%> wrote:
+      <%# TODO: Add full name and datetime format helpers %>
+      <%= "#{c.user.first_name} #{c.user.last_name} on #{c.created_at.strftime("%d %B %Y at %H:%M")} wrote:" %>
     </em>
   </p>
   <p>
