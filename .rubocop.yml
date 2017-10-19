@@ -1,4 +1,5 @@
 AllCops:
+  TargetRailsVersion: 4.2
   TargetRubyVersion: 2.1
   Exclude:
     - 'db/migrate/**'
@@ -8,6 +9,10 @@ AllCops:
 Lint/AssignmentInCondition:
   Exclude:
     - 'bin/spring'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*_spec.rb'
 
 Metrics/ClassLength:
   Max: 200

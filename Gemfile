@@ -10,16 +10,16 @@ group :development, :test do
   gem 'faker'
   gem 'pry-nav'
   gem 'pry-rails'
-  gem 'rubocop', '~> 0.46.0'
+  gem 'rubocop', '~> 0.49'
 end
 
 # Use rspec+selenium_webdriver+capybara as for test
 group :test do
-  gem 'capybara', '2.1.0'
+  gem 'capybara', '~> 2.2'
   gem 'codeclimate-test-reporter', '~> 1.0.0'
   gem 'codecov', require: false
   gem 'database_cleaner'
-  gem 'rspec-rails'
+  gem 'rspec-rails', '~> 3.1'
   gem 'selenium-webdriver', '~> 2.37'
   gem 'shoulda-matchers'
   gem 'simplecov', require: false
@@ -30,7 +30,7 @@ gem 'rails', '~> 4.2'
 gem 'rake', '< 11.0'
 
 # Authorization
-gem 'cancan'
+gem 'cancancan', '~> 1.8'
 # Authentication
 gem 'devise', '~> 4.3'
 # Database

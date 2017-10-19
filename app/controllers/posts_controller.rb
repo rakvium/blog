@@ -10,10 +10,6 @@ class PostsController < ApplicationController
   load_and_authorize_resource except: [:show, :index]
   skip_load_resource only: [:create]
 
-  def validate_user
-    redirect_to new_user_session_url unless current_user
-  end
-
   # publish the new post
   def new
     @post = Post.new
@@ -69,6 +65,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :text, :commit, :user_id)
+    params.require(:post).permit(:title, :text, :commit).merge(user_id: current_user.id)
   end
 end
