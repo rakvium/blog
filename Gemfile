@@ -5,6 +5,10 @@ ruby '2.1.10'
 # Use grape for API
 gem 'grape', '0.17.0'
 
+group :development do
+  gem 'letter_opener'
+end
+
 group :development, :test do
   gem 'factory_girl_rails'
   gem 'faker'
