@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 RSpec.describe UsersRole, type: :model do
   context 'relations' do
-    it { should belong_to(:user) }
-    it { should belong_to(:role) }
+    it { is_expected.to belong_to(:user) }
+    it { is_expected.to belong_to(:role) }
   end
 end

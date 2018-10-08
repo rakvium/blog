@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # ApplicationController is the only controller
 # which inherits from ActionController::Base.
 # All other controllers in turn inherit from ApplicationController
@@ -15,7 +17,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: %i(first_name last_name))
-    devise_parameter_sanitizer.permit(:account_update, keys: %i(first_name last_name))
+    devise_parameter_sanitizer.permit(:sign_up, keys: %i[first_name last_name])
+    devise_parameter_sanitizer.permit(:account_update, keys: %i[first_name last_name])
   end
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # helpers for PostsController
 module PostsHelper
   def full_name(user)

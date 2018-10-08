@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # controls users' posts
 class PostsController < ApplicationController
   # uncomment next string when users had roles
@@ -6,8 +8,8 @@ class PostsController < ApplicationController
   # http_basic_authenticate_with name: "dhh", password: "secret", except: [:index, :show]
 
   # allow to posts only for authenticated users
-  before_action :authenticate_user!, except: [:show, :index]
-  load_and_authorize_resource except: [:show, :index]
+  before_action :authenticate_user!, except: %i[show index]
+  load_and_authorize_resource except: %i[show index]
   skip_load_resource only: [:create]
 
   def validate_user

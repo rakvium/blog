@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 RSpec.describe API, type: :request do
@@ -10,6 +12,7 @@ RSpec.describe API, type: :request do
     end
     context 'post created' do
       let!(:post) { create(:post) }
+
       it 'returns array with posts' do
         get '/api/v1/posts'
         response.body.should eq MultiJson.encode([post])
