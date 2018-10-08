@@ -16,7 +16,6 @@ group :development do
 end
 
 group :development, :test do
-  gem 'factory_bot_rails'
   gem 'faker'
   gem 'letter_opener'
   gem 'pry'
@@ -25,17 +24,13 @@ group :development, :test do
   gem 'pry-remote'
 end
 
-# Use rspec+selenium_webdriver+capybara as for test
 group :test do
-  gem 'capybara', '2.1.0'
   gem 'codeclimate-test-reporter', '~> 1.0.0'
-  gem 'codecov', require: false
   gem 'database_cleaner'
-  gem 'rspec-rails'
-  gem 'selenium-webdriver', '~> 2.37'
+  gem 'factory_bot_rails'
+  gem 'rspec-rails', '~> 3.7'
   gem 'shoulda-matchers'
   gem 'simplecov', require: false
-  gem 'sqlite3'
 end
 
 gem 'rake'

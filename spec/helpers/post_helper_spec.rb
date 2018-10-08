@@ -3,7 +3,7 @@ require 'spec_helper'
 RSpec.describe PostsHelper, type: :helper do
   describe '#full_name' do
     it 'returns string with a space between first name and last name' do
-      @user = FactoryGirl.build(:user)
+      @user = FactoryBot.build(:user)
       helper.full_name(@user).should == "#{@user.first_name} #{@user.last_name}"
     end
   end

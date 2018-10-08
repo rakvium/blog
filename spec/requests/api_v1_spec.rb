@@ -9,7 +9,7 @@ RSpec.describe API, type: :request do
       end
     end
     context 'post created' do
-      let!(:post) { FactoryGirl.create(:post) }
+      let!(:post) { create(:post) }
       it 'returns array with posts' do
         get '/api/v1/posts'
         response.body.should eq MultiJson.encode([post])
