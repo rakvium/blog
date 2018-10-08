@@ -58,7 +58,7 @@ GEM
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
     builder (3.2.3)
-    cancan (1.6.10)
+    cancancan (2.3.0)
     codeclimate-test-reporter (1.0.9)
       simplecov (<= 0.13)
     coderay (1.1.2)
@@ -309,7 +309,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap (>= 1.1.0)
   bootstrap-sass
-  cancan
+  cancancan (~> 2.0)
   codeclimate-test-reporter (~> 1.0.0)
   coffee-rails
   database_cleaner
