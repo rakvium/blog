@@ -82,6 +82,10 @@ GEM
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
     docile (1.1.5)
+    dotenv (2.5.0)
+    dotenv-rails (2.5.0)
+      dotenv (= 2.5.0)
+      railties (>= 3.2, < 6.0)
     enumerable-lazy (0.0.2)
     equalizer (0.0.11)
     erubis (2.7.0)
@@ -295,6 +299,7 @@ DEPENDENCIES
   coffee-rails (= 4.0.1)
   database_cleaner
   devise (~> 4.3)
+  dotenv-rails
   factory_girl_rails
   faker
   grape (= 0.17.0)
@@ -327,4 +332,4 @@ RUBY VERSION
    ruby 2.1.10p492
 
 BUNDLED WITH
-   1.15.4
+   1.16.6
