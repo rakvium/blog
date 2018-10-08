@@ -36,7 +36,7 @@ end
 gem 'rake'
 
 # Authorization
-gem 'cancan'
+gem 'cancancan', '~> 2.0'
 # Authentication
 gem 'devise'
 # Database
