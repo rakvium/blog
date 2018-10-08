@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 
 ruby '2.4.1'
@@ -6,8 +8,34 @@ gem 'dotenv-rails'
 gem 'grape', '0.17.0'
 gem 'rails', '~> 5.2.1'
 
+gem 'rubocop', '~> 0.50.0', require: false
+gem 'rubocop-rspec', require: false
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
+
+# Authorization
+gem 'cancancan', '~> 2.0'
+# Authentication
+gem 'devise'
+# Database
+gem 'pg'
+
+# Layout
+gem 'bootstrap-sass'
+gem 'coffee-rails'
+gem 'jbuilder'
+gem 'jquery-rails'
+gem 'less-rails'
+gem 'sass-rails'
+gem 'therubyracer'
+gem 'turbolinks'
+
+gem 'twitter-bootstrap-rails', '~> 2.2.8'
+gem 'uglifier'
+
+gem 'will_paginate'
+gem 'will_paginate-bootstrap'
 
 group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
@@ -33,36 +61,6 @@ group :test do
   gem 'simplecov', require: false
 end
 
-gem 'rake'
-
-# Authorization
-gem 'cancancan', '~> 2.0'
-# Authentication
-gem 'devise'
-# Database
-gem 'pg'
-
-# Layout
-gem 'bootstrap-sass'
-gem 'coffee-rails'
-gem 'jbuilder'
-gem 'jquery-rails'
-gem 'less-rails'
-gem 'sass-rails'
-gem 'therubyracer'
-gem 'turbolinks'
-
-gem 'twitter-bootstrap-rails', '~> 2.2.8'
-gem 'uglifier'
-
-gem 'will_paginate'
-gem 'will_paginate-bootstrap'
-
-# Documentation
 group :doc do
   gem 'sdoc', '0.3.20', require: false
-end
-
-group :production do
-  gem 'rails_12factor'
 end

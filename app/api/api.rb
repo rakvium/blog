@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Grape API to receive posts and comments
 class API < Grape::API
   format :json

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # controls users' comments to the posts
 class CommentsController < ApplicationController
   before_action :authenticate_user!
