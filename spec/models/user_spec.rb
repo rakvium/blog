@@ -13,17 +13,17 @@ RSpec.describe User, type: :model do
   end
 
   describe '#role?' do
-    let!(:user_role) { FactoryGirl.create(:role, name: :user) }
-    let!(:admin_role) { FactoryGirl.create(:role, name: :admin) }
-    let(:user) { FactoryGirl.create(:user) }
+    let!(:user_role) { create(:role, name: :user) }
+    let!(:admin_role) { create(:role, name: :admin) }
+    let(:user) { create(:user) }
     context 'for equal role' do
       subject { user.role?(:user) }
-      it { should be_true }
+      it { should be_truthy }
     end
 
     context 'for non-equal role' do
       subject { user.role?(:admin) }
-      it { should be_false }
+      it { should be_falsey }
     end
   end
 end
