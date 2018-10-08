@@ -1,4 +1,3 @@
-# defines users' abilities
 class Ability
   include CanCan::Ability
 
