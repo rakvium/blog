@@ -17,8 +17,10 @@
 /public/assets
 /coverage
 
+# Ignore environment variables from dotenv
+.env
+
 # Ignore other useless files
-database.yml
 doc/
 *.swp
 *~

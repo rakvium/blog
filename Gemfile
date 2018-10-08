@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.1.10'
 
-# Use grape for API
+gem 'dotenv-rails'
 gem 'grape', '0.17.0'
 
 group :development do
