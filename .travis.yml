@@ -5,7 +5,7 @@ before_script:
 cache: bundler
 language: ruby
 rvm:
-- 2.1.10
+- 2.4.1
 services:
   - postgresql
 script:

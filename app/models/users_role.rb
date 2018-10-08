@@ -1,5 +1,4 @@
-# defines which user have which role
-class UsersRole < ActiveRecord::Base
+class UsersRole < ApplicationRecord
   belongs_to :user
   belongs_to :role
 end

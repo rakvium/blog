@@ -1,5 +1,4 @@
-# defines users' comments to posts
-class Comment < ActiveRecord::Base
+class Comment < ApplicationRecord
   belongs_to :post
   belongs_to :user
 
