@@ -14,5 +14,6 @@ Rails.application.routes.draw do
     resources :comments
   end
 
-  mount API => '/'
+  mount API::Base, at: '/'
+  mount GrapeSwaggerRails::Engine, at: 'swagger'
 end
