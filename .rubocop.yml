@@ -2,11 +2,12 @@ AllCops:
   TargetRubyVersion: 2.4.1
   DisplayCopNames: true
   Exclude:
-    - 'db/**/*'
+    - 'db/migrate/**'
+    - 'db/schema.rb'
     - 'node_modules/**/*'
     - 'vendor/**/*'
 
-# Disable documentations, because it's all clear w/o it *trollface*
+# Disable documentations, leave it on the programmer’s conscience
 Style/Documentation:
   Enabled: false
 
