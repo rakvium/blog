@@ -5,7 +5,6 @@ source 'https://rubygems.org'
 ruby '2.4.1'
 
 gem 'dotenv-rails'
-gem 'grape', '0.17.0'
 gem 'rails', '~> 5.2.1'
 
 gem 'rubocop', '~> 0.50.0', require: false
@@ -36,6 +35,12 @@ gem 'uglifier'
 
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
+
+# API
+gem 'grape'
+gem 'grape-entity'
+gem 'grape-swagger'
+gem 'grape-swagger-rails'
 
 group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
