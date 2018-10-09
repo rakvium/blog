@@ -4,7 +4,7 @@ module API
   module V1
     module Entities
       class Users < Grape::Entity
-        root :posts
+        root :users
 
         expose :id, documentation: {
           type: 'integer',
