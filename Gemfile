@@ -15,6 +15,8 @@ gem 'cancancan', '~> 2.0'
 gem 'devise'
 # Database
 gem 'pg'
+# Web server
+gem 'puma'
 
 # Assets
 gem 'bootstrap-sass'
