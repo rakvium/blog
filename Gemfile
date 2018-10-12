@@ -4,11 +4,7 @@ source 'https://rubygems.org'
 
 ruby '2.4.1'
 
-gem 'dotenv-rails'
 gem 'rails', '~> 5.2.1'
-
-gem 'rubocop', '~> 0.50.0', require: false
-gem 'rubocop-rspec', require: false
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
@@ -20,12 +16,11 @@ gem 'devise'
 # Database
 gem 'pg'
 
-# Layout
+# Assets
 gem 'bootstrap-sass'
 gem 'coffee-rails'
-gem 'jbuilder'
 gem 'jquery-rails'
-gem 'less-rails'
+gem 'less-rails', '~> 3.0.0'
 gem 'sass-rails'
 gem 'therubyracer'
 gem 'turbolinks'
@@ -33,6 +28,7 @@ gem 'turbolinks'
 gem 'twitter-bootstrap-rails', '~> 2.2.8'
 gem 'uglifier'
 
+# Pagination
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
 
@@ -41,6 +37,13 @@ gem 'grape'
 gem 'grape-entity'
 gem 'grape-swagger'
 gem 'grape-swagger-rails'
+
+# Environments
+gem 'dotenv-rails'
+
+# Code quality
+gem 'rubocop', '~> 0.50.0', require: false
+gem 'rubocop-rspec', require: false
 
 group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
@@ -62,10 +65,6 @@ group :test do
   gem 'database_cleaner'
   gem 'factory_bot_rails'
   gem 'rspec-rails', '~> 3.7'
-  gem 'shoulda-matchers'
+  gem 'shoulda-matchers', '~> 3.1.2'
   gem 'simplecov', require: false
-end
-
-group :doc do
-  gem 'sdoc', '0.3.20', require: false
 end
