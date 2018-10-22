@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 RSpec.describe PostsController, type: :controller do
@@ -26,25 +28,25 @@ RSpec.describe PostsController, type: :controller do
     end
 
     describe 'member actions' do
-      let!(:actual_post) { FactoryGirl.create(:post) }
+      let!(:actual_post) { FactoryBot.create(:post) }
 
       describe 'GET /posts/:id' do
         it 'responds with success' do
-          get :show, id: actual_post.id
+          get :show, params: { id: actual_post.id }
           response.should be_successful
         end
       end
 
       describe 'GET /posts/:id/edit' do
         it 'requires login' do
-          get :edit, id: actual_post.id
+          get :edit, params: { id: actual_post.id }
           response.should redirect_to new_user_session_path
         end
       end
 
       describe 'DELETE /posts/:id' do
         it 'requires login' do
-          delete :destroy, id: actual_post.id
+          delete :destroy, params: { id: actual_post.id }
           response.should redirect_to new_user_session_path
         end
       end
@@ -52,7 +54,7 @@ RSpec.describe PostsController, type: :controller do
   end
 
   describe 'For a signed in user' do
-    let(:user) { FactoryGirl.create(:user) }
+    let(:user) { FactoryBot.create(:user) }
 
     before do
       sign_in(user)
@@ -85,25 +87,25 @@ RSpec.describe PostsController, type: :controller do
 
     describe 'member actions' do
       context 'for a post, created by the same user' do
-        let!(:actual_post) { FactoryGirl.create(:post, user: user) }
+        let!(:actual_post) { FactoryBot.create(:post, user: user) }
 
         describe 'GET /posts/:id' do
           it 'responds with success' do
-            get :show, id: actual_post.id
+            get :show, params: { id: actual_post.id }
             response.should be_successful
           end
         end
 
         describe 'GET /posts/:id/edit' do
           it 'responds with success' do
-            get :edit, id: actual_post.id
+            get :edit, params: { id: actual_post.id }
             response.should be_successful
           end
         end
 
         describe 'DELETE /posts/:id' do
           xit 'responds with success' do
-            delete :destroy, id: actual_post.id
+            delete :destroy, params: { id: actual_post.id }
             response.should be_successful
           end
         end

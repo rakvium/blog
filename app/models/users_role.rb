@@ -1,5 +1,6 @@
-# defines which user have which role
-class UsersRole < ActiveRecord::Base
+# frozen_string_literal: true
+
+class UsersRole < ApplicationRecord
   belongs_to :user
   belongs_to :role
 end

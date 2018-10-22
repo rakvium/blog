@@ -1,4 +1,6 @@
-FactoryGirl.define do
+# frozen_string_literal: true
+
+FactoryBot.define do
   factory :user do
     email { Faker::Internet.safe_email }
     first_name { Faker::Name.first_name }
@@ -6,11 +8,11 @@ FactoryGirl.define do
     password { Faker::Lorem.characters(8) }
 
     trait :admin do
-      roles { [FactoryGirl.create(:role, :admin)] }
+      roles { [FactoryBot.create(:role, :admin)] }
     end
 
     trait :root do
-      roles { [FactoryGirl.create(:role, :root)] }
+      roles { [FactoryBot.create(:role, :root)] }
     end
   end
 end

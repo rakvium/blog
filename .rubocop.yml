@@ -1,14 +1,33 @@
 AllCops:
-  TargetRailsVersion: 4.2
-  TargetRubyVersion: 2.1
+  TargetRailsVersion: 5.2
+  TargetRubyVersion: 2.4.1
+  DisplayCopNames: true
   Exclude:
     - 'db/migrate/**'
     - 'db/schema.rb'
+    - 'node_modules/**/*'
     - 'vendor/**/*'
 
-Lint/AssignmentInCondition:
+# Disable documentations, leave it on the programmer’s conscience
+Style/Documentation:
+  Enabled: false
+
+# Configuration parameters: AllowHeredoc, AllowURI, URISchemes, IgnoreCopDirectives, IgnoredPatterns.
+Metrics/LineLength:
+  Max: 120
+
+# Configuration parameters: CountBlocks.
+Metrics/BlockNesting:
+  Max: 4
+
+# Disable checking compact/nesting class/modules style
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Metrics/BlockLength:
   Exclude:
-    - 'bin/spring'
+    - 'spec/**/*'
+  Max: 120
 
 Metrics/BlockLength:
   Exclude:
@@ -17,14 +36,38 @@ Metrics/BlockLength:
 Metrics/ClassLength:
   Max: 200
 
-Metrics/LineLength:
-  Max: 120
-
+# Configuration parameters: CountComments.
 Metrics/MethodLength:
   Max: 15
 
-Rails:
-  Enabled: true
+# CyclomaticComplexity
+Metrics/CyclomaticComplexity:
+  Max: 15
 
-Style/FrozenStringLiteralComment:
+# PerceivedComplexity
+Metrics/PerceivedComplexity:
+  Max: 15
+
+# Assignment Branch condition
+Metrics/AbcSize:
+  Max: 30
+
+################################## RSpec ##################################
+
+require: rubocop-rspec
+
+RSpec/NestedGroups:
   Enabled: false
+
+RSpec/ExampleLength:
+  Enabled: false
+
+RSpec/DescribeClass:
+  Enabled: false
+
+RSpec/MessageSpies:
+  Enabled: false
+
+RSpec/Focus:
+  Exclude:
+    - 'spec/factories/**/*'

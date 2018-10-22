@@ -1,5 +1,6 @@
-# authentication and validation for user
-class User < ActiveRecord::Base
+# frozen_string_literal: true
+
+class User < ApplicationRecord
   before_create :create_role
   has_many :posts
   has_many :comments

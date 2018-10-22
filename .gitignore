@@ -7,22 +7,32 @@
 # Ignore bundler config.
 /.bundle
 
-# Ignore the default SQLite database.
-/db/*.sqlite3
-/db/*.sqlite3-journal
-
 # Ignore all logfiles and tempfiles.
-/log/*.log
-/tmp
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+
+# Ignore uploaded files in development
+/storage/*
+
 /public/assets
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key
+
+# Ignore environment variables from dotenv
+.env
+
+# Ignore compiled assets
+public/assets/*
+
+# Exclude everything in the folder
+/node_modules/*
+.idea/*
+
+# Ensure that coverage results are not tracked
 /coverage
 
 # Ignore other useless files
-database.yml
-doc/
-*.swp
-*~
-.project
-.DS_Store
 .idea
-.secret

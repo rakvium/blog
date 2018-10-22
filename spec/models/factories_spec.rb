@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 describe 'Factories' do
-  FactoryGirl.factories.map(&:name).each do |factory_name|
+  FactoryBot.factories.map(&:name).each do |factory_name|
     describe "The #{factory_name} factory" do
       it 'is valid' do
-        FactoryGirl.build(factory_name).should be_valid
+        FactoryBot.build(factory_name).should be_valid
       end
     end
   end

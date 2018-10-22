@@ -1,11 +1,9 @@
 addons:
   postgresql: '9.4'
-before_script:
-  - cp config/database.yml.sample config/database.yml
 cache: bundler
 language: ruby
 rvm:
-- 2.1.10
+- 2.4.1
 services:
   - postgresql
 script:

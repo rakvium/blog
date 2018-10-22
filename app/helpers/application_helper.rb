@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # helper for ApplicationController
 module ApplicationHelper
   def resource_name
