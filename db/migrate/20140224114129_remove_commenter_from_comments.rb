@@ -1,4 +1,6 @@
-class RemoveCommenterFromComments < ActiveRecord::Migration
+# frozen_string_literal: true
+
+class RemoveCommenterFromComments < ActiveRecord::Migration[5.2]
   def change
     remove_column :comments, :commenter, :string
   end
