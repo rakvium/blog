@@ -12,7 +12,7 @@ class User < ApplicationRecord
   validates :email, uniqueness: true
 
   def role?(role_name)
-    roles.last == Role.where(name: role_name).last
+    !roles.where(name: role_name).empty?
   end
 
   # create role

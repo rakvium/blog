@@ -1,4 +1,5 @@
 AllCops:
+  TargetRailsVersion: 5.2
   TargetRubyVersion: 2.4.1
   DisplayCopNames: true
   Exclude:
@@ -27,6 +28,10 @@ Metrics/BlockLength:
   Exclude:
     - 'spec/**/*'
   Max: 120
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*_spec.rb'
 
 Metrics/ClassLength:
   Max: 200

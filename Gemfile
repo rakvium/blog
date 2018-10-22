@@ -10,7 +10,7 @@ gem 'rails', '~> 5.2.1'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 # Authorization
-gem 'cancancan', '~> 2.0'
+gem 'cancancan', '~> 1.8'
 # Authentication
 gem 'devise'
 # Database
@@ -62,11 +62,16 @@ group :development, :test do
   gem 'pry-remote'
 end
 
+# Use rspec+selenium_webdriver+capybara as for test
 group :test do
+  gem 'capybara', '~> 2.2'
   gem 'codeclimate-test-reporter', '~> 1.0.0'
+  gem 'codecov', require: false
   gem 'database_cleaner'
   gem 'factory_bot_rails'
   gem 'rspec-rails', '~> 3.7'
+  gem 'selenium-webdriver', '~> 2.37'
   gem 'shoulda-matchers', '~> 3.1.2'
   gem 'simplecov', require: false
+  gem 'sqlite3'
 end
