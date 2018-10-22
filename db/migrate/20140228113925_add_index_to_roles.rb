@@ -1,9 +1,7 @@
-class AddIndexToRoles < ActiveRecord::Migration
-  def up
-    add_index :roles, :name, :unique => true
-  end
+# frozen_string_literal: true
 
-    def down
-    remove_index :roles, :name
+class AddIndexToRoles < ActiveRecord::Migration[5.2]
+  def change
+    add_index :roles, :name, unique: true
   end
 end

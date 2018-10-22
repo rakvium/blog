@@ -1,11 +1,11 @@
-class ReplacePostTextStringByText < ActiveRecord::Migration
+# frozen_string_literal: true
+
+class ReplacePostTextStringByText < ActiveRecord::Migration[5.2]
   def up
-    remove_column :posts, :text
-    add_column    :posts, :text, :text
+    change_column :posts, :text, :text
   end
 
   def down
-    remove_column :posts, :text
-    add_column    :posts, :text, :string
+    change_column :posts, :text, :string
   end
 end
