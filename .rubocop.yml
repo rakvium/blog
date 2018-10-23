@@ -26,12 +26,9 @@ Style/ClassAndModuleChildren:
 
 Metrics/BlockLength:
   Exclude:
+    - 'config/**/*'
     - 'spec/**/*'
   Max: 120
-
-Metrics/BlockLength:
-  Exclude:
-    - 'spec/**/*_spec.rb'
 
 Metrics/ClassLength:
   Max: 200
