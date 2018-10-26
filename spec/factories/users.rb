@@ -8,11 +8,11 @@ FactoryBot.define do
     password { Faker::Lorem.characters(8) }
 
     trait :admin do
-      roles { [FactoryBot.create(:role, :admin)] }
+      type { 'Admin' }
     end
 
     trait :root do
-      roles { [FactoryBot.create(:role, :root)] }
+      type { 'Root' }
     end
   end
 end

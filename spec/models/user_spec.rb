@@ -2,12 +2,10 @@
 
 require 'spec_helper'
 
-RSpec.describe User, type: :model do
+describe User, type: :model do
   describe 'relations' do
     it { is_expected.to have_many(:posts) }
     it { is_expected.to have_many(:comments) }
-    it { is_expected.to have_many(:users_roles) }
-    it { is_expected.to have_many(:roles).through(:users_roles) }
   end
 
   describe 'validations' do
@@ -15,22 +13,30 @@ RSpec.describe User, type: :model do
   end
 
   describe '#role?' do
-    let(:user) { create(:user) }
+    subject { user.type }
 
-    context 'for equal role' do
-      before { create(:role, name: :user) }
+    context 'when user is customer' do
+      let(:user) { create(:user) }
 
-      subject { user.role?(:user) }
-
-      it { is_expected.to be_truthy }
+      it 'has customer type' do
+        is_expected.to eq 'Customer'
+      end
     end
 
-    context 'for non-equal role' do
-      before { create(:role, name: :admin) }
+    context 'when user is root' do
+      let(:user) { create(:user, :root) }
 
-      subject { user.role?(:admin) }
+      it 'has root type' do
+        is_expected.to eq 'Root'
+      end
+    end
 
-      it { is_expected.to be_falsey }
+    context 'when user is admin' do
+      let(:user) { create(:user, :admin) }
+
+      it 'has admin type' do
+        is_expected.to eq 'Admin'
+      end
     end
   end
 end
