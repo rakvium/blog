@@ -1,25 +1,26 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
-  before_create :create_role
-  has_many :posts
-  has_many :comments
-  has_many :users_roles
-  has_many :roles, through: :users_roles
+  has_many :posts, dependent: :destroy
+  has_many :comments, dependent: :nullify
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
+  devise :database_authenticatable, :registerable, :recoverable, :rememberable,
+         :trackable, :validatable
+
   validates :email, uniqueness: true
 
-  def role?(role_name)
-    !roles.where(name: role_name).empty?
+  scope :admins, -> { where(type: 'Admin') }
+  scope :roots, -> { where(type: 'Root') }
+  scope :customers, -> { where(type: 'Customer') }
+
+  %w[root admin customer].each do |role|
+    define_method "#{role}?" do
+      type.downcase == role
+    end
   end
 
-  # create role
-
-  private
-
-  def create_role
-    roles << Role.find_or_create_by(name: :user)
+  def self.roles
+    %w[Root Admin Customer]
   end
 end

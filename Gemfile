@@ -73,5 +73,4 @@ group :test do
   gem 'selenium-webdriver', '~> 2.37'
   gem 'shoulda-matchers', '~> 3.1.2'
   gem 'simplecov', require: false
-  gem 'sqlite3'
 end
