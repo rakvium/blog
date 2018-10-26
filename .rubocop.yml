@@ -49,6 +49,14 @@ Metrics/PerceivedComplexity:
 Metrics/AbcSize:
   Max: 30
 
+Style/MixinUsage:
+  Exclude:
+    - 'bin/*'
+
+Style/StderrPuts:
+  Exclude:
+    - 'bin/*'
+
 ################################## RSpec ##################################
 
 require: rubocop-rspec
@@ -65,6 +73,10 @@ RSpec/DescribeClass:
 RSpec/MessageSpies:
   Enabled: false
 
-RSpec/Focus:
-  Exclude:
-    - 'spec/factories/**/*'
+# TODO: enable and correct
+RSpec/ContextWording:
+  Enabled: false
+
+# TODO: enable and correct
+RSpec/LeadingSubject:
+  Enabled: false
