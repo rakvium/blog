@@ -2,14 +2,14 @@
 
 FactoryBot.define do
   factory :role do
-    name :user
+    name { :user }
 
     trait :admin do
-      name :admin
+      name { :admin }
     end
 
     trait :root do
-      name :root
+      name { :root }
     end
   end
 end
