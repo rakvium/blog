@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-# helpers for PostsController
 module PostsHelper
+  # TODO: Use decorator pattern for such methods
   def full_name(user)
     "#{user.first_name} #{user.last_name}"
   end

@@ -10,7 +10,7 @@ class Ability
 
     if user.admin? || user.root?
       can :manage, :all
-    elsif user.customer?
+    elsif user.author?
       can :crud, Post,    user_id: user.id
       can :crud, Comment, user_id: user.id
     end
