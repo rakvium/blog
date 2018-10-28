@@ -4,30 +4,31 @@ require 'spec_helper'
 require 'cancan/matchers'
 
 describe Ability, type: :model do
-  describe 'user abilities' do
-    subject(:ability) { Ability.new(user) }
+  subject { Ability.new(user) }
 
-    let(:user) { nil }
+  context 'when is a guest' do
+    let(:user) { FactoryBot.create(:guest) }
 
     it { is_expected.to be_able_to(:read, :all) }
+  end
 
-    context 'when is a registered author' do
-      let(:user) { FactoryBot.create(:author) }
+  context 'when is a author' do
+    let(:user) { FactoryBot.create(:author) }
 
-      it { is_expected.to be_able_to(:crud, Post.new(user_id: user.id)) }
-      it { is_expected.to be_able_to(:crud, Comment.new(user_id: user.id)) }
-    end
+    it { is_expected.to be_able_to(:crud, Post.new(user_id: user.id)) }
+    it { is_expected.to be_able_to(:create, Comment.new(user_id: user.id)) }
+    it { is_expected.to be_able_to(:destroy, Comment.new(user_id: user.id)) }
+  end
 
-    context 'when is an admin' do
-      let(:user) { FactoryBot.create(:admin) }
+  context 'when is an admin' do
+    let(:user) { FactoryBot.create(:admin) }
 
-      it { is_expected.to be_able_to(:manage, :all) }
-    end
+    it { is_expected.to be_able_to(:manage, :all) }
+  end
 
-    context 'when is a root' do
-      let(:user) { FactoryBot.create(:root) }
+  context 'when is a root' do
+    let(:user) { FactoryBot.create(:root) }
 
-      it { is_expected.to be_able_to(:manage, :all) }
-    end
+    it { is_expected.to be_able_to(:manage, :all) }
   end
 end

@@ -14,7 +14,7 @@ class ReplaceRolesWithTypeOnUsers < ActiveRecord::Migration[5.2]
                  END
       FROM roles
       INNER JOIN users_roles ON users_roles.role_id = roles.id
-      WHERE users_roles.user_id = users.id AND users_roles.role_id = roles.id;
+      WHERE users_roles.user_id = users.id;
     SQL
 
     execute %( DROP TABLE users_roles; )

@@ -1,25 +1,28 @@
 # frozen_string_literal: true
 
-# controls users' comments to the posts
+# TODO: Add proper flash messages
 class CommentsController < ApplicationController
   before_action :authenticate_user!
+  load_and_authorize_resource
 
-  # CREATE comment to the post
+  before_action :set_post, only: %i[create destroy]
+
   def create
-    @post = Post.find(params[:post_id])
     @comment = @post.comments.create(comment_params)
-    redirect_to post_url(@post)
+    redirect_to @post
   end
 
-  # DESTROY the comment
   def destroy
-    @post = Post.find(params[:post_id])
     @comment = @post.comments.find(params[:id])
-    @comment.destroy if can?(:destroy, @comment)
-    redirect_to post_url(@post)
+    @comment.destroy
+    redirect_to @post
   end
 
   private
+
+  def set_post
+    @post = Post.find(params[:post_id])
+  end
 
   def comment_params
     params.require(:comment).permit(:body).merge(user_id: current_user.id)

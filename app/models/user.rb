@@ -13,14 +13,15 @@ class User < ApplicationRecord
   scope :admins, -> { where(type: 'Admin') }
   scope :roots, -> { where(type: 'Root') }
   scope :authors, -> { where(type: 'Author') }
+  scope :guests, -> { where(type: 'Guest') }
 
-  %w[root admin author].each do |role|
+  %w[root admin author guest].each do |role|
     define_method "#{role}?" do
       type.downcase == role
     end
   end
 
   def self.roles
-    %w[Root Admin Author]
+    %w[Root Admin Author Guest]
   end
 end

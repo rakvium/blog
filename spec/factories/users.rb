@@ -19,4 +19,8 @@ FactoryBot.define do
   factory :author, parent: :user, class: 'Author' do
     type { 'Author' }
   end
+
+  factory :guest, parent: :user, class: 'Guest' do
+    type { 'Guest' }
+  end
 end
