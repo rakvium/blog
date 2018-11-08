@@ -10,8 +10,8 @@ RSpec.describe ApplicationHelper, type: :helper do
   end
 
   describe '#resource' do
-    it 'is object of User class' do
-      helper.resource.should be_an_instance_of(User)
+    it 'is object of Author class' do
+      helper.resource.should be_an_instance_of(Author)
     end
   end
 

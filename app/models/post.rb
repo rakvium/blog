@@ -1,9 +1,10 @@
 # frozen_string_literal: true
 
 class Post < ApplicationRecord
-  # TODO: Check deeply these relations and, probably, refactor posts at all
-  belongs_to :user, optional: true
+  default_scope { order(created_at: :desc) }
+
+  belongs_to :user
   has_many :comments, dependent: :destroy
-  validates :title, presence: true,
-                    length: { minimum: 5, maximum: 255 }
+
+  validates :title, presence: true, length: { minimum: 5, maximum: 255 }
 end

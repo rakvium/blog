@@ -6,13 +6,21 @@ FactoryBot.define do
     first_name { Faker::Name.first_name }
     last_name { Faker::Name.last_name }
     password { Faker::Lorem.characters(8) }
+  end
 
-    trait :admin do
-      roles { [FactoryBot.create(:role, :admin)] }
-    end
+  factory :root, parent: :user, class: 'Root' do
+    type { 'Root' }
+  end
 
-    trait :root do
-      roles { [FactoryBot.create(:role, :root)] }
-    end
+  factory :admin, parent: :user, class: 'Admin' do
+    type { 'Admin' }
+  end
+
+  factory :author, parent: :user, class: 'Author' do
+    type { 'Author' }
+  end
+
+  factory :guest, parent: :user, class: 'Guest' do
+    type { 'Guest' }
   end
 end

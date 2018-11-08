@@ -10,7 +10,7 @@ gem 'rails', '~> 5.2.1'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 # Authorization
-gem 'cancancan', '~> 1.8'
+gem 'cancancan', '~> 2.0'
 # Authentication
 gem 'devise'
 # Database
@@ -73,5 +73,4 @@ group :test do
   gem 'selenium-webdriver', '~> 2.37'
   gem 'shoulda-matchers', '~> 3.1.2'
   gem 'simplecov', require: false
-  gem 'sqlite3'
 end

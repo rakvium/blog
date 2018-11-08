@@ -1,70 +1,59 @@
 # frozen_string_literal: true
 
-# controls users' posts
+# TODO: Add proper flash messages
 class PostsController < ApplicationController
-  # uncomment next string when users had roles
-
-  # allow to delete posts only for http authenticated users
-  # http_basic_authenticate_with name: "dhh", password: "secret", except: [:index, :show]
-
-  # allow to posts only for authenticated users
   before_action :authenticate_user!, except: %i[show index]
   load_and_authorize_resource except: %i[show index]
-  skip_load_resource only: [:create]
 
-  # publish the new post
+  before_action :set_post, only: %i[show edit update destroy]
+
+  PER_PAGE = 3
+
   def new
     @post = Post.new
   end
 
-  # create a post
   def create
     @post = Post.new(post_params)
     if @post.save
-      @post.update_attributes(user_id: current_user.id)
       redirect_to @post
     else
-      render 'new'
+      render :new
     end
   end
 
-  # show the just created|edited post
   def show
-    @post     = Post.find(params[:id])
-    @comments = Post.find(params[:id]).comments.all
+    @comments = @post.comments
     @user     = @post.user
   end
 
-  # show all posts
   def index
-    @posts = Post.order('created_at DESC').paginate(page: params[:page], per_page: 3)
+    @posts = Post.paginate(page: params[:page], per_page: PER_PAGE)
   end
 
-  # def edit
-  def edit
-    @post = Post.find(params[:id])
-  end
+  def edit; end
 
-  # update params of the one post of listing
   def update
-    @post = Post.find(params[:id])
-
     if @post.update(post_params)
       redirect_to @post
     else
-      render 'edit'
+      render :edit
     end
   end
 
-  # DESTROY the post
   def destroy
-    @post = Post.find(params[:id])
-    @post.destroy
-
-    redirect_to posts_url
+    if @post.destroy
+      redirect_to posts_path
+    else
+      redirect_to @post
+    end
   end
 
   private
+
+  def set_post
+    @post = Post.find(params[:id])
+  end
 
   def post_params
     params.require(:post).permit(:title, :text, :commit).merge(user_id: current_user.id)

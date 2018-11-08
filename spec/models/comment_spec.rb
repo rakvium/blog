@@ -2,13 +2,13 @@
 
 require 'spec_helper'
 
-RSpec.describe Comment, type: :model do
+describe Comment, type: :model do
   describe 'relations' do
     it { is_expected.to belong_to(:post) }
     it { is_expected.to belong_to(:user) }
   end
 
-  describe 'vaidations' do
-    it { is_expected.to validate_presence_of(:user_id) }
+  describe 'validations' do
+    it { is_expected.to validate_presence_of(:post).with_message('must exist') }
   end
 end

@@ -18,6 +18,10 @@ require 'factory_bot_rails'
 require 'shoulda/matchers'
 require 'database_cleaner'
 
+# Requires supporting ruby files with custom matchers and macros, etc
+Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
+Dir[Rails.root.join('spec/shared/**/*.rb')].each { |f| require f }
+
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|
     with.test_framework :rspec
