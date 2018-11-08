@@ -1,6 +1,6 @@
 AllCops:
   TargetRailsVersion: 5.2
-  TargetRubyVersion: 2.4.1
+  TargetRubyVersion: 2.4.5
   DisplayCopNames: true
   Exclude:
     - 'db/migrate/**'
