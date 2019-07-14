@@ -77,9 +77,14 @@ RSpec.describe PostsController, type: :controller do
 
       describe 'POST /posts/' do
         context 'with params' do
-          xit 'responds with success' do
-            post :create
-            response.should be_successful
+          it 'responds with success' do
+            post :create, params: {
+              post: {
+                title: Faker::Lorem.characters,
+                text: Faker::Lorem.paragraph
+              }
+            }
+            response.should redirect_to(post_path(Post.order(created_at: :desc).first))
           end
         end
       end
@@ -87,7 +92,7 @@ RSpec.describe PostsController, type: :controller do
 
     describe 'member actions' do
       context 'for a post, created by the same user' do
-        let!(:actual_post) { FactoryBot.create(:post, user: user) }
+        let(:actual_post) { FactoryBot.create(:post, user: user) }
 
         describe 'GET /posts/:id' do
           it 'responds with success' do
@@ -104,9 +109,10 @@ RSpec.describe PostsController, type: :controller do
         end
 
         describe 'DELETE /posts/:id' do
-          xit 'responds with success' do
-            delete :destroy, params: { id: actual_post.id }
-            response.should be_successful
+          it 'responds with success' do
+            post_to_delete = FactoryBot.create(:post, user: user)
+            delete :destroy, params: { id: post_to_delete.id }
+            response.should redirect_to(posts_path)
           end
         end
       end
