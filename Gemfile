@@ -12,7 +12,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # Authorization
 gem 'cancancan', '~> 2.0'
 # Authentication
-gem 'devise'
+gem 'devise', '~> 4.6'
 # Database
 gem 'pg'
 # Web server
