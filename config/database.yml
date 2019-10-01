@@ -8,10 +8,14 @@ default: &default
 
 development:
   <<: *default
+  host: db
+  username: postgres
   database: blog_development
 
 test:
   <<: *default
+  host: db
+  username: postgres
   database: blog_test
 
 production:
