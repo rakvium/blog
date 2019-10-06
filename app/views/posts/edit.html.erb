@@ -1,5 +1,5 @@
-<h1>Editing post</h1>
- 
+<h1><%= t('.edit')%></h1>
+
 <%= render 'form' %>
- 
-<%= link_to ' Back', posts_path, data: { confirm: 'Your post could not be saved. Are you really want to leave this page?' }, :class=>'btn btn-sm btn-warning icon-chevron-left'%>
+
+<%= link_to " #{t('.back')}", posts_path, data: { confirm: t('.are_you_sure') }, :class=>'btn btn-sm btn-warning icon-chevron-left'%>

@@ -1,9 +1,9 @@
 <%provide(:title, '| The Great Listing Of All Of The Posts')%>
-<h1>The Great Listing Of All Of The Posts</h1>
+<h1><%= t('.post_title')%></h1>
 
 <div class="center">
- <%= link_to ' What about a New Post, dude?', new_post_path, :class=>'btn btn-lg btn-success icon-pencil' %>
- </div>
+  <%= link_to " #{t('.new_post')}", new_post_path, :class=>'btn btn-lg btn-success icon-pencil' %>
+</div>
 
 <% if @posts %>
   <% @posts.each do |post| %>
@@ -13,21 +13,21 @@
       <div class="row">
         <div class="span6 text-left">
             <code><%= post.created_at.strftime("%d %B %Y") %></code>
-        </div> 
+        </div>
         <div class="span5 text-right">
           <% if post.created_at.to_i != post.updated_at.to_i %>
             <em><code>
               Updated at <%= post.updated_at.strftime("%d %B %Y") %>
             </code></em>
           <% end %>
-        </div> 
+        </div>
       </div>
       </div>
       <div class="row">
         <div class="span12">
             <h3>
               <%= post.title %>
-            </h3>      
+            </h3>
         </div>
       </div>
         <div class="row">
@@ -41,14 +41,14 @@
         </div>
         <div class="btn-group">
           <% if can? :read, post %>
-            <%= link_to " Show", post_path(post), :class=>'btn btn-primary icon-zoom-in' %>
+            <%= link_to " #{t('.show')}", post_path(post), :class=>'btn btn-primary icon-zoom-in' %>
             <% end %>
           <% if can? :update, post %>
-            <%= link_to " Edit", edit_post_path(post), :class=>'btn btn-success icon-edit' %>
+            <%= link_to " #{t('.edit')}", edit_post_path(post), :class=>'btn btn-success icon-edit' %>
           <% end %>
           <% if can? :destroy, post %>
-            <%= link_to ' Destroy', post_path(post),
-                            method: :delete, data: { confirm: 'Are you sure?' }, :class=>'btn btn-danger icon-remove-sign'%>
+            <%= link_to " #{t('.destroy')}", post_path(post),
+                            method: :delete, data: { confirm: t('.are_you_sure') }, :class=>'btn btn-danger icon-remove-sign'%>
           <% end %>
         </div>
       </div>
