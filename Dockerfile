@@ -28,3 +28,5 @@ COPY . ./
 EXPOSE 3000
 
 ENTRYPOINT ["bundle", "exec"]
+
+RUN rake db:create db:migrate 

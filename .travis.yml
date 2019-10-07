@@ -6,8 +6,6 @@ rvm:
   - 2.6.3
 services:
   - postgresql
-before_script:
-  - cp config/database.yml.travis config/database.yml  
 script:
   - bundle exec rubocop
   - bundle exec rake db:setup
