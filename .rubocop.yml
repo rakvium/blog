@@ -1,6 +1,5 @@
 AllCops:
-  TargetRailsVersion: 5.2
-  TargetRubyVersion: 2.4.5
+  TargetRubyVersion: 2.6.3
   DisplayCopNames: true
   Exclude:
     - 'db/migrate/**'
@@ -57,10 +56,16 @@ Style/StderrPuts:
   Exclude:
     - 'bin/*'
 
+require:
+  - rubocop-rails
+  - rubocop-rspec
+
+################################## Rails ##################################
+Rails:
+  Enabled: true
+  TargetRailsVersion: 6.0
+
 ################################## RSpec ##################################
-
-require: rubocop-rspec
-
 RSpec/NestedGroups:
   Enabled: false
 
