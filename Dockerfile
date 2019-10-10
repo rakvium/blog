@@ -1,5 +1,5 @@
 # Base image
-FROM ruby:1.9.3
+FROM ruby:2.6.3
 
 MAINTAINER rakvium@gmail.com
 
@@ -14,7 +14,7 @@ RUN apt-get update && apt-get -y install \
   postgresql \
   postgresql-contrib
 
-RUN gem install --no-ri --no-rdoc bundler
+RUN gem install bundler
 
 ENV APP_HOME /app
 RUN mkdir -p /$APP_HOME
@@ -29,5 +29,4 @@ EXPOSE 3000
 
 ENTRYPOINT ["bundle", "exec"]
 
-RUN rake db:create db:migrate  
-
+RUN rake db:create db:migrate 

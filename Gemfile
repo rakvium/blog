@@ -2,9 +2,9 @@
 
 source 'https://rubygems.org'
 
-ruby '2.4.5'
+ruby '2.6.3'
 
-gem 'rails', '~> 5.2.3'
+gem 'rails', '~> 6.0.0'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
@@ -44,7 +44,9 @@ gem 'grape-swagger-rails'
 gem 'dotenv-rails'
 
 # Code quality
-gem 'rubocop', '~> 0.59.2', require: false
+gem 'rubocop', '~> 0.75.0', require: false
+gem 'rubocop-faker', require: false
+gem 'rubocop-rails', require: false
 gem 'rubocop-rspec', require: false
 
 group :development do
@@ -69,7 +71,8 @@ group :test do
   gem 'codecov', require: false
   gem 'database_cleaner'
   gem 'factory_bot_rails'
-  gem 'rspec-rails', '~> 3.7'
+  # TODO: update rspec-rails version after a release
+  gem 'rspec-rails', '~> 4.0.0.beta2'
   gem 'selenium-webdriver', '~> 2.37'
   gem 'shoulda-matchers', '~> 3.1.2'
   gem 'simplecov', require: false

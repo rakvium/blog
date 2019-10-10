@@ -7,7 +7,7 @@ RSpec.describe CommentsController, type: :controller do
   let(:parent_post) { FactoryBot.create(:post, user: author) }
   let(:comment) do
     FactoryBot.create(
-      :comment, user: author, post: parent_post, body: Faker::Yoda.quote
+      :comment, user: author, post: parent_post, body: Faker::Hacker.say_something_smart
     )
   end
 
@@ -24,7 +24,7 @@ RSpec.describe CommentsController, type: :controller do
         sign_in(author)
         post :create, params: {
           post_id: parent_post.id,
-          comment: { body: Faker::Yoda.quote }
+          comment: { body: Faker::Hacker.say_something_smart }
         }
         response.should redirect_to parent_post
       end
