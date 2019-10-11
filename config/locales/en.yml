@@ -36,7 +36,7 @@ en:
       back: Back to The Great Listing Of All Of The Posts
       are_you_sure: Are you really want to leave this page?
     form:
-      erors_prohibited: 'prohibited this post from being saved:'
+      errors_prohibited: 'prohibited this post from being saved:'
       sign_in: Sign in to manage posts
     edit:
       edit: Editing post
