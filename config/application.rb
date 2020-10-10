@@ -17,7 +17,7 @@ module Blog
                                  'fontawesome-webfont.eot',
                                  'fontawesome-webfont.svg',
                                  'fontawesome-webfont.woff']
-    config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+    config.assets.paths << Rails.root.join('app/assets/fonts')
     config.generators do |g|
       g.fixture_replacement :factory_girl, dir: 'spec/factories'
       g.test_framework :rspec, fixtures: true,
@@ -28,6 +28,6 @@ module Blog
                                request_specs: false
     end
     config.paths.add File.join('app', 'api'), glob: File.join('**', '*.rb')
-    config.autoload_paths += Dir[Rails.root.join('app', 'api', '*')]
+    config.autoload_paths += Dir[Rails.root.join('app/api/*')]
   end
 end

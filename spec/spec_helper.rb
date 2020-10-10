@@ -19,11 +19,9 @@ require 'shoulda/matchers'
 require 'database_cleaner'
 
 # TODO: Rails/FilePath: Please use Rails.root.join('path', 'to') instead.
-# rubocop:disable Rails/FilePath
 # Requires supporting ruby files with custom matchers and macros, etc
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 Dir[Rails.root.join('spec/shared/**/*.rb')].each { |f| require f }
-# rubocop:enable Rails/FilePath
 
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|
