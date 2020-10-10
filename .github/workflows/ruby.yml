@@ -11,6 +11,11 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    services:
+      postgres:
+        ports:
+          - 5432/tcp
+
     steps:
     - uses: actions/checkout@v2
     - name: Set up Ruby 2.6
