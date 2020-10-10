@@ -44,7 +44,7 @@ gem 'grape-swagger-rails'
 gem 'dotenv-rails'
 
 # Code quality
-gem 'rubocop', '~> 0.75.0', require: false
+gem 'rubocop', '~> 0.77.0', require: false
 gem 'rubocop-faker', require: false
 gem 'rubocop-rails', require: false
 gem 'rubocop-rspec', require: false

@@ -4,7 +4,7 @@ require 'spec_helper'
 require 'cancan/matchers'
 
 describe Ability, type: :model do
-  subject { Ability.new(user) }
+  subject { described_class.new(user) }
 
   context 'when is a guest' do
     let(:user) { FactoryBot.create(:guest) }
