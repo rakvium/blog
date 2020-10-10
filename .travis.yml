@@ -3,7 +3,7 @@ addons:
 cache: bundler
 language: ruby
 rvm:
-  - 2.6.3
+  - 2.6
 services:
   - postgresql
 script:

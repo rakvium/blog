@@ -1,5 +1,5 @@
 # Base image
-FROM ruby:2.6.3
+FROM ruby:2.6
 
 MAINTAINER rakvium@gmail.com
 
@@ -29,4 +29,4 @@ EXPOSE 3000
 
 ENTRYPOINT ["bundle", "exec"]
 
-RUN rake db:create db:migrate 
+RUN rake db:create db:migrate
