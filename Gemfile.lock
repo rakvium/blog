@@ -397,7 +397,7 @@ DEPENDENCIES
   pry-remote
   puma
   rails (~> 6.0.0)
-  rspec-rails (~> 4.0.0.beta2)
+  rspec-rails (~> 4.0)
   rubocop (~> 0.93.1)
   rubocop-faker
   rubocop-rails
