@@ -1,3 +1,7 @@
+require:
+  - rubocop-rails
+  - rubocop-rspec
+
 AllCops:
   TargetRubyVersion: 2.7
   DisplayCopNames: true
@@ -7,58 +11,151 @@ AllCops:
     - 'node_modules/**/*'
     - 'vendor/**/*'
 
-# Disable documentations, leave it on the programmer’s conscience
-Style/Documentation:
-  Enabled: false
-
-# Configuration parameters: AllowHeredoc, AllowURI, URISchemes, IgnoreCopDirectives, IgnoredPatterns.
-Metrics/LineLength:
+################################## Layout #################################
+Layout/BeginEndAlignment: # (new in 0.91)
+  Enabled: true
+Layout/LineLength:
   Max: 120
+Layout/EmptyLinesAroundAttributeAccessor: # (new in 0.83)
+  Enabled: true
+Layout/SpaceAroundMethodCallOperator: # (new in 0.82)
+  Enabled: true
 
-# Configuration parameters: CountBlocks.
+################################## Lint ###################################
+Lint/BinaryOperatorWithIdenticalOperands: # (new in 0.89)
+  Enabled: true
+Lint/ConstantDefinitionInBlock: # (new in 0.91)
+  Enabled: true
+Lint/DeprecatedOpenSSLConstant: # (new in 0.84)
+  Enabled: true
+Lint/DuplicateElsifCondition: # (new in 0.88)
+  Enabled: true
+Lint/DuplicateRequire: # (new in 0.90)
+  Enabled: true
+Lint/DuplicateRescueException: # (new in 0.89)
+  Enabled: true
+Lint/EmptyConditionalBody: # (new in 0.89)
+  Enabled: true
+Lint/EmptyFile: # (new in 0.90)
+  Enabled: true
+Lint/FloatComparison: # (new in 0.89)
+  Enabled: true
+Lint/HashCompareByIdentity: # (new in 0.93)
+  Enabled: true
+Lint/IdentityComparison: # (new in 0.91)
+  Enabled: true
+Lint/MissingSuper: # (new in 0.89)
+  Enabled: true
+Lint/MixedRegexpCaptureTypes: # (new in 0.85)
+  Enabled: true
+Lint/OutOfRangeRegexpRef: # (new in 0.89)
+  Enabled: true
+Lint/RaiseException: # (new in 0.81)
+  Enabled: true
+Lint/RedundantSafeNavigation: # (new in 0.93)
+  Enabled: true
+Lint/SelfAssignment: # (new in 0.89)
+  Enabled: true
+Lint/StructNewOverride: # (new in 0.81)
+  Enabled: true
+Lint/TopLevelReturnWithArgument: # (new in 0.89)
+  Enabled: true
+Lint/TrailingCommaInAttributeDeclaration: # (new in 0.90)
+  Enabled: true
+Lint/UnreachableLoop: # (new in 0.89)
+  Enabled: true
+Lint/UselessMethodDefinition: # (new in 0.90)
+  Enabled: true
+Lint/UselessTimes: # (new in 0.91)
+  Enabled: true
+
+
+################################## Metrics ################################
+Metrics/AbcSize:
+  # Assignment Branch condition size
+  Max: 30
 Metrics/BlockNesting:
+  # Configuration parameters: CountBlocks.
   Max: 4
-
-# Disable checking compact/nesting class/modules style
-Style/ClassAndModuleChildren:
-  Enabled: false
-
 Metrics/BlockLength:
+  # Configuration parameters: AllowHeredoc, AllowURI, URISchemes, IgnoreCopDirectives, IgnoredPatterns.
   Exclude:
     - 'config/**/*'
     - 'spec/**/*'
   Max: 120
-
 Metrics/ClassLength:
   Max: 200
-
-# Configuration parameters: CountComments.
-Metrics/MethodLength:
-  Max: 15
-
-# CyclomaticComplexity
 Metrics/CyclomaticComplexity:
   Max: 15
-
-# PerceivedComplexity
+Metrics/MethodLength:
+  # Configuration parameters: CountComments.
+  Max: 15
 Metrics/PerceivedComplexity:
   Max: 15
 
-# Assignment Branch condition
-Metrics/AbcSize:
-  Max: 30
-
+################################## Style ##################################
+Style/AccessorGrouping: # (new in 0.87)
+  Enabled: true
+Style/BisectedAttrAccessor: # (new in 0.87)
+  Enabled: true
+Style/CaseLikeIf: # (new in 0.88)
+  Enabled: true
+Style/ClassAndModuleChildren:
+  # Disable checking compact/nesting class/modules style
+  Enabled: false
+Style/ClassEqualityComparison: # (new in 0.93)
+  Enabled: true
+Style/CombinableLoops: # (new in 0.90)
+  Enabled: true
+Style/Documentation:
+  # Disable documentations, leave it on the programmer’s conscience
+  Enabled: false
+Style/ExplicitBlockArgument: # (new in 0.89)
+  Enabled: true
+Style/ExponentialNotation: # (new in 0.82)
+  Enabled: true
+Style/GlobalStdStream: # (new in 0.89)
+  Enabled: true
+Style/HashAsLastArrayItem: # (new in 0.88)
+  Enabled: true
+Style/HashEachMethods: # (new in 0.80)
+  Enabled: true
+Style/HashLikeCase: # (new in 0.88)
+  Enabled: true
+Style/HashTransformKeys: # (new in 0.80)
+  Enabled: true
+Style/HashTransformValues: # (new in 0.80)
+  Enabled: true
+Style/KeywordParametersOrder: # (new in 0.90)
+  Enabled: true
 Style/MixinUsage:
   Exclude:
     - 'bin/*'
-
+Style/OptionalBooleanParameter: # (new in 0.89)
+  Enabled: true
+Style/RedundantAssignment: # (new in 0.87)
+  Enabled: true
+Style/RedundantFetchBlock: # (new in 0.86)
+  Enabled: true
+Style/RedundantFileExtensionInRequire: # (new in 0.88)
+  Enabled: true
+Style/RedundantRegexpCharacterClass: # (new in 0.85)
+  Enabled: true
+Style/RedundantRegexpEscape: # (new in 0.85)
+  Enabled: true
+Style/RedundantSelfAssignment: # (new in 0.90)
+  Enabled: true
+Style/SingleArgumentDig: # (new in 0.89)
+  Enabled: true
+Style/SlicingWithRange: # (new in 0.83)
+  Enabled: true
+Style/SoleNestedConditional: # (new in 0.89)
+  Enabled: true
 Style/StderrPuts:
   Exclude:
     - 'bin/*'
-
-require:
-  - rubocop-rails
-  - rubocop-rspec
+Style/StringConcatenation: # (new in 0.89)
+  Enabled: true
 
 ################################## Rails ##################################
 Rails:
@@ -66,22 +163,17 @@ Rails:
   TargetRailsVersion: 6.0
 
 ################################## RSpec ##################################
-RSpec/NestedGroups:
+RSpec/ContextWording:
+  # TODO: enable and correct
   Enabled: false
-
-RSpec/ExampleLength:
-  Enabled: false
-
 RSpec/DescribeClass:
   Enabled: false
-
+RSpec/ExampleLength:
+  Enabled: false
+RSpec/LeadingSubject:
+  # TODO: enable and correct
+  Enabled: false
 RSpec/MessageSpies:
   Enabled: false
-
-# TODO: enable and correct
-RSpec/ContextWording:
-  Enabled: false
-
-# TODO: enable and correct
-RSpec/LeadingSubject:
+RSpec/NestedGroups:
   Enabled: false
