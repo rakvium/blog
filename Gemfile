@@ -71,8 +71,7 @@ group :test do
   gem 'codecov', require: false
   gem 'database_cleaner'
   gem 'factory_bot_rails'
-  # TODO: update rspec-rails version after a release
-  gem 'rspec-rails', '~> 4.0.0.beta2'
+  gem 'rspec-rails', '~> 4.0'
   gem 'selenium-webdriver', '~> 2.37'
   gem 'shoulda-matchers', '~> 3.1.2'
   gem 'simplecov', require: false
