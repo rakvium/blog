@@ -27,6 +27,10 @@ module Blog
                                controller_specs: true,
                                request_specs: false
     end
+
+    config.i18n.default_locale = :en
+    config.i18n.available_locales = %i[en ru uk]
+
     config.paths.add File.join('app', 'api'), glob: File.join('**', '*.rb')
     config.autoload_paths += Dir[Rails.root.join('app/api/*')]
   end
