@@ -15,7 +15,7 @@ RSpec.describe CommentsController, type: :controller do
     describe 'For a guest' do
       it 'requires login' do
         post :create, params: { post_id: parent_post.id }
-        response.should redirect_to new_user_session_path
+        response.should redirect_to new_user_session_path(locale: nil)
       end
     end
 
@@ -34,7 +34,7 @@ RSpec.describe CommentsController, type: :controller do
   describe 'DELETE /posts/:post_id/comments/:id' do
     it 'requires login' do
       delete :destroy, params: { post_id: parent_post.id, id: comment.id }
-      response.should redirect_to new_user_session_path
+      response.should redirect_to new_user_session_path(locale: nil)
     end
   end
 end

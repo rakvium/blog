@@ -1,0 +1,25 @@
+uk:
+  language_name: Українська
+  posts:
+    new:
+      new_post: New Post
+      back: Back to The Great Listing Of All Of The Posts
+      are_you_sure: Are you really want to leave this page?
+    form:
+      errors_prohibited: 'prohibited this post from being saved:'
+      sign_in: Sign in to manage posts
+    edit:
+      edit: Editing post
+      back: Back
+      are_you_sure: Your post could not be saved. Are you really want to leave this page?
+    index:
+      new_post: What about a New Post, dude?
+      post_title: The Great Listing Of All Of The Posts
+      show: Show
+      edit: Edit
+      destroy: Destroy
+      are_you_sure: Are you sure?
+    show:
+      are_you_sure: Are you sure?
+      destroy: Destroy
+      edit: Edit

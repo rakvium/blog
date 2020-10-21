@@ -15,14 +15,14 @@ RSpec.describe PostsController, type: :controller do
       describe 'GET /posts/new' do
         it 'requires login' do
           get :new
-          response.should redirect_to new_user_session_path
+          response.should redirect_to new_user_session_path(locale: nil)
         end
       end
 
       describe 'POST /posts/' do
         it 'requires login' do
           post :create
-          response.should redirect_to new_user_session_path
+          response.should redirect_to new_user_session_path(locale: nil)
         end
       end
     end
@@ -40,14 +40,14 @@ RSpec.describe PostsController, type: :controller do
       describe 'GET /posts/:id/edit' do
         it 'requires login' do
           get :edit, params: { id: actual_post.id }
-          response.should redirect_to new_user_session_path
+          response.should redirect_to new_user_session_path(locale: nil)
         end
       end
 
       describe 'DELETE /posts/:id' do
         it 'requires login' do
           delete :destroy, params: { id: actual_post.id }
-          response.should redirect_to new_user_session_path
+          response.should redirect_to new_user_session_path(locale: nil)
         end
       end
     end

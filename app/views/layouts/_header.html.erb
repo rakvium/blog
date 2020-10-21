@@ -1,27 +1,52 @@
 <header class="navbar navbar-fixed-top navbar-inverse" role="navigation">
   <div class="navbar-inner">
-      <%= link_to " Blog", '/', id: "logo", :class=>"icon-globe icon-large" %>  
-      <nav>
-        <ul class="nav pull-right">        
-          <% if user_signed_in? %>  
-              <li><a onclick="return false" class="icon-ok icon-large" style="color:#ccc">
-                Hello, <%=current_user.first_name%>!</a></li>
-              <li><%= link_to " Help",     static_pages_help_path,
-                  :class=>'icon-stethoscope  icon-large'  %></li>
-              <li><%= link_to " #{current_user.first_name} account", edit_user_registration_path,
-                  :class=>'icon-cog icon-large' %>
-              <li><%= link_to(" Sign out", destroy_user_session_path,
-                  :method=>:delete,
-                  :class=>'icon-signout icon-large' )%></li>
-            <% else %>
-              <li><%= link_to " Help",    static_pages_help_path,
-                  :class=>'icon-stethoscope  icon-large'  %></li>
-              <li><%= link_to " Sign up", new_user_registration_path,
-                  :class=>'icon-edit icon-large'  %></li>
-              <li><%= link_to " Sign in", new_user_session_path,
-                  :class=>'icon-signin icon-large'  %></li>
+    <%= link_to ' Blog', '/', id: 'logo', class: 'icon-globe icon-large' %>
+    <nav>
+      <ul class="nav pull-right">
+        <li>
+          <%= link_to(" #{I18n.backend.translate(locale, 'language_name')}",
+                      url_for(locale: locale),
+                      class: 'icon-chevron-down icon-large dropdown-toggle',
+                      data: { toggle: 'dropdown' }) %>
+          <ul class="dropdown-menu" role="menu">
+            <% I18n.available_locales.each do |locale| %>
+              <li>
+                <%= link_to I18n.backend.translate(locale, 'language_name'),
+                            url_for(locale: locale) %></li>
             <% end %>
-        </ul>
-      </nav>
+          </ul>
+        </li>
+        <% if user_signed_in? %>
+          <li><a onclick="return false" class="icon-ok icon-large" style="color:#ccc">
+              Hello, <%=current_user.first_name%>!</a></li>
+          <li>
+            <%= link_to ' Help',
+                        static_pages_help_path,
+                        class: 'icon-stethoscope icon-large' %></li>
+          <li>
+            <%= link_to " #{current_user.first_name} account",
+                        edit_user_registration_path,
+                        class: 'icon-cog icon-large' %></li>
+          <li>
+            <%= link_to ' Sign out',
+                        destroy_user_session_path,
+                        method: :delete,
+                        class: 'icon-signout icon-large' %></li>
+        <% else %>
+          <li>
+            <%= link_to ' Help',
+                        static_pages_help_path,
+                        class: 'icon-stethoscope icon-large' %></li>
+          <li>
+            <%= link_to ' Sign up',
+                        new_user_registration_path,
+                        class: 'icon-edit icon-large' %></li>
+          <li>
+            <%= link_to ' Sign in',
+                        new_user_session_path,
+                        class: 'icon-signin icon-large'  %></li>
+        <% end %>
+      </ul>
+    </nav>
   </div>
 </header>
