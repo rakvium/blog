@@ -2,24 +2,24 @@ uk:
   language_name: Українська
   posts:
     new:
-      new_post: New Post
-      back: Back to The Great Listing Of All Of The Posts
-      are_you_sure: Are you really want to leave this page?
+      new_post: Новий Запис
+      back: Назад до Великого Переліку Усіх Записів
+      are_you_sure: Ви дійсно бажаєте покинути цю сторінку?
     form:
-      errors_prohibited: 'prohibited this post from being saved:'
-      sign_in: Sign in to manage posts
+      errors_prohibited: 'заважають цьому запису бути збереженим:'
+      sign_in: Увійдіть щоб керувати записами
     edit:
-      edit: Editing post
-      back: Back
-      are_you_sure: Your post could not be saved. Are you really want to leave this page?
+      edit: Редагуємо запис
+      back: Назад
+      are_you_sure: Ваш запис міг бути не збережений. Ви дійсно бажаєте покинути цю сторінку?
     index:
-      new_post: What about a New Post, dude?
-      post_title: The Great Listing Of All Of The Posts
-      show: Show
-      edit: Edit
-      destroy: Destroy
-      are_you_sure: Are you sure?
+      new_post: Що щодо Нового Запису, чуваче?
+      post_title: Великий Перелік Усіх Записів
+      show: Показати
+      edit: Редагувати
+      destroy: Винищити
+      are_you_sure: Ви впевнені?
     show:
-      are_you_sure: Are you sure?
-      destroy: Destroy
-      edit: Edit
+      are_you_sure: Ви впевнені?
+      destroy: Винищити
+      edit: Редагувати
