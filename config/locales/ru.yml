@@ -2,24 +2,24 @@ ru:
   language_name: Русский
   posts:
     new:
-      new_post: New Post
-      back: Back to The Great Listing Of All Of The Posts
-      are_you_sure: Are you really want to leave this page?
+      new_post: Новый Пост
+      back: Обратно к Великому Списку Всех Постов
+      are_you_sure: Вы точно хотите покинуть эту страницу?
     form:
-      errors_prohibited: 'prohibited this post from being saved:'
-      sign_in: Sign in to manage posts
+      errors_prohibited: 'мешают этому посту сохраниться:'
+      sign_in: Войдите, чтобы управлять постами
     edit:
-      edit: Editing post
-      back: Back
-      are_you_sure: Your post could not be saved. Are you really want to leave this page?
+      edit: Редактируем пост
+      back: Назад
+      are_you_sure: Ваш пост мог не сохраниться. Вы точно хотите покинуть эту страницу?
     index:
-      new_post: What about a New Post, dude?
-      post_title: The Great Listing Of All Of The Posts
-      show: Show
-      edit: Edit
-      destroy: Destroy
-      are_you_sure: Are you sure?
+      new_post: Что насчёт Нового Поста, чувак?
+      post_title: Великий Список Всех Постов
+      show: Показать
+      edit: Редактировать
+      destroy: Уничтожить
+      are_you_sure: Вы уверены?
     show:
-      are_you_sure: Are you sure?
-      destroy: Destroy
-      edit: Edit
+      are_you_sure: Вы уверены?
+      destroy: Уничтожить
+      edit: Редактировать
