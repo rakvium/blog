@@ -20,7 +20,7 @@ module Blog
     config.assets.paths << Rails.root.join('app/assets/fonts')
 
     config.generators do |g|
-      g.fixture_replacement :factory_girl, dir: 'spec/factories'
+      g.fixture_replacement :factory_bot, dir: 'spec/factories'
       g.test_framework :rspec, fixtures: true,
                                view_specs: false,
                                helper_specs: false,
