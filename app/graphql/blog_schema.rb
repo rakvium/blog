@@ -6,4 +6,8 @@ class BlogSchema < GraphQL::Schema
 
   use GraphQL::Pagination::Connections
   use GraphQL::Execution::Errors
+
+  def self.unauthorized_object(_error)
+    raise GraphQL::ExecutionError, I18n.t('authentication.failure.unauthenticated')
+  end
 end

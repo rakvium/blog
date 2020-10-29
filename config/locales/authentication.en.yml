@@ -1,0 +1,5 @@
+en:
+  authentication:
+    failure:
+      unauthenticated: 'You need to authenticate to perform this action.'
+      already_signed_up: 'You are already signed up.'

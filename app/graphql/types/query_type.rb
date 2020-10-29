@@ -2,11 +2,6 @@
 
 module Types
   class QueryType < Types::BaseObject
-    # TODO: Remove after defining real queries
-    field :test, String, null: false
-
-    def test
-      'test query'
-    end
+    field :me, resolver: Resolvers::Me
   end
 end
