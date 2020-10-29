@@ -31,6 +31,7 @@ jobs:
         RAILS_ENV: test
         BLOG_DATABASE_USERNAME: postgres
         BLOG_DATABASE_PASSWORD: postgres
+        SECRET_ENCRYPTOR_KEY_SALT: supersecuresalt
       run: |
         sudo apt-get -yqq install libpq-dev
         gem install bundler
