@@ -10,7 +10,7 @@ Bundler.require(*Rails.groups)
 
 module Blog
   class Application < Rails::Application
-    config.load_defaults 5.2
+    config.load_defaults 6.0
 
     config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
     config.assets.precompile += ['fontawesome-webfont.ttf',
@@ -18,6 +18,7 @@ module Blog
                                  'fontawesome-webfont.svg',
                                  'fontawesome-webfont.woff']
     config.assets.paths << Rails.root.join('app/assets/fonts')
+
     config.generators do |g|
       g.fixture_replacement :factory_girl, dir: 'spec/factories'
       g.test_framework :rspec, fixtures: true,
@@ -30,8 +31,5 @@ module Blog
 
     config.i18n.default_locale = :en
     config.i18n.available_locales = %i[en ru uk]
-
-    config.paths.add File.join('app', 'api'), glob: File.join('**', '*.rb')
-    config.autoload_paths += Dir[Rails.root.join('app/api/*')]
   end
 end
