@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_26_175014) do
+ActiveRecord::Schema.define(version: 2020_10_29_190535) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "authentication_tokens", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "value_digest", null: false
+    t.string "ip_address", default: "", null: false
+    t.string "user_agent", default: "", null: false
+    t.datetime "last_used_at", default: -> { "timezone('utc'::text, now())" }, null: false
+    t.datetime "created_at", default: -> { "timezone('utc'::text, now())" }, null: false
+    t.index ["last_used_at"], name: "index_authentication_tokens_on_last_used_at"
+    t.index ["user_id"], name: "index_authentication_tokens_on_user_id"
+    t.index ["value_digest"], name: "index_authentication_tokens_on_value_digest", unique: true
+  end
 
   create_table "comments", force: :cascade do |t|
     t.text "body"
@@ -54,4 +66,5 @@ ActiveRecord::Schema.define(version: 2018_10_26_175014) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "authentication_tokens", "users", on_delete: :cascade
 end
