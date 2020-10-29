@@ -40,6 +40,9 @@ gem 'grape-entity'
 gem 'grape-swagger'
 gem 'grape-swagger-rails'
 
+# Implementation of GraphQL
+gem 'graphql'
+
 # Environments
 gem 'dotenv-rails'
 
@@ -50,6 +53,8 @@ gem 'rubocop-rails', require: false
 gem 'rubocop-rspec', require: false
 
 group :development do
+  # Mount the GraphiQL IDE
+  gem 'graphiql-rails'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
