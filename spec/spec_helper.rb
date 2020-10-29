@@ -36,6 +36,7 @@ ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
+  config.include GraphqlSpecHelper
 
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
