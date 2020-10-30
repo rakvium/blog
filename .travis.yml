@@ -13,3 +13,5 @@ script:
 after_success:
   - bundle exec codeclimate-test-reporter
 sudo: required
+env:
+  - SECRET_ENCRYPTOR_KEY_SALT=verysecuresalt
