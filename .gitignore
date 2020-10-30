@@ -36,3 +36,10 @@ public/assets/*
 
 # Ignore other useless files
 .idea
+
+# Ignore generated graphql schema files
+schema.graphql
+.sass-cache
+
+# Ignore generated .rake_tasks~ file
+.rake_tasks~
