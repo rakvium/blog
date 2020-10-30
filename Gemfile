@@ -42,6 +42,8 @@ gem 'grape-swagger-rails'
 
 # Implementation of GraphQL
 gem 'graphql'
+# Documentation for graphql schema
+gem 'graphql-docs'
 
 # Environments
 gem 'dotenv-rails'

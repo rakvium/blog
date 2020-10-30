@@ -12,9 +12,13 @@ Thanks to:
 
 ### API documentations
 
-Coming...
+GraphQL API documentations should be available at
+`/graphql-docs` relative path after executing next rake tasks:
 
-In the development environment you are allowed to play with GraphiQL IDE,
+- ```rake graphql:dump_schema```
+- ```rake graphql:generate_docs```
+
+Also in the development environment you are allowed to play with GraphiQL IDE,
 which by default is mounted at `/graphiql`.
 
 ### Authentication
