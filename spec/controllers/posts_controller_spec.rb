@@ -87,11 +87,23 @@ RSpec.describe PostsController, type: :controller do
             response.should redirect_to(post_path(Post.order(created_at: :desc).first))
           end
         end
+
+        context 'with invalid params' do
+          it 'stays on the same page' do
+            post :create, params: {
+              post: {
+                title: '',
+                text: ''
+              }
+            }
+            response.should be_successful
+          end
+        end
       end
     end
 
     describe 'member actions' do
-      context 'for a post, created by the same user' do
+      context 'when a post is created by the same user' do
         let(:actual_post) { FactoryBot.create(:post, user: user) }
 
         describe 'GET /posts/:id' do
@@ -108,11 +120,34 @@ RSpec.describe PostsController, type: :controller do
           end
         end
 
+        describe 'PUT /posts/:id' do
+          it 'redirects to the updated post' do
+            put :update, params: { id: actual_post.id, post: { title: Faker::Lorem.characters } }
+            response.should redirect_to(post_path(actual_post))
+          end
+
+          context 'when params are not valid' do
+            it 'does not redirect' do
+              put :update, params: { id: actual_post.id, post: { title: '' } }
+              response.should_not redirect_to(post_path(actual_post))
+            end
+          end
+        end
+
         describe 'DELETE /posts/:id' do
-          it 'responds with success' do
-            post_to_delete = FactoryBot.create(:post, user: user)
+          let(:post_to_delete) { FactoryBot.create(:post, user: user) }
+
+          it 'redirects to the posts path' do
             delete :destroy, params: { id: post_to_delete.id }
             response.should redirect_to(posts_path)
+          end
+
+          context 'when cannot destroy' do
+            it 'redirects to the post\'s page' do
+              allow_any_instance_of(Post).to receive(:destroy).and_return(false)
+              delete :destroy, params: { id: post_to_delete.id }
+              response.should redirect_to(post_path(post_to_delete))
+            end
           end
         end
       end

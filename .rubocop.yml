@@ -164,15 +164,13 @@ Rails:
 
 ################################## RSpec ##################################
 RSpec/ContextWording:
-  # TODO: enable and correct
-  Enabled: false
+  Enabled: true
 RSpec/DescribeClass:
   Enabled: false
 RSpec/ExampleLength:
   Enabled: false
 RSpec/LeadingSubject:
-  # TODO: enable and correct
-  Enabled: false
+  Enabled: true
 RSpec/MessageSpies:
   Enabled: false
 RSpec/NestedGroups:
