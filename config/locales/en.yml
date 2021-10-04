@@ -1,5 +1,5 @@
 # Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
+# and are automatically loaded up by Rails. If you want to use locales other
 # than English, add the necessary files in this directory.
 #
 # To use the locales, use `I18n.t`:
@@ -14,9 +14,9 @@
 #
 #     I18n.locale = :es
 #
-# This would use the information in config/locales/es.yml.
+# This would use the information from config/locales/es.yml.
 #
-# The following keys must be escaped otherwise they will not be retrieved by
+# The following keys must be escaped, otherwise they will not be retrieved by
 # the default I18n backend:
 #
 # true, false, on, off, yes, no
@@ -27,25 +27,25 @@
 #   'true': 'foo'
 #
 # To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
+# available at https://guides.rubyonrails.org/i18n.html.
 
 en:
   language_name: English
   posts:
     new:
       new_post: New Post
-      back: Back to The Great Listing Of All Of The Posts
-      are_you_sure: Are you really want to leave this page?
+      back: Back to the Great Listing of All of the Posts
+      are_you_sure: Do you really want to leave this page?
     form:
       errors_prohibited: 'prohibited this post from being saved:'
-      sign_in: Sign in to manage posts
+      sign_in: Sign in to manage the posts
     edit:
-      edit: Editing post
+      edit: Editing the post
       back: Back
-      are_you_sure: Your post could not be saved. Are you really want to leave this page?
+      are_you_sure: Your post could not be saved. Do you really want to leave this page?
     index:
-      new_post: What about a New Post, dude?
-      post_title: The Great Listing Of All Of The Posts
+      new_post: What About a New Post, My Dear?
+      post_title: The Great Listing of All of the Posts
       show: Show
       edit: Edit
       destroy: Destroy
