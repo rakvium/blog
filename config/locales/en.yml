@@ -42,7 +42,7 @@ en:
     edit:
       edit: Editing the post
       back: Back
-      are_you_sure: Your post could not be saved. Do you really want to leave this page?
+      are_you_sure: The changes in your post may not have been saved. Do you really want to leave this page?
     index:
       new_post: What About a New Post, My Dear?
       post_title: The Great Listing of All of the Posts
