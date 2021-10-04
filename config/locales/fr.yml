@@ -1,0 +1,25 @@
+fr:
+  language_name: Français
+  posts:
+    new:
+      new_post: Nouveau Post
+      back: Retour à la Grande Liste de Tous les Posts
+      are_you_sure: Êtes-vous sûr que vous voulez quitter cette page ?
+    form:
+      errors_prohibited: 'empêchent l'enregistrement de ce post:'
+      sign_in: Connectez-vous pour gérer vos posts
+    edit:
+      edit: Modifions le post
+      back: Retour
+      are_you_sure: Les modifications apportées à ce post peuvent ne pas avoir été sauvegardées. Êtes-vous sûr que vous voulez quitter cette page ?
+    index:
+      new_post: Un nouveau post, mon cœur ?
+      post_title: La Grande Liste de Tous les Posts
+      show: Montrer
+      edit: Modifier
+      destroy: Détruire
+      are_you_sure: Êtes-vous sûr ?
+    show:
+      are_you_sure: Êtes-vous sûr ?
+      destroy: Détruire
+      edit: Modifier
