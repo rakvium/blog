@@ -9,10 +9,17 @@ AllCops:
     - 'db/migrate/**'
     - 'db/schema.rb'
     - 'node_modules/**/*'
+    - 'tmp/**/*'
     - 'vendor/**/*'
+
+################################## Gemspec ################################
+Gemspec/DateAssignment: # new in 1.10
+  Enabled: true
 
 ################################## Layout #################################
 Layout/BeginEndAlignment: # (new in 0.91)
+  Enabled: true
+Layout/LineEndStringConcatenationIndentation: # new in 1.18
   Enabled: true
 Layout/LineLength:
   Max: 120
@@ -20,23 +27,43 @@ Layout/EmptyLinesAroundAttributeAccessor: # (new in 0.83)
   Enabled: true
 Layout/SpaceAroundMethodCallOperator: # (new in 0.82)
   Enabled: true
+Layout/SpaceBeforeBrackets: # new in 1.7
+  Enabled: true
 
 ################################## Lint ###################################
+Lint/AmbiguousAssignment: # new in 1.7
+  Enabled: true
+Lint/AmbiguousOperatorPrecedence: # new in 1.21
+  Enabled: true
+Lint/AmbiguousRange: # new in 1.19
+  Enabled: true
 Lint/BinaryOperatorWithIdenticalOperands: # (new in 0.89)
   Enabled: true
 Lint/ConstantDefinitionInBlock: # (new in 0.91)
   Enabled: true
+Lint/DeprecatedConstants: # new in 1.8
+  Enabled: true
 Lint/DeprecatedOpenSSLConstant: # (new in 0.84)
   Enabled: true
+Lint/DuplicateBranch: # new in 1.3
+  Enabled: true
 Lint/DuplicateElsifCondition: # (new in 0.88)
+  Enabled: true
+Lint/DuplicateRegexpCharacterClassElement: # new in 1.1
   Enabled: true
 Lint/DuplicateRequire: # (new in 0.90)
   Enabled: true
 Lint/DuplicateRescueException: # (new in 0.89)
   Enabled: true
+Lint/EmptyBlock: # new in 1.1
+  Enabled: true
+Lint/EmptyClass: # new in 1.3
+  Enabled: true
 Lint/EmptyConditionalBody: # (new in 0.89)
   Enabled: true
 Lint/EmptyFile: # (new in 0.90)
+  Enabled: true
+Lint/EmptyInPattern: # new in 1.16
   Enabled: true
 Lint/FloatComparison: # (new in 0.89)
   Enabled: true
@@ -44,23 +71,47 @@ Lint/HashCompareByIdentity: # (new in 0.93)
   Enabled: true
 Lint/IdentityComparison: # (new in 0.91)
   Enabled: true
+Lint/IncompatibleIoSelectWithFiberScheduler: # new in 1.21
+  Enabled: true
+Lint/LambdaWithoutLiteralBlock: # new in 1.8
+  Enabled: true
 Lint/MissingSuper: # (new in 0.89)
   Enabled: true
 Lint/MixedRegexpCaptureTypes: # (new in 0.85)
+  Enabled: true
+Lint/NoReturnInBeginEndBlocks: # new in 1.2
+  Enabled: true
+Lint/NumberedParameterAssignment: # new in 1.9
+  Enabled: true
+Lint/OrAssignmentToConstant: # new in 1.9
   Enabled: true
 Lint/OutOfRangeRegexpRef: # (new in 0.89)
   Enabled: true
 Lint/RaiseException: # (new in 0.81)
   Enabled: true
+Lint/RedundantDirGlobSort: # new in 1.8
+  Enabled: true
 Lint/RedundantSafeNavigation: # (new in 0.93)
+  Enabled: true
+Lint/RequireRelativeSelfPath: # new in 1.22
   Enabled: true
 Lint/SelfAssignment: # (new in 0.89)
   Enabled: true
 Lint/StructNewOverride: # (new in 0.81)
   Enabled: true
+Lint/SymbolConversion: # new in 1.9
+  Enabled: true
+Lint/ToEnumArguments: # new in 1.1
+  Enabled: true
 Lint/TopLevelReturnWithArgument: # (new in 0.89)
   Enabled: true
 Lint/TrailingCommaInAttributeDeclaration: # (new in 0.90)
+  Enabled: true
+Lint/TripleQuotes: # new in 1.9
+  Enabled: true
+Lint/UnexpectedBlockArity: # new in 1.5
+  Enabled: true
+Lint/UnmodifiedReduceAccumulator: # new in 1.1
   Enabled: true
 Lint/UnreachableLoop: # (new in 0.89)
   Enabled: true
@@ -93,8 +144,93 @@ Metrics/MethodLength:
 Metrics/PerceivedComplexity:
   Max: 15
 
+################################## Rails ##################################
+Rails:
+  Enabled: true
+  TargetRailsVersion: 6.0
+Rails/ActiveRecordCallbacksOrder: # new in 2.7
+  Enabled: true
+Rails/AddColumnIndex: # new in 2.11
+  Enabled: true
+Rails/AfterCommitOverride: # new in 2.8
+  Enabled: true
+Rails/AttributeDefaultBlockValue: # new in 2.9
+  Enabled: true
+Rails/EagerEvaluationLogMessage: # new in 2.11
+  Enabled: true
+Rails/ExpandedDateRange: # new in 2.11
+  Enabled: true
+Rails/FindById: # new in 2.7
+  Enabled: true
+Rails/I18nLocaleAssignment: # new in 2.11
+  Enabled: true
+Rails/Inquiry: # new in 2.7
+  Enabled: true
+Rails/MailerName: # new in 2.7
+  Enabled: true
+Rails/MatchRoute: # new in 2.7
+  Enabled: true
+Rails/NegateInclude: # new in 2.7
+  Enabled: true
+Rails/Pluck: # new in 2.7
+  Enabled: true
+Rails/PluckInWhere: # new in 2.7
+  Enabled: true
+Rails/RedundantTravelBack: # new in 2.12
+  Enabled: true
+Rails/RenderInline: # new in 2.7
+  Enabled: true
+Rails/RenderPlainText: # new in 2.7
+  Enabled: true
+Rails/ShortI18n: # new in 2.7
+  Enabled: true
+Rails/SquishedSQLHeredocs: # new in 2.8
+  Enabled: true
+Rails/TimeZoneAssignment: # new in 2.10
+  Enabled: true
+Rails/UnusedIgnoredColumns: # new in 2.11
+  Enabled: true
+Rails/WhereEquals: # new in 2.9
+  Enabled: true
+Rails/WhereExists: # new in 2.7
+  Enabled: true
+Rails/WhereNot: # new in 2.8
+  Enabled: true
+
+################################## RSpec ##################################
+RSpec/ContextWording:
+  Enabled: true
+RSpec/DescribeClass:
+  Enabled: false
+RSpec/ExampleLength:
+  Enabled: false
+RSpec/ExcessiveDocstringSpacing: # new in 2.5
+  Enabled: true
+RSpec/IdenticalEqualityAssertion: # new in 2.4
+  Enabled: true
+RSpec/LeadingSubject:
+  Enabled: true
+RSpec/MessageSpies:
+  Enabled: false
+RSpec/MultipleMemoizedHelpers: # new in 1.43
+  Max: 6
+RSpec/NestedGroups:
+  Enabled: false
+RSpec/SubjectDeclaration: # new in 2.5
+  Enabled: true
+
+################################## RSpec/Rails ############################
+RSpec/Rails/AvoidSetupHook: # new in 2.4
+  Enabled: true
+
+################################## Security ###############################
+Security/IoMethods: # new in 1.22
+  Enabled: true
+
 ################################## Style ##################################
 Style/AccessorGrouping: # (new in 0.87)
+  Enabled: true
+Style/ArgumentsForwarding: # new in 1.1
   Enabled: true
 Style/BisectedAttrAccessor: # (new in 0.87)
   Enabled: true
@@ -105,11 +241,17 @@ Style/ClassAndModuleChildren:
   Enabled: false
 Style/ClassEqualityComparison: # (new in 0.93)
   Enabled: true
+Style/CollectionCompact: # new in 1.2
+  Enabled: true
 Style/CombinableLoops: # (new in 0.90)
   Enabled: true
 Style/Documentation:
   # Disable documentations, leave it on the programmer’s conscience
   Enabled: false
+Style/DocumentDynamicEvalDefinition: # new in 1.1
+  Enabled: true
+Style/EndlessMethod: # new in 1.8
+  Enabled: true
 Style/ExplicitBlockArgument: # (new in 0.89)
   Enabled: true
 Style/ExponentialNotation: # (new in 0.82)
@@ -118,7 +260,11 @@ Style/GlobalStdStream: # (new in 0.89)
   Enabled: true
 Style/HashAsLastArrayItem: # (new in 0.88)
   Enabled: true
+Style/HashConversion: # new in 1.10
+  Enabled: true
 Style/HashEachMethods: # (new in 0.80)
+  Enabled: true
+Style/HashExcept: # new in 1.7
   Enabled: true
 Style/HashLikeCase: # (new in 0.88)
   Enabled: true
@@ -126,12 +272,32 @@ Style/HashTransformKeys: # (new in 0.80)
   Enabled: true
 Style/HashTransformValues: # (new in 0.80)
   Enabled: true
+Style/IfWithBooleanLiteralBranches: # new in 1.9
+  Enabled: true
+Style/InPatternThen: # new in 1.16
+  Enabled: true
 Style/KeywordParametersOrder: # (new in 0.90)
   Enabled: true
 Style/MixinUsage:
   Exclude:
     - 'bin/*'
+Style/MultilineInPatternThen: # new in 1.16
+  Enabled: true
+Style/NegatedIfElseCondition: # new in 1.2
+  Enabled: true
+Style/NilLambda: # new in 1.3
+  Enabled: true
+Style/NumberedParameters: # new in 1.22
+  Enabled: true
+Style/NumberedParametersLimit: # new in 1.22
+  Enabled: true
 Style/OptionalBooleanParameter: # (new in 0.89)
+  Enabled: true
+Style/QuotedSymbols: # new in 1.16
+  Enabled: true
+Style/RedundantArgument: # new in 1.4
+  Enabled: true
+Style/RedundantSelfAssignmentBranch: # new in 1.19
   Enabled: true
 Style/RedundantAssignment: # (new in 0.87)
   Enabled: true
@@ -145,6 +311,8 @@ Style/RedundantRegexpEscape: # (new in 0.85)
   Enabled: true
 Style/RedundantSelfAssignment: # (new in 0.90)
   Enabled: true
+Style/SelectByRegexp: # new in 1.22
+  Enabled: true
 Style/SingleArgumentDig: # (new in 0.89)
   Enabled: true
 Style/SlicingWithRange: # (new in 0.83)
@@ -154,24 +322,9 @@ Style/SoleNestedConditional: # (new in 0.89)
 Style/StderrPuts:
   Exclude:
     - 'bin/*'
+Style/StringChars: # new in 1.12
+  Enabled: true
 Style/StringConcatenation: # (new in 0.89)
   Enabled: true
-
-################################## Rails ##################################
-Rails:
+Style/SwapValues: # new in 1.1
   Enabled: true
-  TargetRailsVersion: 6.0
-
-################################## RSpec ##################################
-RSpec/ContextWording:
-  Enabled: true
-RSpec/DescribeClass:
-  Enabled: false
-RSpec/ExampleLength:
-  Enabled: false
-RSpec/LeadingSubject:
-  Enabled: true
-RSpec/MessageSpies:
-  Enabled: false
-RSpec/NestedGroups:
-  Enabled: false

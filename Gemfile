@@ -49,7 +49,7 @@ gem 'graphql-docs'
 gem 'dotenv-rails'
 
 # Code quality
-gem 'rubocop', '~> 0.93.1', require: false
+gem 'rubocop', '~> 1.22.1', require: false
 gem 'rubocop-faker', require: false
 gem 'rubocop-rails', require: false
 gem 'rubocop-rspec', require: false

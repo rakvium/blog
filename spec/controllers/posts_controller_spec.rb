@@ -144,7 +144,8 @@ RSpec.describe PostsController, type: :controller do
 
           context 'when cannot destroy' do
             it 'redirects to the post\'s page' do
-              allow_any_instance_of(Post).to receive(:destroy).and_return(false)
+              allow(Post).to receive(:find).and_return(post_to_delete)
+              allow(post_to_delete).to receive(:destroy).and_return(false)
               delete :destroy, params: { id: post_to_delete.id }
               response.should redirect_to(post_path(post_to_delete))
             end
