@@ -6,7 +6,7 @@ fr:
       back: Retour à la Grande Liste de Tous les Posts
       are_you_sure: Êtes-vous sûr que vous voulez quitter cette page ?
     form:
-      errors_prohibited: 'empêchent l'enregistrement de ce post:'
+      errors_prohibited: "empêchent l'enregistrement de ce post:"
       sign_in: Connectez-vous pour gérer vos posts
     edit:
       edit: Modifions le post
