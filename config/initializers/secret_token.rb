@@ -11,5 +11,8 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Blog::Application.config.secret_key_base = '6d891baba3f24892066143858cf72d83ac5201b68a996cf73bb985d200519578' \
-                                           '65119877fdb2fd2189dbf625e6af3d5fdf58f5a1e8140afd2155113834098516'
+Blog::Application.config.secret_key_base = ENV.fetch(
+  'SECRET_KEY_BASE',
+  '6d891baba3f24892066143858cf72d83ac5201b68a996cf73bb985d200519578' \
+  '65119877fdb2fd2189dbf625e6af3d5fdf58f5a1e8140afd2155113834098516'
+)
