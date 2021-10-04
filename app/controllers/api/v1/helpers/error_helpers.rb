@@ -10,7 +10,7 @@ module API
           errors_object([{ status: status, description: error.message }], code)
         end
 
-        def render_404
+        def render_not_found
           errors_object(
             [{ status: :not_found, description: "Endpoint for '#{request.path}' or operation not found" }], 404
           )

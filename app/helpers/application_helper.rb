@@ -6,7 +6,6 @@ module ApplicationHelper
   end
 
   # Rails/HelperInstanceVariable: Do not use instance variables in helpers.
-  # rubocop:disable Rails/HelperInstanceVariable
   def resource
     @resource ||= User.new
   end
@@ -14,5 +13,4 @@ module ApplicationHelper
   def devise_mapping
     @devise_mapping ||= Devise.mappings[:user]
   end
-  # rubocop:enable Rails/HelperInstanceVariable
 end
