@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_29_190535) do
+ActiveRecord::Schema.define(version: 2021_10_31_131229) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,4 +67,6 @@ ActiveRecord::Schema.define(version: 2020_10_29_190535) do
   end
 
   add_foreign_key "authentication_tokens", "users", on_delete: :cascade
+  add_foreign_key "comments", "posts", on_delete: :cascade
+  add_foreign_key "comments", "users", on_delete: :nullify
 end
