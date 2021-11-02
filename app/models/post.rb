@@ -6,5 +6,13 @@ class Post < ApplicationRecord
   belongs_to :user
   has_many :comments, dependent: :destroy
 
-  validates :title, presence: true, length: { minimum: 5, maximum: 255 }
+  before_validation :remove_surrounding_whitespaces
+
+  validates :title, presence: true, length: { maximum: 255 }
+
+  private
+
+  def remove_surrounding_whitespaces
+    title.try(:strip!)
+  end
 end
