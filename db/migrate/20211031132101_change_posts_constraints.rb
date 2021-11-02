@@ -11,7 +11,7 @@ class ChangePostsConstraints < ActiveRecord::Migration[6.0]
         execute <<-SQL.squish
           ALTER TABLE posts
             ADD CONSTRAINT check_posts_title_length
-              CHECK (char_length(title) BETWEEN 5 AND 255);
+              CHECK (char_length(TRIM(title)) BETWEEN 1 AND 255);
         SQL
       end
 
