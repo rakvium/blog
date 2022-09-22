@@ -92,7 +92,7 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     commonjs (0.2.7)
-    commonmarker (0.23.4)
+    commonmarker (0.23.6)
     concurrent-ruby (1.1.9)
     crass (1.0.6)
     database_cleaner (1.8.5)
