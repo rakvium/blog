@@ -2,5 +2,5 @@
 
 if Rails.env.development?
   GraphiQL::Rails.config.csrf = false
-  GraphiQL::Rails.config.headers['X_AUTH_TOKEN'] = ->(_context) { ENV['GRAPHIQL_AUTH_TOKEN'] }
+  GraphiQL::Rails.config.header_editor_enabled = true
 end
