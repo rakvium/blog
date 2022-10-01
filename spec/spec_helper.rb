@@ -16,7 +16,7 @@ abort('The Rails environment is running in production mode!') if Rails.env.produ
 require 'rspec/rails'
 require 'factory_bot_rails'
 require 'shoulda/matchers'
-require 'database_cleaner'
+require 'database_cleaner/active_record'
 
 # TODO: Rails/FilePath: Please use Rails.root.join('path', 'to') instead.
 # Requires supporting ruby files with custom matchers and macros, etc
