@@ -104,7 +104,10 @@ GEM
     commonmarker (0.23.6)
     concurrent-ruby (1.1.9)
     crass (1.0.6)
-    database_cleaner (1.8.5)
+    database_cleaner-active_record (2.0.1)
+      activerecord (>= 5.a)
+      database_cleaner-core (~> 2.0.0)
+    database_cleaner-core (2.0.1)
     devise (4.7.3)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -409,7 +412,7 @@ DEPENDENCIES
   codeclimate-test-reporter (~> 1.0.0)
   codecov
   coffee-rails
-  database_cleaner
+  database_cleaner-active_record
   devise (~> 4.6)
   dotenv-rails
   factory_bot_rails

@@ -76,7 +76,7 @@ group :test do
   gem 'capybara', '~> 2.2'
   gem 'codeclimate-test-reporter', '~> 1.0.0'
   gem 'codecov', require: false
-  gem 'database_cleaner'
+  gem 'database_cleaner-active_record'
   gem 'factory_bot_rails'
   gem 'rspec-rails', '~> 4.0'
   gem 'selenium-webdriver', '~> 2.37'
