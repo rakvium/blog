@@ -30,6 +30,6 @@ module Blog
     end
 
     config.i18n.default_locale = :en
-    config.i18n.available_locales = %i[en ru uk]
+    config.i18n.available_locales = %i[en ru uk fr]
   end
 end
