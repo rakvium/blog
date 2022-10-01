@@ -56,7 +56,7 @@ gem 'rubocop-rspec', require: false
 
 group :development do
   # Mount the GraphiQL IDE
-  gem 'graphiql-rails'
+  gem 'graphiql-rails', git: 'https://github.com/rmosolgo/graphiql-rails', ref: '6b34eb1'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
