@@ -1,0 +1,25 @@
+de:
+  language_name: Deutsch
+  posts:
+    new:
+      new_post: Neuer Beitrag
+      back: Zurück zur Übersicht aller Beiträge
+      are_you_sure: Wollen Sie wirklich die Seite verlassen?
+    form:
+      errors_prohibited: 'Verhindert das Speichern des Beitrags:'
+      sign_in: Einloggen um die Beiträge zu verwalten
+    edit:
+      edit: Beitrag bearbeiten
+      back: Zurück
+      are_you_sure: Die Änderungen wurden nicht gespeichert. Wollen Sie die Seite wirklich verlassen?
+    index:
+      new_post: Wie wäre es mit einem neuen Beitrag?
+      post_title: Übersicht aller Beiträge
+      show: Anzeigen
+      edit: Beabreiten
+      destroy: Löschen
+      are_you_sure: Sind Sie sicher?
+    show:
+      are_you_sure: Sind Sie sicher?
+      destroy: Löschen
+      edit: Bearbeiten
