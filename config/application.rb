@@ -35,6 +35,7 @@ module Blog
       ru
       uk
       fr
+      de
     ]
   end
 end
