@@ -18,6 +18,9 @@ gem 'pg'
 # Web server
 gem 'puma'
 
+# Internationalization
+gem 'i18n-spec'
+
 # Assets
 gem 'bootstrap-sass', '~> 3.4.1'
 gem 'coffee-rails'
