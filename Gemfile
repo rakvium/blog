@@ -18,9 +18,6 @@ gem 'pg'
 # Web server
 gem 'puma'
 
-# Internationalization
-gem 'i18n-spec'
-
 # Assets
 gem 'bootstrap-sass', '~> 3.4.1'
 gem 'coffee-rails'
@@ -81,7 +78,9 @@ group :test do
   gem 'codecov', require: false
   gem 'database_cleaner-active_record'
   gem 'factory_bot_rails'
+  gem 'i18n-spec'
   gem 'rspec-rails', '~> 4.0'
+
   gem 'selenium-webdriver', '~> 2.37'
   gem 'shoulda-matchers', '~> 3.1.2'
   gem 'simplecov', require: false
