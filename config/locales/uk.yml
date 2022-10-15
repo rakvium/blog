@@ -23,7 +23,7 @@ uk:
       are_you_sure: Ви впевнені?
       destroy: Знищити
       edit: Редагувати
-authentication:
+    authentication:
       failure:
         unauthenticated: 'Щоб виконати цю дію, вам необхідно пройти авторизацію.'
         already_signed_up: 'Ви вже зареєстровані.'
