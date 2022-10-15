@@ -23,3 +23,12 @@ de:
       are_you_sure: Sind Sie sicher?
       destroy: Löschen
       edit: Bearbeiten
+    authentication:
+      failure:
+        unauthenticated: 'Sie müssen sich authentifizieren, um diese Aktion durchzuführen.'
+        already_signed_up: 'Sie sind bereits registriert.'
+        invalid: 'Ungültige E-Mail oder ungültiges Passwort.'
+        already_signed_in: 'Sie sind bereits eingeschrieben.'
+        not_found_in_database: 'Ungültige E-Mail oder ungültiges Passwort.'
+      sessions:
+        broken_sign_out: 'Sie konnten sich nicht abmelden.'
