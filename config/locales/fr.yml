@@ -1,5 +1,14 @@
 fr:
   language_name: Français
+  authentication:
+    failure:
+      unauthenticated: 'Vous devez vous connecter pour effectuer cette action.'
+      already_signed_up: 'Vous êtes déjà inscrit.'
+      invalid: 'Adresse électronique ou mot de passe non valide.'
+      already_signed_in: 'Vous êtes déjà connecté.'
+      not_found_in_database: 'Adresse électronique ou mot de passe non valide.'
+    sessions:
+      broken_sign_out: 'Impossible de vous déconnecter.'
   posts:
     new:
       new_post: Nouveau Post
@@ -23,12 +32,3 @@ fr:
       are_you_sure: Êtes-vous sûr ?
       destroy: Détruire
       edit: Modifier
-    authentication:
-      failure:
-        unauthenticated: 'Vous devez vous connecter pour effectuer cette action.'
-        already_signed_up: 'Vous êtes déjà inscrit.'
-        invalid: 'Adresse électronique ou mot de passe non valide.'
-        already_signed_in: 'Vous êtes déjà connecté.'
-        not_found_in_database: 'Adresse électronique ou mot de passe non valide.'
-      sessions:
-        broken_sign_out: 'Impossible de vous déconnecter.'
