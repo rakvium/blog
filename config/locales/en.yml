@@ -54,3 +54,12 @@ en:
       are_you_sure: Are you sure?
       destroy: Destroy
       edit: Edit
+    authentication:
+      failure:
+        unauthenticated: 'You need to authenticate to perform this action.'
+        already_signed_up: 'You are already signed up.'
+        invalid: 'Invalid email or password.'
+        already_signed_in: 'You are already signed in.'
+        not_found_in_database: 'Invalid email or password.'
+      sessions:
+        broken_sign_out: 'Could not sign out.'
