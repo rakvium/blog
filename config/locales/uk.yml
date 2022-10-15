@@ -1,5 +1,14 @@
 uk:
   language_name: Українська
+  authentication:
+    failure:
+      unauthenticated: 'Щоб виконати цю дію, вам необхідно пройти авторизацію.'
+      already_signed_up: 'Ви вже зареєстровані.'
+      invalid: 'Невірна адреса електронної пошти або пароль.'
+      already_signed_in: 'Ви вже зайшли в свій обліковий запис.'
+      not_found_in_database: 'Невірна адреса електронної пошти або пароль.'
+    sessions:
+      broken_sign_out: 'Не вдалося вийти з вашого облікового запису.'
   posts:
     new:
       new_post: Новий Допис
@@ -23,12 +32,3 @@ uk:
       are_you_sure: Ви впевнені?
       destroy: Знищити
       edit: Редагувати
-    authentication:
-      failure:
-        unauthenticated: 'Щоб виконати цю дію, вам необхідно пройти авторизацію.'
-        already_signed_up: 'Ви вже зареєстровані.'
-        invalid: 'Невірна адреса електронної пошти або пароль.'
-        already_signed_in: 'Ви вже зайшли в свій обліковий запис.'
-        not_found_in_database: 'Невірна адреса електронної пошти або пароль.'
-      sessions:
-        broken_sign_out: 'Не вдалося вийти з вашого облікового запису.'
