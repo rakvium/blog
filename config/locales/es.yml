@@ -1,0 +1,81 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded up by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information from config/locales/es.yml.
+#
+# The following keys must be escaped, otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at https://guides.rubyonrails.org/i18n.html.
+
+es:
+  language_name: Spanish
+  authentication:
+    failure:
+      unauthenticated: 'Necesitas iniciar sesión para realizar esta acción.'
+      already_signed_up: 'Ya estas registrado.'
+      invalid: 'Correo electrónico o Contraseña Inválidos.'
+      already_signed_in: 'Ya has iniciado sesión.'
+      not_found_in_database: 'Correo electrónico o Contraseña Inválidos.'
+    sessions:
+      broken_sign_out: 'No se pudo cerrar sesión.'
+  posts:
+    new:
+      new_post: Nueva publicación
+      back: Volver a la Gran Lista de Todas las Publicaciones
+      are_you_sure: ¿De verdad quieres abandonar esta página?
+    form:
+      errors_prohibited: 'prohibir que este post se guarde:'
+      sign_in: Inicia sesión para administrar las publicaciones
+    edit:
+      edit: Editando la publicación
+      back: Volver
+      are_you_sure: Los cambios de tu publicación no han sido guardados. ¿De verdad quieres abandonar esta página?
+    index:
+      new_post: ¿Qué tal una nueva publicación, cariño?
+      post_title: La Gran Lista de Todas las Publicaciones
+      show: Mostrar
+      edit: Editar
+      destroy: Destruir
+      are_you_sure: ¿Estás seguro?
+    show:
+      are_you_sure: ¿Estás seguro?
+      destroy: Destruir
+      edit: Editar
+
+  helpers:
+    actions: "Acciones"
+    links:
+      back: "Volver"
+      cancel: "Cancelar"
+      confirm: "¿Estás seguro?"
+      destroy: "Eliminar"
+      new: "Nuevo"
+      edit: "Editar"
+    titles:
+      edit: "Editar %{model}"
+      save: "Guardar %{model}"
+      new: "Nuevo %{model}"
+      Eliminar: "Eliminar %{model}"
+
