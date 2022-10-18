@@ -31,11 +31,12 @@ module Blog
 
     config.i18n.default_locale = :en
     config.i18n.available_locales = %i[
-      en
-      uk
-      fr
       de
+      en
       es
+      fr
+      lt
+      uk
     ]
   end
 end

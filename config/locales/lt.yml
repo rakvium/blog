@@ -1,0 +1,49 @@
+lt:
+  language_name: Lietuvių 
+  authentication:
+    failure:
+      unauthenticated: 'Norėdami atlikti šį veiksmą, turite patvirtinti savo tapatybę.'
+      already_signed_up: 'Jūs jau esate užsiregistravote.'
+      invalid: 'Neteisingas elektroninis paštas arba slaptažodis.'
+      already_signed_in: 'Jūs jau esate prisijungęs.'
+      not_found_in_database: 'Neteisingas elektroninis paštas arba slaptažodis.'
+    sessions:
+      broken_sign_out: 'Nepavyko atsijungti.'
+  posts:
+    new:
+      new_post: Naujas įrašas
+      back: Grįžti į puikų visų įrašų sąrašą
+      are_you_sure: Ar tikrai norite išeiti iš šio puslapio?
+    form:
+      errors_prohibited: 'uždraudė išsaugoti šį įrašą:'
+      sign_in: Prisijunkite, kad galėtumėte tvarkyti įrašus
+    edit:
+      edit: Įrašo redagavimas
+      back: Atgal
+      are_you_sure: Jūsų pranešime esantys pakeitimai galėjo būti neišsaugoti. Ar tikrai norite išeiti iš šio puslapio?
+    index:
+      new_post: Kaip dėl naujo pranešimo, gerbiamasis?
+      post_title: Didysis visų pranešimų sąrašas
+      show: Rodyti
+      edit: Redaguoti
+      destroy: Sunaikinti
+      are_you_sure: Ar esate tikras?
+    show:
+      are_you_sure: Ar esate tikras?
+      destroy: Sunaikinti
+      edit: Redaguoti
+
+  helpers:
+    actions: "Veiksmai"
+    links:
+      back: "Atgal"
+      cancel: "Atšaukti"
+      confirm: "Ar esate tikras?"
+      destroy: "Ištrinti"
+      new: "Naujas"
+      edit: "Redaguoti"
+    titles:
+      edit: "Redaguoti %{model}"
+      save: "Išsaugoti %{model}"
+      new: "Naujas %{model}"
+      delete: "Ištrinti %{model}"
