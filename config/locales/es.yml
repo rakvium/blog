@@ -30,7 +30,7 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 es:
-  language_name: Spanish
+  language_name: Español
   authentication:
     failure:
       unauthenticated: 'Necesitas iniciar sesión para realizar esta acción.'
