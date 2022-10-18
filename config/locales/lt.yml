@@ -1,5 +1,5 @@
 lt:
-  language_name: Lithuanian
+  language_name: Lietuvių 
   authentication:
     failure:
       unauthenticated: 'Norėdami atlikti šį veiksmą, turite patvirtinti savo tapatybę.'
