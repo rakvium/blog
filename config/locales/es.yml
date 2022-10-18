@@ -77,5 +77,4 @@ es:
       edit: "Editar %{model}"
       save: "Guardar %{model}"
       new: "Nuevo %{model}"
-      destroy: "Eliminar %{model}"
-
+      delete: "Eliminar %{model}"
