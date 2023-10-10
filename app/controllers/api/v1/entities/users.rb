@@ -9,22 +9,22 @@ module API
         expose :id, documentation: {
           type: 'integer',
           desc: "post's id"
-        }, &:id
+        }, as: :id
 
         expose :email, documentation: {
           type: 'string',
           desc: "post's email"
-        }, &:email
+        }, as: :email
 
         expose :first_name, documentation: {
           type: 'string',
           desc: "post's first_name"
-        }, &:first_name
+        }, as: :first_name
 
         expose :last_name, documentation: {
           type: 'string',
           desc: "post's last_name"
-        }, &:last_name
+        }, as: :last_name
       end
     end
   end
