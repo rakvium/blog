@@ -147,7 +147,7 @@ Metrics/PerceivedComplexity:
 ################################## Rails ##################################
 Rails:
   Enabled: true
-  TargetRailsVersion: 6.0
+  TargetRailsVersion: 6.1
 Rails/ActiveRecordCallbacksOrder: # new in 2.7
   Enabled: true
 Rails/AddColumnIndex: # new in 2.11
