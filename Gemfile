@@ -27,7 +27,7 @@ gem 'sass-rails'
 gem 'therubyracer'
 gem 'turbolinks'
 
-gem 'twitter-bootstrap-rails', '~> 2.2.8'
+gem 'twitter-bootstrap-rails', '~> 5.0.0'
 gem 'uglifier'
 
 # Pagination
