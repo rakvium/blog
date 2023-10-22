@@ -141,7 +141,7 @@ GEM
       zeitwerk (~> 2.6)
     erubi (1.12.0)
     escape_utils (1.2.1)
-    execjs (2.7.0)
+    execjs (2.9.1)
     extended-markdown-filter (0.7.0)
       html-pipeline (~> 2.9)
     factory_bot (6.1.0)
@@ -391,11 +391,11 @@ GEM
     turbolinks (5.2.1)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
-    twitter-bootstrap-rails (2.2.8)
-      actionpack (>= 3.1)
-      execjs
-      rails (>= 3.1)
-      railties (>= 3.1)
+    twitter-bootstrap-rails (5.0.0)
+      actionpack (>= 5.0, < 8.0)
+      execjs (~> 2.7)
+      less-rails (>= 3.0, < 5.0)
+      railties (>= 5.0, < 8.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     uglifier (4.2.0)
@@ -462,7 +462,7 @@ DEPENDENCIES
   spring-watcher-listen (~> 2.0.0)
   therubyracer
   turbolinks
-  twitter-bootstrap-rails (~> 2.2.8)
+  twitter-bootstrap-rails (~> 5.0.0)
   uglifier
   will_paginate
   will_paginate-bootstrap
