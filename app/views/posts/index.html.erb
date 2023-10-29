@@ -2,7 +2,7 @@
 <h1><%= t('.post_title')%></h1>
 
 <div class="center">
-  <%= link_to " #{t('.new_post')}", new_post_path, :class=>'btn btn-lg btn-success icon-pencil' %>
+  <%= link_to "📝 #{t('.new_post')}", new_post_path, class: 'btn btn-lg btn-success' %>
 </div>
 
 <% if @posts %>
@@ -41,14 +41,16 @@
         </div>
         <div class="btn-group">
           <% if can? :read, post %>
-            <%= link_to " #{t('.show')}", post_path(post), :class=>'btn btn-primary icon-zoom-in' %>
+            <%= link_to "🔎 #{t('.show')}", post_path(post), class: 'btn btn-primary' %>
             <% end %>
           <% if can? :update, post %>
-            <%= link_to " #{t('.edit')}", edit_post_path(post), :class=>'btn btn-success icon-edit' %>
+            <%= link_to "📝 #{t('.edit')}", edit_post_path(post), class: 'btn btn-success' %>
           <% end %>
           <% if can? :destroy, post %>
-            <%= link_to " #{t('.destroy')}", post_path(post),
-                            method: :delete, data: { confirm: t('.are_you_sure') }, :class=>'btn btn-danger icon-remove-sign'%>
+            <%= link_to "❌ #{t('.destroy')}", post_path(post),
+                            method: :delete,
+                            data: { confirm: t('.are_you_sure') },
+                            class: 'btn btn-danger' %>
           <% end %>
         </div>
       </div>
