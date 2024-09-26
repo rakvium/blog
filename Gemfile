@@ -19,14 +19,11 @@ gem 'pg'
 gem 'puma'
 
 # Assets
-gem 'bootstrap-sass', '~> 3.4.1'
-gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'less-rails', '~> 3.0.0'
 gem 'sass-rails'
 gem 'therubyracer'
 gem 'turbolinks'
-
 gem 'twitter-bootstrap-rails', '~> 5.0.0'
 gem 'uglifier'
 
