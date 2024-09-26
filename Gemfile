@@ -22,7 +22,6 @@ gem 'puma'
 gem 'jquery-rails'
 gem 'sass-rails'
 gem 'turbolinks'
-gem 'twitter-bootstrap-rails', '~> 5.0.0'
 gem 'uglifier'
 
 # Pagination
