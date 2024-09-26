@@ -5,9 +5,9 @@ Rails.application.routes.draw do
   post '/graphql', to: 'graphql#execute'
 
   scope '(:locale)', locale: /#{I18n.available_locales.join("|")}/ do
-    root 'welcome#index'
+    root 'posts#index'
 
-    get 'static_pages/home'
+    get 'welcome', controller: 'welcome', action: :index
     get 'static_pages/help'
     get 'static_pages/about'
     get 'static_pages/contact'

@@ -75,6 +75,15 @@ p {
   line-height: 1.7em;
 }
 
+/* navigation */
+nav ul {
+  list-style-type: none;
+}
+
+nav ul li {
+  margin-right: 8px;
+}
+
 /* posts */
 .post {
   background-color: #f0f0f0;
@@ -125,12 +134,10 @@ footer small {
 
 footer ul {
   float: right;
-  list-style: none;
 }
 
 footer ul li {
   float: left;
-  margin-left: 10px;
 }
 
 /* fields with errors */
