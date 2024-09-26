@@ -13,10 +13,6 @@ module Blog
     config.load_defaults 6.1
 
     config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
-    config.assets.precompile += ['fontawesome-webfont.ttf',
-                                 'fontawesome-webfont.eot',
-                                 'fontawesome-webfont.svg',
-                                 'fontawesome-webfont.woff']
     config.assets.paths << Rails.root.join('app/assets/fonts')
 
     config.generators do |g|

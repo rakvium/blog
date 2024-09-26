@@ -2,7 +2,7 @@
 
 source 'https://rubygems.org'
 
-ruby '~> 3.0.6'
+ruby '~> 3.2.4'
 
 gem 'rails', '~> 6.1.7'
 
@@ -20,9 +20,7 @@ gem 'puma'
 
 # Assets
 gem 'jquery-rails'
-gem 'less-rails', '~> 3.0.0'
 gem 'sass-rails'
-gem 'therubyracer'
 gem 'turbolinks'
 gem 'twitter-bootstrap-rails', '~> 5.0.0'
 gem 'uglifier'
