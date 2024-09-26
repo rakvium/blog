@@ -9,7 +9,7 @@
                         edit_user_registration_path, style: 'color:#ccc' %>
           </li>
           <li>
-            <%= link_to '🩺 Help', static_pages_help_path %></li>
+            <%= link_to 'ℹ️ Help', static_pages_help_path %></li>
           <li>
             <%= link_to "⚙️ #{current_user.first_name} account",
                         edit_user_registration_path %>
@@ -20,7 +20,7 @@
           </li>
         <% else %>
           <li>
-            <%= link_to '🩺 Help', static_pages_help_path %></li>
+            <%= link_to 'ℹ️ Help', static_pages_help_path %></li>
           <li><%= link_to '📝 Sign up', new_user_registration_path %></li>
           <li><%= link_to '🚪 Sign in', new_user_session_path %></li>
         <% end %>

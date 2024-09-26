@@ -1,11 +1,8 @@
 # frozen_string_literal: true
 
 class BlogSchema < GraphQL::Schema
-  mutation(Types::MutationType)
-  query(Types::QueryType)
-
-  use GraphQL::Pagination::Connections
-  use GraphQL::Execution::Errors
+  mutation Types::MutationType
+  query Types::QueryType
 
   rescue_from(ActiveRecord::RecordNotSaved) do |err|
     raise GraphQL::ExecutionError, err.message

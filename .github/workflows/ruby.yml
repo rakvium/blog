@@ -21,11 +21,9 @@ jobs:
           BLOG_DATABASE_PASSWORD: postgres
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Set up Ruby 3.0
+    - uses: actions/checkout@v4
+    - name: Set up Ruby used in .ruby-version or .tool-versions
       uses: ruby/setup-ruby@v1
-      with:
-        ruby-version: '3.0.6'
     - name: Build and test with Rake
       env:
         RAILS_ENV: test
