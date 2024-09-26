@@ -1,6 +1,5 @@
 # My first blog web-application using Ruby on Rails Tutorial
 
-[![codecov](https://codecov.io/gh/rakvium/blog/branch/master/graph/badge.svg)](https://codecov.io/gh/rakvium/blog)
 [![Code Climate](https://codeclimate.com/github/rakvium/blog.png)](https://codeclimate.com/github/rakvium/blog)
 [![#StandWithUkraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](https://stand-with-ukraine.pp.ua)
 
