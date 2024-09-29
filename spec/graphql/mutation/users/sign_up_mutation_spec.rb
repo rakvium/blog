@@ -15,7 +15,7 @@ RSpec.describe 'SignUpMutation', type: :request do
         passwordConfirmation: user.password
       }
     )
-    prepare_context({ request: request })
+    prepare_context({ request: })
     prepare_query(<<~GQL)
       mutation signUp(
         $email: String!,
@@ -65,7 +65,7 @@ RSpec.describe 'SignUpMutation', type: :request do
       end
 
       it 'has no errors' do
-        expect(execution_response.dig(:data, :signUp, :errors)).to eq(nil)
+        expect(execution_response.dig(:data, :signUp, :errors)).to be_nil
       end
     end
 
@@ -86,11 +86,11 @@ RSpec.describe 'SignUpMutation', type: :request do
       end
 
       it 'has no user' do
-        expect(execution_response.dig(:data, :signUp, :user)).to eq(nil)
+        expect(execution_response.dig(:data, :signUp, :user)).to be_nil
       end
 
       it 'has no token' do
-        expect(execution_response.dig(:data, :signUp, :token)).to eq(nil)
+        expect(execution_response.dig(:data, :signUp, :token)).to be_nil
       end
 
       it 'has proper errors' do
@@ -109,7 +109,7 @@ RSpec.describe 'SignUpMutation', type: :request do
     end
 
     it 'has no data' do
-      expect(execution_response.dig(:data, :signUp)).to eq(nil)
+      expect(execution_response.dig(:data, :signUp)).to be_nil
     end
 
     it 'has proper general error' do

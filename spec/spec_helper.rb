@@ -14,10 +14,9 @@ require 'factory_bot_rails'
 require 'shoulda/matchers'
 require 'database_cleaner/active_record'
 
-# TODO: Rails/FilePath: Please use Rails.root.join('path', 'to') instead.
 # Requires supporting ruby files with custom matchers and macros, etc
-Dir[Rails.root.join('spec/support/**/*.rb')].sort.each { |f| require f }
-Dir[Rails.root.join('spec/shared/**/*.rb')].sort.each { |f| require f }
+Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
+Dir[Rails.root.join('spec/shared/**/*.rb')].each { |f| require f }
 
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|
@@ -34,7 +33,7 @@ RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
   config.include GraphqlSpecHelper
 
-  config.fixture_path = "#{::Rails.root}/spec/fixtures"
+  config.fixture_path = Rails.root.join('/spec/fixtures')
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false

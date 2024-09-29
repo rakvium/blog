@@ -52,7 +52,7 @@ RSpec.describe 'SignOutMutation' do
       end
 
       it 'has no data' do
-        expect(execution_response.dig(:data, :signOut)).to eq(nil)
+        expect(execution_response.dig(:data, :signOut)).to be_nil
       end
 
       it 'has proper general error' do

@@ -11,11 +11,11 @@ class GraphqlController < APIController
     query = params[:query]
     operation_name = params[:operationName]
     context = {
-      request: request,
-      auth_token: auth_token,
-      current_user: current_user
+      request:,
+      auth_token:,
+      current_user:
     }
-    result = BlogSchema.execute(query, variables: variables, context: context, operation_name: operation_name)
+    result = BlogSchema.execute(query, variables:, context:, operation_name:)
     render json: result
   rescue StandardError => e
     raise e unless Rails.env.development?
