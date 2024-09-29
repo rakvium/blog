@@ -43,10 +43,12 @@ gem 'graphql-docs'
 gem 'dotenv-rails'
 
 # Code quality
-gem 'rubocop', '~> 1.22.1', require: false
+gem 'rubocop', '~> 1.66', require: false
+gem 'rubocop-factory_bot', '~> 2.26', '>= 2.26.1', require: false
 gem 'rubocop-faker', require: false
 gem 'rubocop-rails', require: false
 gem 'rubocop-rspec', require: false
+gem 'rubocop-rspec_rails', require: false
 
 group :development do
   # Mount the GraphiQL IDE
@@ -72,9 +74,9 @@ group :test do
   gem 'database_cleaner-active_record'
   gem 'factory_bot_rails'
   gem 'i18n-spec'
-  gem 'rspec-rails', '~> 4.0'
+  gem 'rspec-rails', '~> 6.1'
 
   gem 'selenium-webdriver', '~> 2.37'
-  gem 'shoulda-matchers', '~> 3.1.2'
+  gem 'shoulda-matchers', '~> 6.4'
   gem 'simplecov', require: false
 end

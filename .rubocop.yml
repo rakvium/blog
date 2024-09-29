@@ -1,9 +1,11 @@
 require:
+  - rubocop-factory_bot
   - rubocop-rails
   - rubocop-rspec
+  - rubocop-rspec_rails
 
 AllCops:
-  TargetRubyVersion: 2.7
+  TargetRubyVersion: 3.2
   DisplayCopNames: true
   Exclude:
     - 'db/migrate/**'
@@ -11,10 +13,6 @@ AllCops:
     - 'node_modules/**/*'
     - 'tmp/**/*'
     - 'vendor/**/*'
-
-################################## Gemspec ################################
-Gemspec/DateAssignment: # new in 1.10
-  Enabled: true
 
 ################################## Layout #################################
 Layout/BeginEndAlignment: # (new in 0.91)
@@ -215,6 +213,8 @@ RSpec/MessageSpies:
 RSpec/MultipleMemoizedHelpers: # new in 1.43
   Max: 6
 RSpec/NestedGroups:
+  Enabled: false
+RSpec/NoExpectationExample: # NOTE: disabled due to shoulda-matchers usage
   Enabled: false
 RSpec/SubjectDeclaration: # new in 2.5
   Enabled: true

@@ -21,7 +21,7 @@ module Mutations
 
           if user.save
             {
-              user: user,
+              user:,
               token: TokenManager::TokenCreator.call(user, context[:request])
             }
           else

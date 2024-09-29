@@ -2,7 +2,7 @@
 
 shared_examples 'general authentication errors' do |key|
   it 'has no data' do
-    expect(execution_response.dig(:data, key)).to eq(nil)
+    expect(execution_response.dig(:data, key)).to be_nil
   end
 
   it 'has proper general error' do

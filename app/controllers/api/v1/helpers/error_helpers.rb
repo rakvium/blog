@@ -7,7 +7,7 @@ module API
         extend Grape::API::Helpers
 
         def render_error(error, status, code)
-          errors_object([{ status: status, description: error.message }], code)
+          errors_object([{ status:, description: error.message }], code)
         end
 
         def render_not_found

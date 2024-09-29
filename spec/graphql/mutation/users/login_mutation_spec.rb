@@ -8,7 +8,7 @@ RSpec.describe 'LoginMutation' do
 
   before do
     prepare_query_variables({})
-    prepare_context({ request: request })
+    prepare_context({ request: })
     prepare_query("
       mutation login($email: String!, $password: String!){
         login(email: $email, password: $password) {
@@ -30,13 +30,13 @@ RSpec.describe 'LoginMutation' do
         prepare_query_variables(
           {
             email: Faker::Internet.email,
-            password: password
+            password:
           }
         )
       end
 
       it 'has no data' do
-        expect(execution_response.dig(:data, :login)).to eq(nil)
+        expect(execution_response.dig(:data, :login)).to be_nil
       end
 
       it 'has proper general error' do
@@ -84,7 +84,7 @@ RSpec.describe 'LoginMutation' do
         end
 
         it 'has no data' do
-          expect(execution_response.dig(:data, :login)).to eq(nil)
+          expect(execution_response.dig(:data, :login)).to be_nil
         end
 
         it 'has proper general error' do
@@ -110,7 +110,7 @@ RSpec.describe 'LoginMutation' do
     end
 
     it 'has no data' do
-      expect(execution_response.dig(:data, :login)).to eq(nil)
+      expect(execution_response.dig(:data, :login)).to be_nil
     end
 
     it 'has proper general error' do

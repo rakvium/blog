@@ -104,7 +104,7 @@ RSpec.describe PostsController, type: :controller do
 
     describe 'member actions' do
       context 'when a post is created by the same user' do
-        let(:actual_post) { FactoryBot.create(:post, user: user) }
+        let(:actual_post) { FactoryBot.create(:post, user:) }
 
         describe 'GET /posts/:id' do
           it 'responds with success' do
@@ -135,7 +135,7 @@ RSpec.describe PostsController, type: :controller do
         end
 
         describe 'DELETE /posts/:id' do
-          let(:post_to_delete) { FactoryBot.create(:post, user: user) }
+          let(:post_to_delete) { FactoryBot.create(:post, user:) }
 
           it 'redirects to the posts path' do
             delete :destroy, params: { id: post_to_delete.id }

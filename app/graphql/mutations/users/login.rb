@@ -17,7 +17,7 @@ module Mutations
         if user.present?
           if user.valid_password?(args[:password])
             {
-              user: user,
+              user:,
               token: TokenManager::TokenCreator.call(user, context[:request])
             }
           else

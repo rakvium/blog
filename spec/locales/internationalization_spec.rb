@@ -3,7 +3,7 @@
 require 'spec_helper'
 
 I18n.available_locales.each do |locale_name|
-  context "#{locale_name} locale" do
+  context "when #{locale_name} locale chosen" do
     describe 'locale file' do
       locale_file = "config/locales/#{locale_name}.yml"
 
