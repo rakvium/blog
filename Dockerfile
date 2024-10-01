@@ -1,5 +1,5 @@
 # Base image
-FROM ruby:3.2.4
+FROM ruby:3.2.5
 
 MAINTAINER rakvium@gmail.com
 
