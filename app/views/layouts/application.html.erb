@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="<%= I18n.locale %>">
 <head>
-  <title>Blog <%= yield(:title) %></title>
+  <title><%= ['Blog', yield(:title)].compact.join(' | ') %></title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <%# TODO: use hosted styles instead of cdn %>
