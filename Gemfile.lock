@@ -400,6 +400,8 @@ GEM
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
     stringio (3.1.1)
+    terser (1.2.3)
+      execjs (>= 0.3.0, < 3)
     thor (1.3.2)
     tilt (2.0.10)
     timeout (0.4.1)
@@ -408,8 +410,6 @@ GEM
     turbolinks-source (5.2.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
-    uglifier (4.2.1)
-      execjs (>= 0.3.0, < 3)
     unicode-display_width (2.6.0)
     useragent (0.16.10)
     warden (1.2.9)
@@ -472,8 +472,8 @@ DEPENDENCIES
   spring
   spring-watcher-listen
   sprockets-rails
+  terser
   turbolinks
-  uglifier
   will_paginate
   will_paginate-bootstrap
 
