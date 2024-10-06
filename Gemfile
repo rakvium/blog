@@ -7,7 +7,7 @@ ruby '~> 3.2.5'
 gem 'rails', '~> 7.0'
 
 # Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', '>= 1.1.0', require: false
+gem 'bootsnap', require: false
 
 # Authorization
 gem 'cancancan', '~> 2.0'
