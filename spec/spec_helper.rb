@@ -33,8 +33,6 @@ RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
   config.include GraphqlSpecHelper
 
-  config.fixture_path = Rails.root.join('/spec/fixtures')
-
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
   # instead of true.
@@ -44,6 +42,9 @@ RSpec.configure do |config|
   # automatically. This will be the default behavior in future versions of
   # rspec-rails.
   config.infer_base_class_for_anonymous_controllers = false
+
+  # Raise an error if deprecation found
+  config.raise_errors_for_deprecations!
 
   config.include Devise::Test::ControllerHelpers, type: :controller
 
