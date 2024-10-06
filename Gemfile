@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 
 ruby '~> 3.2.5'
 
-gem 'rails', '~> 6.1.7'
+gem 'rails', '~> 7.0'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
@@ -22,6 +22,7 @@ gem 'puma'
 # Assets
 gem 'jquery-rails'
 gem 'sassc-rails'
+gem 'sprockets-rails'
 gem 'turbolinks'
 gem 'uglifier'
 
@@ -54,9 +55,9 @@ gem 'rubocop-rspec_rails', require: false
 group :development do
   # Mount the GraphiQL IDE
   gem 'graphiql-rails', git: 'https://github.com/rmosolgo/graphiql-rails', ref: '6b34eb1'
-  gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'listen'
   gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'spring-watcher-listen'
 end
 
 group :development, :test do
