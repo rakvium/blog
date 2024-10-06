@@ -23,8 +23,8 @@ gem 'puma'
 gem 'jquery-rails'
 gem 'sassc-rails'
 gem 'sprockets-rails'
+gem 'terser'
 gem 'turbolinks'
-gem 'uglifier'
 
 # Pagination
 gem 'will_paginate'
