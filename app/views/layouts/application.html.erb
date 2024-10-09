@@ -1,26 +1,17 @@
 <!DOCTYPE html>
 <html lang="<%= I18n.locale %>">
 <head>
-  <title><%= ['Blog', yield(:title)].compact.join(' | ') %></title>
+  <title><%= ['Blog', yield(:title).presence].compact.join(' | ') %></title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <%# TODO: use hosted styles instead of cdn %>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-
-  <%# TODO: automatic light/dark themes %>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application",               "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
   <%= render 'layouts/shim' %>
 </head>
 <body>
-  <%# TODO: use hosted js instead of cdn %>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
-
   <%= render 'layouts/header' %>
-  <div class="container">
-    <%= yield %>
-  </div>
+  <content><%= yield %></content>
   <%= render 'layouts/footer' %>
 </body>
 </html>
