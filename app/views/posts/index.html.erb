@@ -10,36 +10,29 @@
   <% @posts.each do |post| %>
     <hr>
     <div class="post">
-      <div>
       <div class="row">
-        <div class="span6 text-left">
-            <code><%= post.created_at.strftime("%d %B %Y") %></code>
-        </div>
-        <div class="span5 text-right">
-          <% if post.created_at.to_i != post.updated_at.to_i %>
-            <em><code>
+        <code class="pull-left"><%= post.created_at.strftime("%d %B %Y") %></code>
+        <% if post.created_at.to_i != post.updated_at.to_i %>
+          <em class="pull-right">
+            <code>
               Updated at <%= post.updated_at.strftime("%d %B %Y") %>
-            </code></em>
-          <% end %>
-        </div>
-      </div>
+            </code>
+          </em>
+        <% end %>
       </div>
       <div class="row">
-        <div class="span12">
-            <h3>
-              <%= post.title %>
-            </h3>
+        <div>
+          <h2>
+            <%= post.title %>
+          </h2>
         </div>
       </div>
-        <div class="row">
-          <div class="span12 lead">
-          <%= post.text %>
-          <br>
-          </div>
-        </div>
       <div class="row">
-        <div class="span1">
-        </div>
+        <%= post.text %>
+        <br />
+      </div>
+      <br />
+      <div class="row">
         <div class="btn-group">
           <% if can? :read, post %>
             <%= link_to "🔎 #{t('.show')}", post_path(post), class: 'btn btn-primary' %>
@@ -58,9 +51,8 @@
     </div>
   <% end %>
 
-
   <hr>
   <div class="center">
-    <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
+    <%= will_paginate @posts %>
   </div>
 <% end %>

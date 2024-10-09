@@ -40,9 +40,9 @@
 
 
 <div class="comment">
-<h3>
+<h2>
  Comments
-</h3>
+</h2>
 <% @comments.each do |c| %>
   <hr>
   <p>
@@ -64,17 +64,17 @@
 <% end %>
 
 <% if can? :create, Comment %>
-<h3>
+<h2>
  Add a comment:
-</h3>
+</h2>
 <%= form_for([@post, @post.comments.build]) do |f| %>
 
   <%= "Comment as #{current_user.first_name} #{current_user.last_name}\:" %>
   <p>
-    <%= f.text_area :body, :required => true %>
+    <%= f.text_area :body, required: true %>
   </p>
   <p>
-    <%= f.submit :class=>'btn btn-lg btn-success'%>
+    <%= f.submit class: 'btn btn-lg btn-success'%>
   </p>
   <% end %>
  <% else %>

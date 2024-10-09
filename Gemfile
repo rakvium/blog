@@ -28,7 +28,6 @@ gem 'turbolinks'
 
 # Pagination
 gem 'will_paginate'
-gem 'will_paginate-bootstrap'
 
 # API
 gem 'grape'

@@ -1,36 +1,36 @@
 <% if user_signed_in? %>
-<div id="post">
-<%= form_for @post do |f| %>
-  <% if @post.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@post.errors.count, "error") %> <%= t('.errors_prohibited')%></h2>
-    <ul>
-    <% @post.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
+  <div id="post">
+    <%= form_for @post do |f| %>
+      <% if @post.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@post.errors.count, 'error') %> <%= t('.errors_prohibited')%></h2>
+        <ul>
+        <% @post.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+      <% end %>
+      <%= "Act as #{current_user.first_name} #{current_user.last_name}\:" %>
+      <p>
+        <%= f.label :title %><br />
+        <%= f.text_field :title %>
+      </p>
+
+      <p>
+        <%= f.label :text %><br />
+        <%= f.text_area :text%>
+      </p>
+
+      <p>
+        <%= f.submit class: 'btn btn-lg btn-success' %>
+      </p>
     <% end %>
-    </ul>
   </div>
-  <% end %>
-  <%= "Act as #{current_user.first_name} #{current_user.last_name}\:" %>
-  <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </p>
-
-  <p>
-    <%= f.label :text %><br>
-    <%= f.text_area :text%>
-  </p>
-
-  <p>
-    <%= f.submit :class=>'btn btn-lg btn-success' %>
-  </p>
-<% end %>
 
 <%else%>
-<p class="center">
-<%= link_to t('.sign_in'), new_user_session_path, :class=>'btn btn-lg btn-primary' %>
-</p>
 
+  <p class="center">
+    <%= link_to t('.sign_in'), new_user_session_path, class: 'btn btn-lg btn-primary' %>
+  </p>
 <%end%>
-</div>
