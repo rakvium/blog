@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     get 'static_pages/contact'
 
     devise_for :users
-
+    get '/users', to: redirect('/users/edit')
     resources :posts do
       resources :comments, only: %i[create destroy]
     end
