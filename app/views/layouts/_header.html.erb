@@ -1,6 +1,6 @@
 <header>
   <div class="header-first-row">
-    <%= link_to '🌐 Blog', '/', id: 'logo' %>
+    <%= link_to '🌐 Blog', url_for(locale: I18n.locale), hreflang: I18n.locale, id: 'logo' %>
     <nav>
       <ul>
         <% if user_signed_in? %>
