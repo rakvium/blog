@@ -75,7 +75,7 @@ group :test do
   gem 'database_cleaner-active_record'
   gem 'factory_bot_rails'
   gem 'i18n-spec'
-  gem 'rspec-rails', '~> 6.1'
+  gem 'rspec-rails', '~> 7.1'
 
   gem 'selenium-webdriver', '~> 2.37'
   gem 'shoulda-matchers', '~> 6.4'
