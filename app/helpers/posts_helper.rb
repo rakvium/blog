@@ -3,10 +3,10 @@
 module PostsHelper
   # TODO: Use decorator pattern for such methods
   def full_name(user)
-    "#{user.try(:first_name)} #{user.try(:last_name)}"
+    user.name
   end
 
   def my_date_format(date)
-    date.strftime('%d %B %Y at %H:%M')
+    date.strftime('%Y-%m-%d | %H:%M')
   end
 end

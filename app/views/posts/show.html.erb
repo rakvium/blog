@@ -1,8 +1,8 @@
-<div class="panel post">
-  <div class="col-md-6 text-left">
+<div class="post">
+  <div class="text-left">
     <em>
       <code>
-        <%= "#{full_name(@user)} on #{my_date_format(@post.created_at)}" %>
+        <%= "#{full_name(@user)} | #{my_date_format(@post.created_at)}" %>
       </code>
     </em>
   </div>
@@ -10,7 +10,7 @@
     <% if @post.created_at.to_i != @post.updated_at.to_i %>
       <em>
         <code>
-          Updated: <%= @post.updated_at.strftime("%d %B %Y at %H:%M") %>
+          Updated: <%= my_date_format(@post.updated_at) %>
         </code>
       </em>
     <% end %>
@@ -69,7 +69,7 @@
 </h2>
 <%= form_for([@post, @post.comments.build]) do |f| %>
 
-  <%= "Comment as #{current_user.first_name} #{current_user.last_name}\:" %>
+  <%= "#{current_user.name}:" %>
   <p>
     <%= f.text_area :body, required: true %>
   </p>

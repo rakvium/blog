@@ -14,7 +14,7 @@ RSpec.describe PostsHelper, type: :helper do
 
   describe '#my_date_format' do
     it 'returns date in a readable format' do
-      helper.my_date_format(date).should == '18 October 2017 at 19:32'
+      helper.my_date_format(date).should == '2017-10-18 | 19:32'
     end
   end
 end

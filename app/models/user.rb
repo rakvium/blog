@@ -26,4 +26,8 @@ class User < ApplicationRecord
   def self.roles
     %w[Root Admin Author Guest]
   end
+
+  def name
+    [first_name, last_name].compact.join(' ').presence || "##{id || '?'}"
+  end
 end
