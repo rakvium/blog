@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-RSpec.describe AuthenticationToken, type: :model do
+RSpec.describe AuthenticationToken do
   subject { create(:authentication_token) }
 
   describe 'associations' do

@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-RSpec.describe PostsController, type: :controller do
+RSpec.describe PostsController do
   describe 'For a guest' do
     describe 'collection actions' do
       describe 'GET /posts/' do
@@ -28,7 +28,7 @@ RSpec.describe PostsController, type: :controller do
     end
 
     describe 'member actions' do
-      let!(:actual_post) { FactoryBot.create(:post) }
+      let!(:actual_post) { create(:post) }
 
       describe 'GET /posts/:id' do
         it 'responds with success' do
@@ -54,7 +54,7 @@ RSpec.describe PostsController, type: :controller do
   end
 
   describe 'For a signed in user' do
-    let(:user) { FactoryBot.create(:user) }
+    let(:user) { create(:user) }
 
     before do
       sign_in(user)
@@ -104,7 +104,7 @@ RSpec.describe PostsController, type: :controller do
 
     describe 'member actions' do
       context 'when a post is created by the same user' do
-        let(:actual_post) { FactoryBot.create(:post, user:) }
+        let(:actual_post) { create(:post, user:) }
 
         describe 'GET /posts/:id' do
           it 'responds with success' do
@@ -135,7 +135,7 @@ RSpec.describe PostsController, type: :controller do
         end
 
         describe 'DELETE /posts/:id' do
-          let(:post_to_delete) { FactoryBot.create(:post, user:) }
+          let(:post_to_delete) { create(:post, user:) }
 
           it 'redirects to the posts path' do
             delete :destroy, params: { id: post_to_delete.id }

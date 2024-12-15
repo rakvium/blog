@@ -15,7 +15,7 @@ describe API::V1::Resources::Posts do
     before { get '/api/v1/posts' }
 
     it 'responds with 200' do
-      expect(last_response.status).to eq(200)
+      expect(last_response).to have_http_status(:ok)
     end
 
     it 'returns all the posts' do

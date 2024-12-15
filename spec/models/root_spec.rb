@@ -2,6 +2,6 @@
 
 require 'spec_helper'
 
-describe Root, type: :model do
+describe Root do
   it_behaves_like 'user'
 end

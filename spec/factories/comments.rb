@@ -3,7 +3,7 @@
 FactoryBot.define do
   factory :comment do
     body { Faker::Lorem.paragraph }
-    association :post
-    association :user
+    post
+    user
   end
 end

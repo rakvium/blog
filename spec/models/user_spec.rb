@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-describe User, type: :model do
+describe User do
   describe 'relations' do
     it { is_expected.to have_many(:posts).dependent(:destroy) }
     it { is_expected.to have_many(:comments).dependent(:nullify) }

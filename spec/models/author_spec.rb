@@ -2,6 +2,6 @@
 
 require 'spec_helper'
 
-describe Author, type: :model do
+describe Author do
   it_behaves_like 'user'
 end

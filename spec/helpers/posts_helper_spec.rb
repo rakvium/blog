@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-RSpec.describe PostsHelper, type: :helper do
+RSpec.describe PostsHelper do
   let(:user) { build(:user) }
   let(:date) { DateTime.parse('2017-10-18T19:32:10+00:00').utc }
 
