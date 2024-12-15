@@ -15,8 +15,8 @@ require 'shoulda/matchers'
 require 'database_cleaner/active_record'
 
 # Requires supporting ruby files with custom matchers and macros, etc
-Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
-Dir[Rails.root.join('spec/shared/**/*.rb')].each { |f| require f }
+Rails.root.glob('spec/support/**/*.rb').each { |f| require f }
+Rails.root.glob('spec/shared/**/*.rb').each { |f| require f }
 
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|
@@ -42,6 +42,8 @@ RSpec.configure do |config|
   # automatically. This will be the default behavior in future versions of
   # rspec-rails.
   config.infer_base_class_for_anonymous_controllers = false
+
+  config.infer_spec_type_from_file_location!
 
   # Raise an error if deprecation found
   config.raise_errors_for_deprecations!

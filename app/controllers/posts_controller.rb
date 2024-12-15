@@ -9,9 +9,20 @@ class PostsController < ApplicationController
 
   PER_PAGE = 3
 
+  def index
+    @posts = Post.paginate(page: params[:page], per_page: PER_PAGE)
+  end
+
+  def show
+    @comments = @post.comments
+    @user     = @post.user
+  end
+
   def new
     @post = Post.new
   end
+
+  def edit; end
 
   def create
     @post = Post.new(post_params)
@@ -21,17 +32,6 @@ class PostsController < ApplicationController
       render :new
     end
   end
-
-  def show
-    @comments = @post.comments
-    @user     = @post.user
-  end
-
-  def index
-    @posts = Post.paginate(page: params[:page], per_page: PER_PAGE)
-  end
-
-  def edit; end
 
   def update
     if @post.update(post_params)

@@ -2,6 +2,6 @@
 
 require 'spec_helper'
 
-describe Admin, type: :model do
+describe Admin do
   it_behaves_like 'user'
 end

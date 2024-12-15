@@ -2,11 +2,11 @@
 
 require 'spec_helper'
 
-RSpec.describe CommentsController, type: :controller do
-  let(:author) { FactoryBot.create(:author) }
-  let(:parent_post) { FactoryBot.create(:post, user: author) }
+RSpec.describe CommentsController do
+  let(:author) { create(:author) }
+  let(:parent_post) { create(:post, user: author) }
   let(:comment) do
-    FactoryBot.create(
+    create(
       :comment, user: author, post: parent_post, body: Faker::Hacker.say_something_smart
     )
   end

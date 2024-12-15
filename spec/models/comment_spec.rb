@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-describe Comment, type: :model do
+describe Comment do
   describe 'relations' do
     it { is_expected.to belong_to(:post) }
     it { is_expected.to belong_to(:user).optional(true) }

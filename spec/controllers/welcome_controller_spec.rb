@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-RSpec.describe WelcomeController, type: :controller do
+RSpec.describe WelcomeController do
   describe 'GET /' do
     it 'responds with success' do
       get :index

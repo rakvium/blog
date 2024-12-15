@@ -3,17 +3,17 @@
 require 'spec_helper'
 require 'cancan/matchers'
 
-describe Ability, type: :model do
+describe Ability do
   subject { described_class.new(user) }
 
   context 'when is a guest' do
-    let(:user) { FactoryBot.create(:guest) }
+    let(:user) { create(:guest) }
 
     it { is_expected.to be_able_to(:read, :all) }
   end
 
   context 'when is a author' do
-    let(:user) { FactoryBot.create(:author) }
+    let(:user) { create(:author) }
 
     it { is_expected.to be_able_to(:crud, Post.new(user_id: user.id)) }
     it { is_expected.to be_able_to(:create, Comment.new(user_id: user.id)) }
@@ -21,13 +21,13 @@ describe Ability, type: :model do
   end
 
   context 'when is an admin' do
-    let(:user) { FactoryBot.create(:admin) }
+    let(:user) { create(:admin) }
 
     it { is_expected.to be_able_to(:manage, :all) }
   end
 
   context 'when is a root' do
-    let(:user) { FactoryBot.create(:root) }
+    let(:user) { create(:root) }
 
     it { is_expected.to be_able_to(:manage, :all) }
   end

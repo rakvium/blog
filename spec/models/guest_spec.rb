@@ -2,6 +2,6 @@
 
 require 'spec_helper'
 
-describe Guest, type: :model do
+describe Guest do
   it_behaves_like 'user'
 end

@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-RSpec.describe StaticPagesController, type: :controller do
+RSpec.describe StaticPagesController do
   describe 'GET #about' do
     it 'responds with success' do
       get :about

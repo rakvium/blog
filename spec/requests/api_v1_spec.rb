@@ -2,12 +2,12 @@
 
 require 'spec_helper'
 
-describe API, type: :request do
+describe API do
   describe 'GET /api/v1/posts' do
     context 'when no posts created' do
       it 'returns an empty array' do
         get '/api/v1/posts'
-        expect(JSON.parse(response.body)['posts']).to eq []
+        expect(response.parsed_body['posts']).to eq []
       end
     end
 
@@ -17,7 +17,7 @@ describe API, type: :request do
 
       it 'returns array with created post' do
         get '/api/v1/posts'
-        expect(JSON.parse(response.body)['posts']).to include(represented_post)
+        expect(response.parsed_body['posts']).to include(represented_post)
       end
     end
   end

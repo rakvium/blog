@@ -7,6 +7,6 @@ FactoryBot.define do
     user_agent { Faker::Internet.user_agent }
     last_used_at { Time.current }
 
-    association :user
+    user
   end
 end
