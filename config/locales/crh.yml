@@ -1,0 +1,80 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded up by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information from config/locales/es.yml.
+#
+# The following keys must be escaped, otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at https://guides.rubyonrails.org/i18n.html.
+
+crh:
+  language_name: "Qırımtatar"
+  authentication:
+    failure:
+      unauthenticated: "Bu areketni yapmaq içün tasdıqlav kerek."
+      already_signed_up: "Siz endi yazıldıñ."
+      invalid: "Elektron poçta ya da parol doğru degil."
+      already_signed_in: "Siz endi kirdiñiz."
+      not_found_in_database: "Elektron poçta ya da parol doğru degil."
+    sessions:
+      broken_sign_out: "Sen çıqıp olamadıñ."
+  posts:
+    new:
+      new_post: "Yañı post"
+      back: "Bütün yazmalarnıñ büyük cedveline qaytmaq"
+      are_you_sure: "Siz kerçekten de bu saifeden çıqmaq isteysiñizmi?"
+    form:
+      errors_prohibited: "bu yazını saqlamağa yasaq etti:"
+      sign_in: "Yazılarnı idare etmek içün kiriñiz"
+    edit:
+      edit: "Yazını deñiştirüv"
+      back: "Qaytıp ket"
+      are_you_sure: "Yazıñdaki deñişmeler saqlanmağan ola bile. Siz kerçekten de bu saifeden çıqmaq isteysiñizmi?"
+    index:
+      new_post: "Yañı post ne, canım?"
+      post_title: "Bütün yazmalarnıñ büyük cedveli"
+      show: "Köster"
+      edit: "Tarir etmek"
+      destroy: "Yoq etmek"
+      are_you_sure: "Sen eminsiñmi?"
+    show:
+      are_you_sure: "Sen eminsiñmi?"
+      destroy: "Yoq etmek"
+      edit: "Yazını deñiştirüv"
+
+  helpers:
+    actions: "Areketler"
+    links:
+      back: "Qaytıp ket"
+      cancel: "Lâğu"
+      confirm: "Sen eminsiñmi?"
+      destroy: "Yoq etmek"
+      new: "Yañı"
+      edit: "Yazını deñiştirüv"
+    titles:
+      edit: "Deñiştirüv %{model}"
+      save: "Saqla %{model}"
+      new: "Yañı %{model}"
+      delete: "Yoq etmek %{model}"
