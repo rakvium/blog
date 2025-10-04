@@ -21,7 +21,6 @@ gem 'puma'
 
 # Assets
 gem 'jquery-rails'
-gem 'sassc-rails'
 gem 'sprockets-rails'
 gem 'terser'
 gem 'turbolinks'
