@@ -15,6 +15,9 @@ port ENV.fetch('PORT', 3000)
 # Specifies the `environment` that Puma will run in.
 environment ENV.fetch('RAILS_ENV', 'development')
 
+# [Heroku router keepalive idle timeout + 5 seconds](https://devcenter.heroku.com/articles/http-routing#keepalives)
+persistent_timeout(95)
+
 # Specifies the number of `workers` to boot in clustered mode.
 # Workers are forked webserver processes. If using threads and workers together
 # the concurrency of the application would be max `threads` * `workers`.
