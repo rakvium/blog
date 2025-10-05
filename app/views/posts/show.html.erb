@@ -10,7 +10,7 @@
     <% if @post.created_at.to_i != @post.updated_at.to_i %>
       <em>
         <code>
-          Updated: <%= my_date_format(@post.updated_at) %>
+          📝: <%= my_date_format(@post.updated_at) %>
         </code>
       </em>
     <% end %>
@@ -27,12 +27,12 @@
   </div>
   <div class="btn-group">
     <% if can? :update, @post %>
-      <%= link_to "📝 #{t('.edit')}", edit_post_path(@post), class: 'btn btn-sm btn-success'%>
+      <%= link_to "📝 #{I18n.t('posts.show.edit')}", edit_post_path(@post), class: 'btn btn-sm btn-success'%>
     <% end %>
     <% if can? :destroy, @post %>
-      <%= link_to "❌ #{t('.destroy')}",
+      <%= link_to "❌ #{I18n.t('posts.show.destroy')}",
                   post_path(@post),
-                  method: :delete, data: { confirm: t('.are_you_sure') },
+                  method: :delete, data: { confirm: I18n.t('posts.show.are_you_sure') },
                   class: 'btn btn-sm btn-danger' %>
     <% end %>
   </div>
@@ -41,13 +41,13 @@
 
 <div class="comment">
 <h2>
- Comments
+ <%= I18n.t('comments.header') %>
 </h2>
 <% @comments.each do |c| %>
   <hr>
   <p>
     <em>
-      <%= "#{full_name(c.user)} on #{my_date_format(c.created_at)} wrote:" %>
+      <%= "#{full_name(c.user)} #{my_date_format(c.created_at)}:" %>
     </em>
   </p>
   <p>
@@ -55,9 +55,9 @@
   </p>
   <% if can? :destroy, c %>
     <p>
-      <%= link_to '❌ Destroy Comment', [c.post, c],
+      <%= link_to "❌ #{I18n.t('comments.destroy')}", [c.post, c],
                    method: :delete,
-                   data: { confirm: 'Are you sure you want to delete this comment?'},
+                   data: { confirm: I18n.t('comments.are_you_sure') },
                    class: 'btn btn-sm btn-danger'%>
     </p>
   <% end %>
@@ -65,7 +65,7 @@
 
 <% if can? :create, Comment %>
 <h2>
- Add a comment:
+  <%= I18n.t('comments.add') %>
 </h2>
 <%= form_for([@post, @post.comments.build]) do |f| %>
 
@@ -79,10 +79,9 @@
   <% end %>
  <% else %>
   <p>
-    <%= link_to "Sign in to add a comment", new_user_session_path, class: 'btn btn-lg btn-primary'  %>
+    <%= link_to I18n.t('comments.sign_in'), new_user_session_path, class: 'btn btn-lg btn-primary'  %>
   </p>
 
 <% end %>
 <%= link_to "⬅️ #{I18n.t('posts.new.back')}", posts_path, class: 'btn btn-sm btn-warning' %>
 </div>
-

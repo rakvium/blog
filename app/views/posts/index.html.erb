@@ -1,58 +1,56 @@
-<% title = t('.post_title') %>
+<% title = I18n.t('posts.index.post_title') %>
 <% provide(:title, title) %>
 <h1><%= title %></h1>
 
 <div class="center">
-  <%= link_to "📝 #{t('.new_post')}", new_post_path, class: 'btn btn-lg btn-success' %>
+  <%= link_to "📝 #{I18n.t('posts.index.new_post')}", new_post_path, class: 'btn btn-lg btn-success' %>
 </div>
 
-<% if @posts %>
-  <% @posts.each do |post| %>
-    <hr>
-    <div class="post">
-      <div class="row">
-        <code class="pull-left"><%= post.created_at.strftime("%d %B %Y") %></code>
-        <% if post.created_at.to_i != post.updated_at.to_i %>
-          <em class="pull-right">
-            <code>
-              Updated at <%= post.updated_at.strftime("%d %B %Y") %>
-            </code>
-          </em>
-        <% end %>
-      </div>
-      <div class="row">
-        <div>
-          <h2>
-            <%= post.title %>
-          </h2>
-        </div>
-      </div>
-      <div class="row">
-        <%= post.text %>
-        <br />
-      </div>
-      <br />
-      <div class="row">
-        <div class="btn-group">
-          <% if can? :read, post %>
-            <%= link_to "🔎 #{t('.show')}", post_path(post), class: 'btn btn-primary' %>
-            <% end %>
-          <% if can? :update, post %>
-            <%= link_to "📝 #{t('.edit')}", edit_post_path(post), class: 'btn btn-success' %>
-          <% end %>
-          <% if can? :destroy, post %>
-            <%= link_to "❌ #{t('.destroy')}", post_path(post),
-                            method: :delete,
-                            data: { confirm: t('.are_you_sure') },
-                            class: 'btn btn-danger' %>
-          <% end %>
-        </div>
+<% @posts.each do |post| %>
+  <hr>
+  <div class="post">
+    <div class="row">
+      <code class="pull-left"><%= post.created_at.strftime("%d %B %Y") %></code>
+      <% if post.created_at.to_i != post.updated_at.to_i %>
+        <em class="pull-right">
+          <code>
+            📝: <%= post.updated_at.strftime("%d %B %Y") %>
+          </code>
+        </em>
+      <% end %>
+    </div>
+    <div class="row">
+      <div>
+        <h2>
+          <%= post.title %>
+        </h2>
       </div>
     </div>
-  <% end %>
-
-  <hr>
-  <div class="center">
-    <%= will_paginate @posts %>
+    <div class="row">
+      <%= post.text %>
+      <br />
+    </div>
+    <br />
+    <div class="row">
+      <div class="btn-group">
+        <% if can? :read, post %>
+          <%= link_to "🔎 #{I18n.t('posts.index.show')}", post_path(post), class: 'btn btn-primary' %>
+          <% end %>
+        <% if can? :update, post %>
+          <%= link_to "📝 #{I18n.t('posts.index.edit')}", edit_post_path(post), class: 'btn btn-success' %>
+        <% end %>
+        <% if can? :destroy, post %>
+          <%= link_to "❌ #{I18n.t('posts.index.destroy')}", post_path(post),
+                          method: :delete,
+                          data: { confirm: I18n.t('posts.index.are_you_sure') },
+                          class: 'btn btn-danger' %>
+        <% end %>
+      </div>
+    </div>
   </div>
 <% end %>
+
+<hr>
+<div class="center">
+  <%= will_paginate @posts %>
+</div>
