@@ -63,7 +63,6 @@ crh:
       are_you_sure: "Sen eminsiñmi?"
       destroy: "Yoq etmek"
       edit: "Yazını deñiştirüv"
-
   helpers:
     actions: "Areketler"
     links:
@@ -78,3 +77,12 @@ crh:
       save: "Saqla %{model}"
       new: "Yañı %{model}"
       delete: "Yoq etmek %{model}"
+  news: Haberler
+  static_pages:
+    about:
+      header: Aqında
+      disclaimer: "Bu uygulama, Ruby on Rails Dersi online olaraq teqdim etilgende ve bekara bulunğanda yaratıldı."
+    contact:
+      header: Bağlantı
+    help:
+      header: Yardım
