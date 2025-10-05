@@ -32,8 +32,8 @@ fr:
       are_you_sure: Êtes-vous sûr ?
       destroy: Détruire
       edit: Modifier
-hello: "Bonjour %{name}"
-helpers:
+  hello: "Bonjour %{name}"
+  helpers:
     actions: "Actions"
     links:
       back: "Retour"
