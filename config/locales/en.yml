@@ -92,5 +92,5 @@ en:
       disclaimer: "This application was created using the Ruby on Rails Tutorial when it was still available online for free."
     contact:
       header: Contact
-    Help:
+    help:
       header: Help
