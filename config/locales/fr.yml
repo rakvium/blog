@@ -47,7 +47,7 @@ fr:
       save: "Enregistrer %{model}"
       new: "Nouveau %{model}"
       delete: "Supprimer %{model}"
-      news: Nouvelles
+  news: Nouvelles
   static_pages:
     about:
       header: À propos
