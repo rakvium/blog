@@ -32,3 +32,27 @@ uk:
       are_you_sure: Ви впевнені?
       destroy: Знищити
       edit: Редагувати
+  hello: "Привіт, %{name}"
+  helpers:
+    actions: "Дії"
+    links:
+      back: "Назад"
+      cancel: "Відмінити"
+      confirm: "Ви впевнені?"
+      destroy: "Видалити"
+      new: "Новий"
+      edit: "Редагувати"
+    titles:
+      edit: "Редагувати %{model}"
+      save: "Зберегти %{model}"
+      new: "Новий %{model}"
+      delete: "Видалити %{model}"
+  news: Новини
+  static_pages:
+    about:
+      header: Про програму
+      disclaimer: "Цей застосунок було створено за допомогою Ruby on Rails Tutorial, поки він ще був доступний в Інтернеті безкоштовно."
+    contact:
+      header: Контакт
+    help:
+      header: Допомога
