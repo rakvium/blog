@@ -161,11 +161,6 @@ nav ul li {
   overflow-x: auto;
 }
 
-/* welcome page */
-.welcome {
-  text-align: center;
-}
-
 /* comments */
 .comment {
   margin-left: 25%;
