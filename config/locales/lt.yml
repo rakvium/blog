@@ -32,7 +32,6 @@ lt:
       are_you_sure: Ar esate tikras?
       destroy: Sunaikinti
       edit: Redaguoti
-
   helpers:
     actions: "Veiksmai"
     links:
@@ -47,3 +46,12 @@ lt:
       save: "Išsaugoti %{model}"
       new: "Naujas %{model}"
       delete: "Ištrinti %{model}"
+  news: Naujienos
+  static_pages:
+    about:
+      header: Apie
+      disclaimer: "Ši programa buvo sukurta naudojant „Ruby on Rails Tutorial“, kai ji dar buvo prieinama internete nemokamai."
+    contact:
+      header: Susisiekite
+    help:
+      header: Pagalba
