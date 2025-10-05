@@ -20,7 +20,7 @@ fr:
     edit:
       edit: Modifions le post
       back: Retour
-      are_you_sure: Les modifications apportées à ce post peuvent ne pas avoir été sauvegardées. Êtes-vous sûr que vous voulez quitter cette page ?
+      are_you_sure: Les modifications apportées à ce post peuvent ne pas avoir été enregistrées. Êtes-vous sûr que vous voulez quitter cette page ?
     index:
       new_post: Un nouveau post, mon cœur ?
       post_title: La Grande Liste de Tous les Posts
@@ -32,3 +32,26 @@ fr:
       are_you_sure: Êtes-vous sûr ?
       destroy: Détruire
       edit: Modifier
+helpers:
+    actions: "Actions"
+    links:
+      back: "Retour"
+      cancel: "Annuler"
+      confirm: "Êtes-vous sûr"
+      destroy: "Supprimer"
+      new: "Nouveau"
+      edit: "Modifier"
+    titles:
+      edit: "Modifier %{model}"
+      save: "Enregistrer %{model}"
+      new: "Nouveau %{model}"
+      delete: "Supprimer %{model}"
+      news: Nouvelles
+  static_pages:
+    about:
+      header: À propos
+      disclaimer: "Cette application a été créée à l'aide de Ruby on Rails Tutorial lorsqu'il était encore disponible gratuitement en ligne."
+    contact:
+      header: Contacts
+    help:
+      header: Aide
