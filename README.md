@@ -1,6 +1,5 @@
 # My first blog web-application using Ruby on Rails Tutorial
 
-[![Code Climate](https://codeclimate.com/github/rakvium/blog.png)](https://codeclimate.com/github/rakvium/blog)
 [![#StandWithUkraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](https://stand-with-ukraine.pp.ua)
 
 Link: https://hello-blog.herokuapp.com/

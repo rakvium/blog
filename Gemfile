@@ -71,7 +71,6 @@ end
 # Use rspec+selenium_webdriver+capybara as for test
 group :test do
   gem 'capybara', '~> 2.2'
-  # gem 'codeclimate-test-reporter', '~> 1.0.0' # Removed: Code Climate API deprecated (July 2025)
   gem 'database_cleaner-active_record'
   gem 'factory_bot_rails'
   gem 'i18n-spec'
