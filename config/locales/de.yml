@@ -32,3 +32,27 @@ de:
       are_you_sure: Sind Sie sicher?
       destroy: Löschen
       edit: Bearbeiten
+  hello: "Hallo, %{name}"
+  helpers:
+    actions: "Aktionen"
+    links:
+      back: "Zurück"
+      cancel: "Abbrechen"
+      confirm: "Sind Sie sicher?"
+      destroy: "Löschen"
+      new: "Neu"
+      edit: "Beabreiten"
+    titles:
+      edit: "Beabreiten %{model}"
+      save: "Speichern %{model}"
+      new: "Neu %{model}"
+      delete: "Löschen %{model}"
+  news: Nachrichten
+  static_pages:
+    about:
+      header: Über
+      disclaimer: "Diese Anwendung wurde mit dem Ruby on Rails Tutorial erstellt, als es noch kostenlos online verfügbar war."
+    contact:
+      header: Kontakt
+    help:
+      header: Hilfe
