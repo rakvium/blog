@@ -63,7 +63,6 @@ es:
       are_you_sure: ¿Estás seguro?
       destroy: Destruir
       edit: Editar
-
   helpers:
     actions: "Acciones"
     links:
@@ -78,3 +77,12 @@ es:
       save: "Guardar %{model}"
       new: "Nuevo %{model}"
       delete: "Eliminar %{model}"
+  news: Noticias
+  static_pages:
+    about:
+      header: Acerca de
+      disclaimer: "Esta aplicación se creó utilizando el Ruby on Rails Tutorial cuando aún estaba disponible en línea de forma gratuita."
+    contact:
+      header: Contacto
+    help:
+      header: Ayuda
