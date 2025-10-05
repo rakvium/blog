@@ -2,10 +2,10 @@
   <nav>
     <ul>
       <li><a href="http://railstutorial.org/">Rails Tutorial</a> by Michael Hartl</li>
-      <li><%= link_to "About",   static_pages_about_path %></li>
-      <li><%= link_to "Contact", static_pages_contact_path %></li>
-      <li><%= link_to 'Help', static_pages_help_path %></li>
-      <li><a href="http://news.railstutorial.org/">News</a></li>
+      <li><%= link_to I18n.t('static_pages.About.header'), static_pages_about_path %></li>
+      <li><%= link_to I18n.t('static_pages.Contact.header'), static_pages_contact_path %></li>
+      <li><%= link_to I18n.t('static_pages.Help.header'), static_pages_help_path %></li>
+      <li><a href="http://news.railstutorial.org/" target="blank"><%= I18n.t("news") %></a></li>
       <li><%= link_to 'GraphQL API', '/graphql-docs', target: '_blank' %></li>
     </ul>
   </nav>

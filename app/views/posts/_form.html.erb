@@ -11,7 +11,7 @@
         </ul>
       </div>
       <% end %>
-      <%= "Act as #{current_user.first_name} #{current_user.last_name}\:" %>
+      <%= "#{current_user.first_name} #{current_user.last_name}\:" %>
       <p>
         <%= f.label :title %><br />
         <%= f.text_field :title %>
@@ -31,6 +31,6 @@
 <%else%>
 
   <p class="center">
-    <%= link_to t('.sign_in'), new_user_session_path, class: 'btn btn-lg btn-primary' %>
+    <%= link_to I18n.t('posts.form.sign_in'), new_user_session_path, class: 'btn btn-lg btn-primary' %>
   </p>
 <%end%>

@@ -5,7 +5,7 @@
       <ul>
         <% if user_signed_in? %>
           <li>
-            <%= link_to "👤⚙️ #{['Hello', current_user.first_name].compact.join(', ')}!",
+            <%= link_to "👤⚙️ #{I18n.t('hello', name: current_user.first_name)}",
                         edit_user_registration_path %>
           </li>
           <li>

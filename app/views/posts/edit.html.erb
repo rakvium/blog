@@ -1,5 +1,5 @@
-<h1><%= t('.edit')%></h1>
+<h1><%= I18n.t('posts.edit.edit')%></h1>
 
 <%= render 'form' %>
 
-<%= link_to "⬅️ #{t('.back')}", posts_path, data: { confirm: t('.are_you_sure') }, class: 'btn btn-sm btn-warning'%>
+<%= link_to "⬅️ #{I18n.t('posts.edit.back')}", posts_path, data: { confirm: I18n.t('posts.edit.are_you_sure') }, class: 'btn btn-sm btn-warning'%>

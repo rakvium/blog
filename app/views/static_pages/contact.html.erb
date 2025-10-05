@@ -1,6 +1,10 @@
-<% provide(:title, 'Contact') %>
-<h1>Contact</h1>
+<% provide(:title, I18n.t('static_pages.contact.header')) %>
+<h1><%= I18n.t('static_pages.contact.header') %></h1>
+
 <p>
-  Contact Ruby on Rails Tutorial about the sample app at the
-  <a href="http://railstutorial.org/contact">contact page</a>.
+  <%= link_to I18n.t('any_issues'), 'https://github.com/rakvium/blog' %>
+</p>
+
+<p>
+  <%= link_to '📝🛠️', 'https://github.com/rakvium/blog/blob/master/app/views/static_pages/contact.html.erb' %>
 </p>

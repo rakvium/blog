@@ -31,6 +31,7 @@
 
 en:
   language_name: English
+  any_issues: "Any issues? Check the source code!"
   authentication:
     failure:
       unauthenticated: 'You need to authenticate to perform this action.'
@@ -40,6 +41,12 @@ en:
       not_found_in_database: 'Invalid email or password.'
     sessions:
       broken_sign_out: 'Could not sign out.'
+  comments:
+    add: "Add a comment"
+    are_you_sure: "Do you really want to destroy this comment?"
+    destroy: "Destroy Comment"
+    header: "Comments"
+    sign_in: "Sign in to add a comment"
   posts:
     new:
       new_post: New Post
@@ -63,7 +70,7 @@ en:
       are_you_sure: Are you sure?
       destroy: Destroy
       edit: Edit
-
+  hello: "Hello, %{name}"
   helpers:
     actions: "Actions"
     links:
@@ -78,4 +85,12 @@ en:
       save: "Save %{model}"
       new: "New %{model}"
       delete: "Delete %{model}"
-
+  news: News
+  static_pages:
+    about:
+      header: About
+      disclaimer: "This application was created using the Ruby on Rails Tutorial when it was still available online for free."
+    contact:
+      header: Contact
+    Help:
+      header: Help
