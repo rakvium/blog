@@ -12,7 +12,7 @@ gem 'bootsnap', require: false
 # Authorization
 gem 'cancancan', '~> 2.0'
 # Authentication
-gem 'devise', '~> 4.9'
+gem 'devise', '~> 5.0', '>= 5.0.3'
 gem 'devise-i18n'
 # Database
 gem 'pg'
@@ -29,10 +29,10 @@ gem 'turbolinks'
 gem 'will_paginate'
 
 # API
-gem 'grape'
+gem 'grape', '~> 2.0'
 gem 'grape-entity'
-gem 'grape-swagger'
-gem 'grape-swagger-rails'
+gem 'grape-swagger', '~> 2.1'
+gem 'grape-swagger-rails', '~> 0.7'
 
 # Implementation of GraphQL
 gem 'graphql'
