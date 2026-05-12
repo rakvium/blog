@@ -237,7 +237,7 @@ GEM
     mustermann (4.0.0)
     mustermann-grape (1.1.0)
       mustermann (>= 1.0.0)
-    net-imap (0.5.7)
+    net-imap (0.6.4)
       date
       net-protocol
     net-pop (0.1.2)
@@ -414,7 +414,7 @@ GEM
     terser (1.2.3)
       execjs (>= 0.3.0, < 3)
     thor (1.5.0)
-    timeout (0.4.3)
+    timeout (0.6.1)
     tsort (0.2.0)
     turbolinks (5.2.1)
       turbolinks-source (~> 5.2)
