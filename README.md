@@ -2,8 +2,6 @@
 
 [![#StandWithUkraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](https://stand-with-ukraine.pp.ua)
 
-Link: https://hello-blog.herokuapp.com/
-
 Thanks to:
 [*Ruby on Rails Tutorial*](http://railstutorial.org/)
  [Michael Hartl](http://michaelhartl.com/).
